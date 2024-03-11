@@ -40,14 +40,9 @@ class ServiceIndex extends Component
 
       
         $services = \GrassFeria\StarterkidFrontend\Models\Service::query()
-        ->with('media')
-        ->select('id','user_id')
-        ->ofUser(auth()->user()->id)
-        //->where(function($query) {
-        //$query->where('id','like','%'.$this->search.'%')
-        //    ->orWhere('title','like','%'.$this->search.'%');
-        //    
-        //})
+        ->select('id','user_id','name')
+        ->where('id','like','%'.$this->search.'%')
+        ->orWhere('name','like','%'.$this->search.'%')
         ->orderBy($this->orderBy, $this->sort)
         ->paginate($this->perPage);
 

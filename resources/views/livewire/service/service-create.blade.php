@@ -7,8 +7,26 @@
                 </x-slot>
                 <x-starterkid::starterkid.form cancelRoute="{{route('services.index')}}">
                 
-                // forms here
-              
+                <x-starterkid::starterkid.form.text wire:model="name" for="name" id="name" type="text" label="{{__('Name')}}" required/>
+                <x-starterkid::starterkid.form.text wire:model="title" for="title" id="title" type="text" label="{{__('Title')}}" required/>
+                <x-starterkid::starterkid.form.text wire:model="slug" for="slug" id="slug" type="text" label="{{__('Slug')}}" required/>
+                <x-starterkid::starterkid.form.ckeditor5 wire:model="preview" for="preview" id="preview" rows="5" label="{{__('Preview content')}}" required>
+                </x-starterkid::starterkid.form.ckeditor5>
+                <x-starterkid::starterkid.form.ckeditor5 wire:model="content" for="content" id="content" rows="5" label="{{__('Content')}}" required>
+                </x-starterkid::starterkid.form.ckeditor5>
+                <x-starterkid::starterkid.form.datetime wire:model="published" for="published" id="published" label="{{__('Published')}}" required />
+                <x-starterkid::starterkid.form.select wire:model="author" for="author" id="author" label="{{__('Author')}}" placeholder="{{__('Choose your author')}}" required>
+                <option selected>{{__('Choose your author')}}</option>
+                @foreach($authors as $author)
+                <option value="{{$author->id}}">{{$author->name}}</option>
+                @endforeach
+                </x-starterkid::starterkid.form.select>
+                <x-starterkid::starterkid.form.checkbox for="online" id="online" label="{{__('Online')}}">
+                <x-starterkid::starterkid.input-checkbox-radio-panel>
+                <x-starterkid::starterkid.input-checkbox wire:model="online" name="online" />
+                <x-starterkid::starterkid.label>{{__('Online')}}</x-starterkid::starterkid.label>
+                </x-starterkid::starterkid.input-checkbox-radio-panel>
+                </x-starterkid::starterkid.form.checkbox>
 
                 </x-starterkid::starterkid.form>
 

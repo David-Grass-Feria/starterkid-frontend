@@ -18,6 +18,7 @@ class ServiceCreate extends Component
     public $published;
     public $author;
     public $online;
+    public $slug;
    
     
     
@@ -40,6 +41,7 @@ class ServiceCreate extends Component
 
         $validated = $this->validate([
             'name'                      => 'required|string',
+            'slug'                      => 'required|string',
             'title'                     => 'required|string',
             'preview'                   => 'required|string',
             'content'                   => 'required|string',
@@ -78,7 +80,8 @@ class ServiceCreate extends Component
     public function render()
     {
         
-        return view('starterkid-frontend::livewire.service.service-create');
+        $authors = \App\Models\User::query()->select('id','name','role')->where('role','editor')->orWhere('role','admin')->get();
+        return view('starterkid-frontend::livewire.service.service-create',['authors' => $authors]);
         
     }
 }

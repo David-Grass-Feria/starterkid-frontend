@@ -23,7 +23,8 @@ class Service extends Model implements HasMedia
        'content',
        'published',
        'author',
-       'online'
+       'online',
+       'slug'
     ];
 
  
