@@ -16,8 +16,7 @@ class ServiceCreate extends Component
     public $preview;
     public $content;
     public $published;
-    public $author;
-    public $online;
+    public $status = true;
     public $slug;
    
     
@@ -46,8 +45,7 @@ class ServiceCreate extends Component
             'preview'                   => 'required|string',
             'content'                   => 'required|string',
             'published'                 => 'required|date_format:' . config('starterkid.time_format.date_time_format_for_picker'),
-            'author'                    => 'required|string',
-            'online'                    => 'required|boolean',
+            'status'                    => 'required|boolean',
             //'color'                     => 'required|string',
             //'range'                     => 'required|string',
             //'about'                     => 'required|string',
@@ -65,7 +63,7 @@ class ServiceCreate extends Component
         
         
         $this->authorize('create',\GrassFeria\StarterkidFrontend\Models\Service::class);
-        $validated = array_merge($validated, ['user_id' => $this->author]);
+        $validated = array_merge($validated, ['user_id' => auth()->user()->id]);
         $this->service = \GrassFeria\StarterkidFrontend\Models\Service::create($validated);
         
         //if ($this->public_photos !== []) {
@@ -80,8 +78,7 @@ class ServiceCreate extends Component
     public function render()
     {
         
-        $authors = \App\Models\User::query()->select('id','name','role')->where('role','editor')->orWhere('role','admin')->get();
-        return view('starterkid-frontend::livewire.service.service-create',['authors' => $authors]);
+        return view('starterkid-frontend::livewire.service.service-create');
         
     }
 }

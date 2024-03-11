@@ -29,6 +29,10 @@
             <x-starterkid::starterkid.tr>
             <x-starterkid::starterkid.th></x-starterkid::starterkid.th>
             <x-starterkid::starterkid.th>{{__('ID')}}</x-starterkid::starterkid.th>
+            <x-starterkid::starterkid.th>{{__('Name')}}</x-starterkid::starterkid.th>
+            <x-starterkid::starterkid.th>{{__('Published')}}</x-starterkid::starterkid.th>
+            <x-starterkid::starterkid.th>{{__('Go to page')}}</x-starterkid::starterkid.th>
+            <x-starterkid::starterkid.th>{{__('Status')}}</x-starterkid::starterkid.th>
             
             </x-starterkid::starterkid.tr>
             </thead>
@@ -42,6 +46,20 @@
                 @endcan
                 </x-starterkid::starterkid.td>
                 <x-starterkid::starterkid.td>{{$service->id}}</x-starterkid::starterkid.td>
+                <x-starterkid::starterkid.td>{{$service->name}}</x-starterkid::starterkid.td>
+                <x-starterkid::starterkid.td>{{$service->getPublished()}}</x-starterkid::starterkid.td>
+                <x-starterkid::starterkid.td>
+                    <a href="#" title="{{__('Go to page')}}">
+                        <x-starterkid::starterkid.button-secondary type="button">{{__('Go to page')}}</x-starterkid::starterkid.button-secondary>
+                    </a>
+                </x-starterkid::starterkid.td>
+                <x-starterkid::starterkid.td>
+                    @if($service->status === true)
+                    <x-starterkid::starterkid.badge-success>{{__('Online')}}</x-starterkid::starterkid.badge-success>
+                    @else
+                    <x-starterkid::starterkid.badge-danger>{{__('Offline')}}</x-starterkid::starterkid.badge-danger>
+                    @endif
+                </x-starterkid::starterkid.td>
                 <x-starterkid::starterkid.td>
                     @can('update',[\GrassFeria\StarterkidFrontend\Models\Service::class,$service])
                     <a href="{{route('services.edit',$service->id)}}" title="{{__('Edit')}}">

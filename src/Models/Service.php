@@ -22,8 +22,7 @@ class Service extends Model implements HasMedia
        'preview',
        'content',
        'published',
-       'author',
-       'online',
+       'status',
        'slug'
     ];
 
@@ -31,7 +30,7 @@ class Service extends Model implements HasMedia
     protected $casts = [
    
           'published' => 'datetime',
-          'online' => 'boolean',
+          'status' => 'boolean',
         
     ];
 
@@ -50,21 +49,21 @@ class Service extends Model implements HasMedia
     //    return $this->date->format(config('starterkid.time_format.date_format'));
     //}
 
-    //public function getDateTime()
-    //{
-    //    return $this->date_time->format(config('starterkid.time_format.date_time_format'));
-    //}
+    public function getPublished()
+    {
+        return $this->published->format(config('starterkid.time_format.date_time_format'));
+    }
 
     //public function getTime()
     //{
     //    return $this->time->format(config('starterkid.time_format.time_format'));
     //}
 
-    //protected function name(): Attribute
-    //{
-    //    return Attribute::make(
-    //        get: fn (string $value) => ucfirst($value),
-    //        set: fn (string $value) => ucfirst($value),
-    //    );
-    //}
+    protected function name(): Attribute
+    {
+        return Attribute::make(
+            get: fn (string $value) => ucfirst($value),
+          
+        );
+    }
 }

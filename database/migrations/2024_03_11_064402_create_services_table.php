@@ -20,8 +20,7 @@ return new class extends Migration
             $table->text('preview');
             $table->longText('content');
             $table->dateTime('published');
-            $table->string('author');
-            $table->boolean('online')->default(true);
+            $table->boolean('status')->default(true);
             //$table->string('title');
             //$table->string('color');
             //$table->string('range');
