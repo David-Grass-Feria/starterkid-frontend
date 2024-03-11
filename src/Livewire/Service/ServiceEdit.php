@@ -13,7 +13,6 @@ class ServiceEdit extends Component
     public $service;
     public $name;
     public $title;
-    public $preview;
     public $content;
     public $published;
     public $status;
@@ -30,7 +29,6 @@ class ServiceEdit extends Component
         $this->service                          = \GrassFeria\StarterkidFrontend\Models\Service::find($recordId);
         $this->name                             = $this->service->name;
         $this->title                            = $this->service->title;
-        $this->preview                          = $this->service->preview;
         $this->content                          = $this->service->content;
         $this->published                        = $this->service->published->format(config('starterkid.time_format.date_time_format_for_picker'));
         $this->status                           = $this->service->status;

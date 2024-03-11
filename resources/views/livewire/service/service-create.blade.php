@@ -8,12 +8,13 @@
                 <x-starterkid::starterkid.form cancelRoute="{{route('services.index')}}">
                 
                 <x-starterkid::starterkid.form.text wire:model="name" for="name" id="name" type="text" label="{{__('Name')}}" required/>
-                <x-starterkid::starterkid.form.text wire:model="title" for="title" id="title" type="text" label="{{__('Title')}}" required/>
-                <x-starterkid::starterkid.form.text wire:model="slug" for="slug" id="slug" type="text" label="{{__('Slug')}}" required/>
-                <x-starterkid::starterkid.form.ckeditor5 wire:model="preview" for="preview" id="preview" rows="5" label="{{__('Preview content')}}" required>
-                </x-starterkid::starterkid.form.ckeditor5>
                 <x-starterkid::starterkid.form.ckeditor5 wire:model="content" for="content" id="content" rows="5" label="{{__('Content')}}" required>
                 </x-starterkid::starterkid.form.ckeditor5>
+                
+                <x-starterkid::starterkid.form.text wire:model="title" for="title" id="title" type="text" label="{{__('Title')}}" required/>
+                <x-starterkid::starterkid.form.slug wire:model="slug" slug="{{url('/')}}/{{config('starterkid-frontend.service_slug')}}/" for="slug" id="slug" type="text" label="{{__('Slug')}}" required/>
+               
+                
                 <x-starterkid::starterkid.form.datetime wire:model="published" for="published" id="published" label="{{__('Published')}}" required />
                 <x-starterkid::starterkid.form.checkbox for="status" id="status" label="{{__('Status')}}">
                 <x-starterkid::starterkid.input-checkbox-radio-panel>

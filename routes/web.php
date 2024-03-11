@@ -20,6 +20,12 @@ use \GrassFeria\StarterkidFrontend\Livewire\Service\ServiceIndex;
 |
 */
 
+Route::middleware(['web'])->group(function () {
+   
+    //Route::get('/service/{slug}',ServiceIndex::class)->name('services.index');
+   
+
+});
 
 
 Route::middleware([

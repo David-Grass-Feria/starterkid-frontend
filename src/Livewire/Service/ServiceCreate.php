@@ -13,7 +13,6 @@ class ServiceCreate extends Component
     public $service;
     public $name;
     public $title;
-    public $preview;
     public $content;
     public $published;
     public $status = true;
@@ -42,7 +41,6 @@ class ServiceCreate extends Component
             'name'                      => 'required|string',
             'slug'                      => 'required|string',
             'title'                     => 'required|string',
-            'preview'                   => 'required|string',
             'content'                   => 'required|string',
             'published'                 => 'required|date_format:' . config('starterkid.time_format.date_time_format_for_picker'),
             'status'                    => 'required|boolean',
