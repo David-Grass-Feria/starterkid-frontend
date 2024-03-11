@@ -1,0 +1,1 @@
+<a {{$attributes->merge(['class' => 'text-sm font-semibold leading-6 settingFontColorOnDarkBackground'])}}>{{$slot}}</a>

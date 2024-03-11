@@ -1,9 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use \GrassFeria\StarterkidFrontend\Livewire\Service\ServiceCreate;
+use GrassFeria\StarterkidFrontend\Livewire\Homepage;
 use \GrassFeria\StarterkidFrontend\Livewire\Service\ServiceEdit;
 use \GrassFeria\StarterkidFrontend\Livewire\Service\ServiceIndex;
+use \GrassFeria\StarterkidFrontend\Livewire\Service\ServiceCreate;
 
 
 
@@ -22,7 +23,7 @@ use \GrassFeria\StarterkidFrontend\Livewire\Service\ServiceIndex;
 
 Route::middleware(['web'])->group(function () {
    
-    //Route::get('/service/{slug}',ServiceIndex::class)->name('services.index');
+    Route::get('/',Homepage::class)->name('front.homepage');
    
 
 });

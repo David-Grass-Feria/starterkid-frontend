@@ -18,9 +18,9 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->register(RouteServiceProvider::class);
         $this->app->register(AuthServiceProvider::class);
-        $this->mergeConfigFrom(
-            __DIR__.'/../../config/starterkid-frontend.php', 'starterkid-frontend'
-        );
+        //$this->mergeConfigFrom(
+        //    __DIR__.'/../../config/starterkid-frontend.php', 'starterkid-frontend'
+        //);
         
     }
 
@@ -35,6 +35,7 @@ class AppServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../../resources/views', 'starterkid-frontend');
         $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
         $this->loadJsonTranslationsFrom(__DIR__.'/../../lang');
+        Livewire::component(\GrassFeria\StarterkidFrontend\Livewire\Homepage::class);
         Livewire::component(\GrassFeria\StarterkidFrontend\Livewire\Service\ServiceCreate::class);
         Livewire::component(\GrassFeria\StarterkidFrontend\Livewire\Service\ServiceEdit::class);
         Livewire::component(\GrassFeria\StarterkidFrontend\Livewire\Service\ServiceIndex::class);
