@@ -11,6 +11,14 @@ class ServiceCreate extends Component
     use WithFileUploads;
 
     public $service;
+    public $name;
+    public $title;
+    public $preview;
+    public $content;
+    public $published;
+    public $author;
+    public $online;
+   
     
     
 
@@ -21,7 +29,7 @@ class ServiceCreate extends Component
         
         $this->authorize('create',\GrassFeria\StarterkidFrontend\Models\Service::class);
         //$this->date                                 = now()->format(config('starterkid.time_format.date_format_for_picker'));
-        //$this->date_time                            = now()->format(config('starterkid.time_format.date_time_format_for_picker'));
+        $this->published                              = now()->format(config('starterkid.time_format.date_time_format_for_picker'));
         //$this->time                                 = now()->format(config('starterkid.time_format.time_format_for_picker'));
         
     }
@@ -31,7 +39,13 @@ class ServiceCreate extends Component
 
 
         $validated = $this->validate([
-            //'title'                     => 'required|string',
+            'name'                      => 'required|string',
+            'title'                     => 'required|string',
+            'preview'                   => 'required|string',
+            'content'                   => 'required|string',
+            'published'                 => 'required|date_format:' . config('starterkid.time_format.date_time_format_for_picker'),
+            'author'                    => 'required|string',
+            'online'                    => 'required|boolean',
             //'color'                     => 'required|string',
             //'range'                     => 'required|string',
             //'about'                     => 'required|string',
@@ -49,7 +63,7 @@ class ServiceCreate extends Component
         
         
         $this->authorize('create',\GrassFeria\StarterkidFrontend\Models\Service::class);
-        $validated = array_merge($validated, ['user_id' => auth()->user()->id]);
+        $validated = array_merge($validated, ['user_id' => $this->author]);
         $this->service = \GrassFeria\StarterkidFrontend\Models\Service::create($validated);
         
         //if ($this->public_photos !== []) {

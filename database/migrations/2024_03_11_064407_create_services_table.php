@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('team_id')->index()->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->index()->constrained()->onDelete('cascade');
+            $table->string('name');
+            $table->string('title');
+            $table->text('preview');
+            $table->longText('content');
+            $table->dateTime('published');
+            $table->string('author');
+            $table->boolean('online')->default(true);
             //$table->string('title');
             //$table->string('color');
             //$table->string('range');

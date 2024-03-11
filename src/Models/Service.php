@@ -2,12 +2,13 @@
 
 namespace GrassFeria\StarterkidFrontend\Models;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Casts\Attribute;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Spatie\MediaLibrary\HasMedia;
-use Spatie\MediaLibrary\InteractsWithMedia;
 use App\Models\User;
+use Spatie\MediaLibrary\HasMedia;
+use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Service extends Model implements HasMedia
 {
@@ -16,15 +17,22 @@ class Service extends Model implements HasMedia
 
     protected $fillable = [
        'user_id',
+       'name',
+       'title',
+       'preview',
+       'content',
+       'published',
+       'author',
+       'online'
     ];
 
-    //protected $casts = [
-    //    'date' => 'date',
-    //    'date_time' => 'datetime',
-    //    'time' => 'datetime',
-    //    'active' => 'boolean',
-    //    
-    //];
+ 
+    protected $casts = [
+   
+          'published' => 'datetime',
+          'online' => 'boolean',
+        
+    ];
 
     public function scopeOfUser($query, $userId)
     {

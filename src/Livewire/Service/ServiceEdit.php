@@ -11,6 +11,13 @@ class ServiceEdit extends Component
     use WithFileUploads;
 
     public $service;
+    public $name;
+    public $title;
+    public $preview;
+    public $content;
+    public $published;
+    public $author;
+    public $online;
     
     
 
@@ -35,6 +42,13 @@ class ServiceEdit extends Component
 
 
         $validated = $this->validate([
+            'name'                      => 'required|string',
+            'title'                     => 'required|string',
+            'preview'                   => 'required|string',
+            'content'                   => 'required|string',
+            'published'                 => 'required|date_format:' . config('starterkid.time_format.date_time_format_for_picker'),
+            'author'                    => 'required|string',
+            'online'                    => 'required|boolean',
             //'title'                     => 'required|string',
             //'color'                     => 'required|string',
             //'range'                     => 'required|string',
@@ -53,7 +67,7 @@ class ServiceEdit extends Component
         
        
         $this->authorize('update',[\GrassFeria\StarterkidFrontend\Models\Service::class,$this->service]);
-        $validated = array_merge($validated, ['user_id' => auth()->user()->id]);
+        $validated = array_merge($validated, ['user_id' => $this->author]);
         $this->service->update($validated);
        
 

@@ -31,6 +31,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        
         $this->loadViewsFrom(__DIR__.'/../../resources/views', 'starterkid-frontend');
         $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
         $this->loadJsonTranslationsFrom(__DIR__.'/../../lang');
@@ -41,6 +42,10 @@ class AppServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../../config/navlink.php' => base_path('/config/starterkid/grass-feria/starterkid-frontend/navlink.php'),
         ], 'StarterkidFrontend config');
+
+        $this->publishes([
+            __DIR__.'/../../stubs' => base_path('/'),
+        ], 'starterkid-frontend');
 
 
         // commands
