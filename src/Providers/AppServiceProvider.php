@@ -3,6 +3,10 @@
 namespace GrassFeria\StarterkidFrontend\Providers;
 
 use Livewire\Livewire;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\QueryException;
 use Illuminate\Support\ServiceProvider;
 use GrassFeria\StarterkidFrontend\Console\Commands\InstallStarterkidFrontendCommand;
 
@@ -31,6 +35,33 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        
+        try {
+            // Überprüfe, ob die Datenbanktabelle existiert
+            if (Schema::hasTable('settings')) {
+                $setting = \GrassFeria\Starterkid\Models\Setting::find(1);
+                if ($setting) {
+                    // Teile Einstellungen mit allen Ansichten
+                    View::share('settingOrganizationName', $setting->extra['organization']['name']);
+                    View::share('settingOrganizationAlternateName', $setting->extra['organization']['alternate_name']);
+                    View::share('settingOrganizationFacebookUrl', $setting->extra['organization']['facebook_url']);
+                    View::share('settingOrganizationTwitterUrl', $setting->extra['organization']['twitter_url']);
+                    View::share('settingOrganizationInstagramUrl', $setting->extra['organization']['instagram_url']);
+                    View::share('settingOrganizationYoutubeUrl', $setting->extra['organization']['youtube_url']);
+                    View::share('settingOrganizationLinkedinUrl', $setting->extra['organization']['linkedin_url']);
+                    View::share('settingOrganizationPinterestUrl', $setting->extra['organization']['pinterest_url']);
+                    View::share('settingOrganizationGithubUrl', $setting->extra['organization']['github_url']);
+                    View::share('settingOrganizationWikipediaUrl', $setting->extra['organization']['wikipedia_url']);
+                    
+                }
+            }
+        } catch (QueryException $e) {
+            // Datenbankverbindung fehlgeschlagen oder Tabelle nicht gefunden
+            // Logge den Fehler oder handle ihn, wie benötigt
+        }
+        
+        
+        
         
         $this->loadViewsFrom(__DIR__.'/../../resources/views', 'starterkid-frontend');
         $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');

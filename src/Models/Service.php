@@ -5,6 +5,7 @@ namespace GrassFeria\StarterkidFrontend\Models;
 use App\Models\User;
 use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -65,5 +66,10 @@ class Service extends Model implements HasMedia
             get: fn (string $value) => ucfirst($value),
           
         );
+    }
+
+    public function scopeFrontGetServicesWhereStatusIsOnline(Builder $query): Builder
+    {
+        return $query->select('id', 'name', 'title', 'published', 'status', 'slug')->where('status',true);
     }
 }

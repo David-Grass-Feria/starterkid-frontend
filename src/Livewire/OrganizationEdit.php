@@ -12,6 +12,17 @@ class OrganizationEdit extends Component
 
     public $setting;
     public $name;
+    public $alternate_name;
+    public $facebook_url;
+    public $twitter_url;
+    public $instagram_url;
+    public $youtube_url;
+    public $linkedin_url;
+    public $pinterest_url;
+    public $wikipedia_url;
+    public $github_url;
+    
+ 
    
     
 
@@ -22,7 +33,19 @@ class OrganizationEdit extends Component
         
        
         $this->setting                          = \GrassFeria\Starterkid\Models\Setting::find(1);
-        //$this->name                             = $this->setting->
+        $this->name                             = $this->setting->extra['organization']['name'] ?? null;
+        $this->alternate_name                   = $this->setting->extra['organization']['alternate_name'] ?? null;
+        $this->facebook_url                     = $this->setting->extra['organization']['facebook_url'] ?? null;
+        $this->twitter_url                      = $this->setting->extra['organization']['twitter_url'] ?? null;
+        $this->instagram_url                    = $this->setting->extra['organization']['instagram_url'] ?? null;
+        $this->youtube_url                      = $this->setting->extra['organization']['youtube_url'] ?? null;
+        $this->linkedin_url                     = $this->setting->extra['organization']['linkedin_url'] ?? null;
+        $this->pinterest_url                    = $this->setting->extra['organization']['pinterest_url'] ?? null;
+        $this->wikipedia_url                    = $this->setting->extra['organization']['wikipedia_url'] ?? null;
+        $this->github_url                       = $this->setting->extra['organization']['github_url'] ?? null;
+       
+        
+        
 
        
       
@@ -39,8 +62,17 @@ class OrganizationEdit extends Component
 
 
         $validated = $this->validate([
-            'name'                      => 'required|string',
-           
+            'name'                                  => 'required|string',
+            'alternate_name'                        => 'required|string',
+            'facebook_url'                          => 'nullable|string',
+            'twitter_url'                           => 'nullable|string',
+            'instagram_url'                         => 'nullable|string',
+            'youtube_url'                           => 'nullable|string',
+            'linkedin_url'                          => 'nullable|string',
+            'pinterest_url'                         => 'nullable|string',
+            'wikipedia_url'                         => 'nullable|string',
+            'github_url'                            => 'nullable|string',
+          
             //'title'                     => 'required|string',
             //'color'                     => 'required|string',
             //'range'                     => 'required|string',
@@ -61,8 +93,8 @@ class OrganizationEdit extends Component
         $this->authorize('update',[\GrassFeria\Starterkid\Models\Setting::class,$this->setting]);
         //$validated = array_merge($validated, ['user_id' => auth()->user()->id]);
         
-        
-        $this->setting->update(['organization' => $validated]);
+        $extra['organization'] = $validated;
+        $this->setting->update(['extra' => $extra]);
        
 
         //if ($this->public_photos !== []) {

@@ -23,11 +23,11 @@
 
 <body class="h-full w-full bg-gray-200">
    
-   @include('starterkid-frontend::header')
+   
    
 {{$slot}}
 
-@include('starterkid-frontend::footer')
+
 
     
   

@@ -49,7 +49,7 @@ class ServiceEdit extends Component
         $validated = $this->validate([
             'name'                      => 'required|string',
             'title'                     => 'required|string',
-            'preview'                   => 'required|string',
+            'slug'                      => 'required|string',
             'content'                   => 'required|string',
             'published'                 => 'required|date_format:' . config('starterkid.time_format.date_time_format_for_picker'),
             'status'                    => 'required|boolean',

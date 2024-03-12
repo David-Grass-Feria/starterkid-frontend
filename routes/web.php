@@ -1,11 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use GrassFeria\StarterkidFrontend\Livewire\Homepage;
+use GrassFeria\StarterkidFrontend\Livewire\Front\Homepage;
+use GrassFeria\StarterkidFrontend\Livewire\OrganizationEdit;
 use \GrassFeria\StarterkidFrontend\Livewire\Service\ServiceEdit;
 use \GrassFeria\StarterkidFrontend\Livewire\Service\ServiceIndex;
 use \GrassFeria\StarterkidFrontend\Livewire\Service\ServiceCreate;
-use GrassFeria\StarterkidFrontend\Livewire\OrganizationEdit;
+use GrassFeria\StarterkidFrontend\Livewire\Front\Service\FrontServiceShow;
+
 
 
 
@@ -25,6 +27,8 @@ use GrassFeria\StarterkidFrontend\Livewire\OrganizationEdit;
 Route::middleware(['web'])->group(function () {
    
     Route::get('/',Homepage::class)->name('front.homepage');
+    Route::get('/services/{slug}',FrontServiceShow::class)->name('front.service.show');
+   
    
 
 });
