@@ -5,6 +5,7 @@ use GrassFeria\StarterkidFrontend\Livewire\Homepage;
 use \GrassFeria\StarterkidFrontend\Livewire\Service\ServiceEdit;
 use \GrassFeria\StarterkidFrontend\Livewire\Service\ServiceIndex;
 use \GrassFeria\StarterkidFrontend\Livewire\Service\ServiceCreate;
+use GrassFeria\StarterkidFrontend\Livewire\OrganizationEdit;
 
 
 
@@ -38,6 +39,7 @@ Route::middleware([
     Route::get('/dashboard/services',ServiceIndex::class)->name('services.index');
     Route::get('/dashboard/services/create',ServiceCreate::class)->name('services.create');
     Route::get('/dashboard/services/edit/{recordId}',ServiceEdit::class)->name('services.edit');
+    Route::get('/dashboard/organization/edit',OrganizationEdit::class)->name('organization.edit');
 
     
 

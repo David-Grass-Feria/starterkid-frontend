@@ -39,6 +39,7 @@ class AppServiceProvider extends ServiceProvider
         Livewire::component(\GrassFeria\StarterkidFrontend\Livewire\Service\ServiceCreate::class);
         Livewire::component(\GrassFeria\StarterkidFrontend\Livewire\Service\ServiceEdit::class);
         Livewire::component(\GrassFeria\StarterkidFrontend\Livewire\Service\ServiceIndex::class);
+        Livewire::component(\GrassFeria\StarterkidFrontend\Livewire\OrganizationEdit::class);
 
         $this->publishes([
             __DIR__.'/../../config/navlink.php' => base_path('/config/starterkid/grass-feria/starterkid-frontend/navlink.php'),
