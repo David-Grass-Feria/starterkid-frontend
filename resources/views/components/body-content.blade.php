@@ -69,11 +69,11 @@ $content = preg_replace_callback(
      <div class="col-span-12 xl:col-span-9">   
     <div class="w-full overflow-hidden">
         <div class="mb-5">
-     <h1 class="text-2xl font-bold text-gray-900 md:text-4xl xl:text-5xl">{{$heading}}</h1>
+     <h1 class="text-2xl font-bold settingFontColor md:text-4xl xl:text-5xl">{{$heading}}</h1>
      @if(isset($dateTime))
      <div class="flex items-center space-x-2 mt-5">
-        <span class="text-xs text-gray-600 xl:text-sm">{{$dateTime}}</span>
-        <span class="text-xs text-gray-600 xl:text-sm">{{$author}}</span>
+        <span class="text-xs settingFontColor xl:text-sm">{{$dateTime}}</span>
+        <span class="text-xs settingFontColor xl:text-sm">{{$author}}</span>
      </div>
      @endif
      @if(isset($imgSrc))
@@ -82,7 +82,7 @@ $content = preg_replace_callback(
      </div>
      @endif
         </div>
-     <div class="prose mt-10">
+     <div class="prose mt-10 overflow-hidden">
      {!!$content!!}
      </div>   
     

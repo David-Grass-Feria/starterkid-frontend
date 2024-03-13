@@ -8,7 +8,7 @@
         </div>
         <div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
           <div>
-            <a href="{{$routeLink}}" title="{{$routeTitle}}" class="text-sm text-gray-500">{{$name}}</a>
+            <a href="{{$routeLink}}" title="{{$routeTitle}}" class="text-sm settingFontColor">{{$name}}</a>
           </div>
         
         </div>

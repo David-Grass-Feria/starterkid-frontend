@@ -15,7 +15,7 @@ class FrontServiceShow extends Component
    
    public function mount($slug)
    {
-      $this->service = \GrassFeria\StarterkidFrontend\Models\Service::where('slug',$slug)->first();
+      $this->service = \GrassFeria\StarterkidFrontend\Models\Service::where('slug',$slug)->firstOrFail();
    }
   
   
