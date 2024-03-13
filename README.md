@@ -22,5 +22,8 @@ protected static function boot()
         static::updated(function ($model) {
            \Spatie\ResponseCache\Facades\ResponseCache::forget(url('/').'/'.config('starterkid-frontend.service_slug').'/'.$model->slug);
         });
+        static::deleted(function ($model) {
+            \Spatie\ResponseCache\Facades\ResponseCache::forget(url('/').'/'.config('starterkid-frontend.service_slug').'/'.$model->slug);
+         });
     }
 ```
