@@ -33,7 +33,7 @@ $content = preg_replace('/<table>/', '<table class="ball">', $content);
 
 
 
-    <div class="w-full p-5 xl:p-10 md:max-w-2xl xl:max-w-2xl mx-auto overflow-hidden">
+    <div class="w-full md:max-w-2xl xl:max-w-xl overflow-hidden">
         <div class="mb-5">
      <h1 class="text-2xl font-bold text-gray-900 md:text-4xl xl:text-5xl">{{$heading}}</h1>
      <div class="flex items-center space-x-2 mt-5">

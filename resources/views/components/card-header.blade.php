@@ -1,4 +1,4 @@
-<div class="settingSecondaryBackgroundColor py-12 settingFontColorOnDarkBackground">
+<div class="bg-gray-50 py-12 settingFontColor">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-2xl lg:mx-0">
         <h2 class="text-4xl font-bold tracking-tight sm:text-6xl">{{$heading}}</h2>

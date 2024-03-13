@@ -2,9 +2,9 @@
     <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
       <nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
 
-          
-          <x-starterkid-frontend::footer-link href="{{route('front.service.index')}}" title="{{ucfirst(config('starterkid-frontend.service_slug'))}}">{{ucfirst(config('starterkid-frontend.service_slug'))}}</x-starterkid-frontend::footer-link>
-         
+          @foreach($services as $service)
+          <x-starterkid-frontend::footer-link href="{{route('front.service.show',$service->slug)}}" title="{{$service->title}}">{{$service->name}}</x-starterkid-frontend::footer-link>
+          @endforeach
       
       </nav>
       <div class="mt-10 flex justify-center space-x-10">

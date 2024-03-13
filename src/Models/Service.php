@@ -17,22 +17,22 @@ class Service extends Model implements HasMedia
     use InteractsWithMedia;
 
     protected $fillable = [
-       'user_id',
-       'name',
-       'title',
-       'preview',
-       'content',
-       'published',
-       'status',
-       'slug'
+        'user_id',
+        'name',
+        'title',
+        'preview',
+        'content',
+        'published',
+        'status',
+        'slug'
     ];
 
- 
+
     protected $casts = [
-   
-          'published' => 'datetime',
-          'status' => 'boolean',
-        
+
+        'published' => 'datetime',
+        'status' => 'boolean',
+
     ];
 
     public function scopeOfUser($query, $userId)
@@ -40,7 +40,7 @@ class Service extends Model implements HasMedia
         return $query->where('user_id', $userId);
     }
 
-     public function user(): BelongsTo
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
@@ -64,12 +64,30 @@ class Service extends Model implements HasMedia
     {
         return Attribute::make(
             get: fn (string $value) => ucfirst($value),
-          
+
         );
     }
 
-    public function scopeFrontGetServicesWhereStatusIsOnline(Builder $query): Builder
+    //public function scopeFrontGetServicesWhereStatusIsOnline(Builder $query): Builder
+    //{
+    //    return $query->select('id', 'name', 'title', 'published', 'status', 'slug','preview')->where('status',true);
+    //}
+
+    public function scopeFrontGetServicesWhereStatusIsOnline(Builder $query, $search = '', $orderBy = 'id', $sort = 'asc'): Builder
     {
-        return $query->select('id', 'name', 'title', 'published', 'status', 'slug','preview')->where('status',true);
+        $query = $query->select('id', 'name', 'title', 'published', 'status', 'slug', 'preview')
+            ->where('status', true);
+
+        if (!empty($search)) {
+            $query->where(function ($query) use ($search) {
+                $query->where('name', 'like', '%' . $search . '%')
+                    ->orWhere('title', 'like', '%' . $search . '%')
+                    ->orWhere('slug', 'like', '%' . $search . '%');
+            });
+        }
+
+        $query->orderBy($orderBy, $sort);
+
+        return $query;
     }
 }
