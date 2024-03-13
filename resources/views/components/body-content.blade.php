@@ -25,30 +25,64 @@ $content = preg_replace_callback(
 @endphp
 
 
+
 @php
-// Ersetze <table> mit <table class="table-auto">
-$content = preg_replace('/<table>/', '<table class="ball">', $content);
-  
+// H2 Überschriften bearbeiten und ID hinzufügen
+$content = preg_replace_callback(
+    '/<h2(.*?)>(.*?)<\/h2>/',
+    function ($matches) use (&$h2WithId) {
+        $id = Str::slug($matches[2]);
+        $h2WithId[] = $matches[2];
+        return "<h2 id=\"{$id}\"{$matches[1]}>{$matches[2]}</h2>";
+    },
+    $content
+);
 @endphp
 
+    <div class="grid grid-cols-12 gap-5">
+
+<div class="col-span-12 xl:col-span-3">
+   
+         
+         <x-starterkid-frontend::heading-item-wrapper>
+            @foreach($h2WithId as $h2)
+            @if($loop->last)
+            <x-starterkid-frontend::heading-item-last routeLink="#{{ Str::slug($h2) }}" routeTitle="{{ $h2 }}" name="{{ $h2 }}"/>
+            @else
+            <x-starterkid-frontend::heading-item routeLink="#{{ Str::slug($h2) }}" routeTitle="{{ $h2 }}" name="{{ $h2 }}"/>
+            @endif
+          @endforeach
+         
+        </x-starterkid-frontend::heading-item-wrapper>
+         
+    
+          
+</div>
 
 
-    <div class="w-full md:max-w-2xl xl:max-w-xl overflow-hidden">
+
+     <div class="col-span-12 xl:col-span-9">   
+    <div class="w-full overflow-hidden">
         <div class="mb-5">
      <h1 class="text-2xl font-bold text-gray-900 md:text-4xl xl:text-5xl">{{$heading}}</h1>
+     @if(isset($dateTime))
      <div class="flex items-center space-x-2 mt-5">
-        <span class="text-xs text-gray-600 xl:text-sm">{{now()}}</span>
-        <span class="text-xs text-gray-600 xl:text-sm">Oliver Grau</span>
+        <span class="text-xs text-gray-600 xl:text-sm">{{$dateTime}}</span>
+        <span class="text-xs text-gray-600 xl:text-sm">{{$author}}</span>
      </div>
+     @endif
+     @if(isset($imgSrc))
      <div class="mt-5">
-        <img src="https://www.jimdo.com/de/magazin/wp-content/uploads/2023/10/KeywordResearch_Hero-714x476.jpg" />
+        <img src="{{$imgSrc}}" alt="{{$imgAlt}}" />
      </div>
+     @endif
         </div>
      <div class="prose mt-10">
      {!!$content!!}
      </div>   
     
     </div>
-    
+</div>
     
     </div>
+

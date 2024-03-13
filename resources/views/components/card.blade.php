@@ -1,4 +1,4 @@
-<div class="overflow-hidden bg-gray-100">
+<div class="overflow-hidden">
     <div>
       {{$slot}}
     </div>
