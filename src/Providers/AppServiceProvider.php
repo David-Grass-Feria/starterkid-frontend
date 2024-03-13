@@ -67,7 +67,6 @@ class AppServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
         $this->loadJsonTranslationsFrom(__DIR__.'/../../lang');
         Livewire::component('starterkid-frontend::homepage',\GrassFeria\StarterkidFrontend\Livewire\Front\Homepage::class);
-        Livewire::component('starterkid-frontend::body-content',\GrassFeria\StarterkidFrontend\Livewire\Front\BodyContent::class);
         Livewire::component('starterkid-frontend::service-create',\GrassFeria\StarterkidFrontend\Livewire\Service\ServiceCreate::class);
         Livewire::component('starterkid-frontend::service-edit',\GrassFeria\StarterkidFrontend\Livewire\Service\ServiceEdit::class);
         Livewire::component('starterkid-frontend::service-index',\GrassFeria\StarterkidFrontend\Livewire\Service\ServiceIndex::class);

@@ -1,7 +1,7 @@
 <div>
     @include('starterkid-frontend::header')
     
-    <livewire-starterkid-frontend::body-content content="{!!$service->content!!}"/>
+    <x-starterkid-frontend::body-content heading="{{$service->name}}" content="{!!$service->content!!}" />
    
 
 
