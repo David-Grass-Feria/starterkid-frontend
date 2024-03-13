@@ -31,7 +31,7 @@
             <x-starterkid::starterkid.th>{{__('ID')}}</x-starterkid::starterkid.th>
             <x-starterkid::starterkid.th>{{__('Name')}}</x-starterkid::starterkid.th>
             <x-starterkid::starterkid.th>{{__('Published')}}</x-starterkid::starterkid.th>
-            <x-starterkid::starterkid.th>{{__('Go to page')}}</x-starterkid::starterkid.th>
+            <x-starterkid::starterkid.th>{{__('View')}}</x-starterkid::starterkid.th>
             <x-starterkid::starterkid.th>{{__('Status')}}</x-starterkid::starterkid.th>
             
             </x-starterkid::starterkid.tr>
@@ -49,9 +49,11 @@
                 <x-starterkid::starterkid.td>{{$service->name}}</x-starterkid::starterkid.td>
                 <x-starterkid::starterkid.td>{{$service->getPublished()}}</x-starterkid::starterkid.td>
                 <x-starterkid::starterkid.td>
-                    <a href="#" title="{{__('Go to page')}}">
-                        <x-starterkid::starterkid.button-secondary type="button">{{__('Go to page')}}</x-starterkid::starterkid.button-secondary>
+                    @if($service->status === true)
+                    <a target="_blank" href="{{route('front.service.show',$service->slug)}}" title="{{__('View')}}">
+                        <x-starterkid::starterkid.button-secondary type="button">{{__('View')}}</x-starterkid::starterkid.button-secondary>
                     </a>
+                    @endif
                 </x-starterkid::starterkid.td>
                 <x-starterkid::starterkid.td>
                     @if($service->status === true)

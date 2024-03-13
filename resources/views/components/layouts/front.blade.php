@@ -22,7 +22,9 @@
 </head>
 
 <body class="h-full w-full bg-white">
-   
+    @if($settingBannerMessage !== '')
+    <x-starterkid::starterkid.banner-message />
+    @endif
     {{$slot}}
       
    
