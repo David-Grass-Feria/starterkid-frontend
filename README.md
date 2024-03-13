@@ -8,7 +8,7 @@ composer require spatie/laravel-responsecache
 'cache'    => \Spatie\ResponseCache\Middlewares\CacheResponse::class,
 ```
 
-# add middleware your route
+# add middleware your show route
 ```shell
 ->middleware('cache');
 ```
