@@ -66,11 +66,17 @@ class AppServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../../resources/views', 'starterkid-frontend');
         $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
         $this->loadJsonTranslationsFrom(__DIR__.'/../../lang');
-        Livewire::component('starterkid-frontend::homepage',\GrassFeria\StarterkidFrontend\Livewire\Front\Homepage::class);
+        
         Livewire::component('starterkid-frontend::service-create',\GrassFeria\StarterkidFrontend\Livewire\Service\ServiceCreate::class);
         Livewire::component('starterkid-frontend::service-edit',\GrassFeria\StarterkidFrontend\Livewire\Service\ServiceEdit::class);
         Livewire::component('starterkid-frontend::service-index',\GrassFeria\StarterkidFrontend\Livewire\Service\ServiceIndex::class);
         Livewire::component('starterkid-frontend::organization-edit',\GrassFeria\StarterkidFrontend\Livewire\OrganizationEdit::class);
+
+        //front
+        Livewire::component('starterkid-frontend::front-service-index',\GrassFeria\StarterkidFrontend\Livewire\Front\Service\FrontServiceIndex::class);
+        Livewire::component('starterkid-frontend::front-service-show',\GrassFeria\StarterkidFrontend\Livewire\Front\Service\FrontServiceShow::class);
+        Livewire::component('starterkid-frontend::homepage',\GrassFeria\StarterkidFrontend\Livewire\Front\Homepage::class);
+        
 
         $this->publishes([
             __DIR__.'/../../config/navlink.php' => base_path('/config/starterkid/grass-feria/starterkid-frontend/navlink.php'),

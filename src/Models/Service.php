@@ -70,6 +70,6 @@ class Service extends Model implements HasMedia
 
     public function scopeFrontGetServicesWhereStatusIsOnline(Builder $query): Builder
     {
-        return $query->select('id', 'name', 'title', 'published', 'status', 'slug')->where('status',true);
+        return $query->select('id', 'name', 'title', 'published', 'status', 'slug','preview')->where('status',true);
     }
 }

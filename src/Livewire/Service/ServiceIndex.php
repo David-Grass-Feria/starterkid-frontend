@@ -24,7 +24,7 @@ class ServiceIndex extends Component
         foreach ($this->selected as $recordId) {
             $findRecord = \GrassFeria\StarterkidFrontend\Models\Service::find($recordId);
             $this->authorize('delete',[\GrassFeria\StarterkidFrontend\Models\Service::class,$findRecord]);
-            //\GrassFeria\Starterkid\Jobs\SpatieMediaLibary\DeleteMediaCollection::dispatch($findRecord,'photos');
+            \GrassFeria\Starterkid\Jobs\SpatieMediaLibary\DeleteMediaCollection::dispatch($findRecord,'services');
             $findRecord->delete();
 
         }

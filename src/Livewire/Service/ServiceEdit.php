@@ -17,6 +17,7 @@ class ServiceEdit extends Component
     public $published;
     public $status;
     public $slug;
+    public $preview;
     
     
 
@@ -30,6 +31,7 @@ class ServiceEdit extends Component
         $this->name                             = $this->service->name;
         $this->title                            = $this->service->title;
         $this->content                          = $this->service->content;
+        $this->preview                          = $this->service->preview;
         $this->published                        = $this->service->published->format(config('starterkid.time_format.date_time_format_for_picker'));
         $this->status                           = $this->service->status;
         $this->slug                             = $this->service->slug;
@@ -51,6 +53,7 @@ class ServiceEdit extends Component
             'title'                     => 'required|string',
             'slug'                      => 'required|string',
             'content'                   => 'required|string',
+            'preview'                   => 'nullable|string',
             'published'                 => 'required|date_format:' . config('starterkid.time_format.date_time_format_for_picker'),
             'status'                    => 'required|boolean',
             //'title'                     => 'required|string',

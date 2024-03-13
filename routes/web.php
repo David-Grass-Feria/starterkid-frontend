@@ -7,6 +7,7 @@ use \GrassFeria\StarterkidFrontend\Livewire\Service\ServiceEdit;
 use \GrassFeria\StarterkidFrontend\Livewire\Service\ServiceIndex;
 use \GrassFeria\StarterkidFrontend\Livewire\Service\ServiceCreate;
 use GrassFeria\StarterkidFrontend\Livewire\Front\Service\FrontServiceShow;
+use GrassFeria\StarterkidFrontend\Livewire\Front\Service\FrontServiceIndex;
 
 
 
@@ -27,7 +28,8 @@ use GrassFeria\StarterkidFrontend\Livewire\Front\Service\FrontServiceShow;
 Route::middleware(['web'])->group(function () {
    
     Route::get('/',Homepage::class)->name('front.homepage');
-    Route::get('/services/{slug}',FrontServiceShow::class)->name('front.service.show');
+    Route::get(config('starterkid-frontend.service_slug'),FrontServiceIndex::class)->name('front.service.index');
+    Route::get(config('starterkid-frontend.service_slug').'/{slug}',FrontServiceShow::class)->name('front.service.show');
    
    
 

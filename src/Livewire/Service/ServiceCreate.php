@@ -3,6 +3,7 @@
 namespace GrassFeria\StarterkidFrontend\Livewire\Service;
 
 use Livewire\Component;
+use Illuminate\Support\Str;
 use Livewire\WithFileUploads;
 
 
@@ -15,9 +16,9 @@ class ServiceCreate extends Component
     public $title;
     public $content;
     public $published;
-    public $status = true;
+    public $status = false;
     public $slug;
-   
+    public $preview;
     
     
 
@@ -33,6 +34,12 @@ class ServiceCreate extends Component
         
     }
 
+    public function updated($name)
+    {
+        $this->slug = Str::slug($this->name);
+        $this->title = $this->name;
+    }
+
     public function save()
     {
 
@@ -42,6 +49,7 @@ class ServiceCreate extends Component
             'slug'                      => 'required|string',
             'title'                     => 'required|string',
             'content'                   => 'required|string',
+            'preview'                   => 'nullable|string',
             'published'                 => 'required|date_format:' . config('starterkid.time_format.date_time_format_for_picker'),
             'status'                    => 'required|boolean',
             //'color'                     => 'required|string',
