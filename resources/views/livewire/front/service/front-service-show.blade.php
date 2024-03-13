@@ -9,7 +9,7 @@
     <x-starterkid-frontend::wrapper>
    
   
-    <x-starterkid-frontend::body-content heading="{{$service->name}}" content="{!!$service->content!!}" />
+    <x-starterkid-frontend::body-content heading="{{$service->name}}" content="{!!$service->content!!}"  />
 
     
       
