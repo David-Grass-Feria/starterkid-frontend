@@ -68,6 +68,15 @@ class Service extends Model implements HasMedia
         );
     }
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::updated(function ($model) {
+           \Spatie\ResponseCache\Facades\ResponseCache::forget(url('/').'/'.config('starterkid-frontend.service_slug').'/'.$model->slug);
+        });
+    }
+
     //public function scopeFrontGetServicesWhereStatusIsOnline(Builder $query): Builder
     //{
     //    return $query->select('id', 'name', 'title', 'published', 'status', 'slug','preview')->where('status',true);

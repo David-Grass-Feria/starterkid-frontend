@@ -45,14 +45,18 @@ $content = preg_replace_callback(
    
          
          <x-starterkid-frontend::heading-item-wrapper>
-            <x-starterkid-frontend::heading-item routeLink="#" routeTitle="{{ $heading }}" name="{{ $heading }}"/>      
-         @foreach($h2WithId as $h2)
+               
+         
+         @if(isset($h2WithId))
+         <x-starterkid-frontend::heading-item routeLink="#" routeTitle="{{ $heading }}" name="{{ $heading }}"/>   
+            @foreach($h2WithId as $h2)
             @if($loop->last)
             <x-starterkid-frontend::heading-item-last routeLink="#{{ Str::slug($h2) }}" routeTitle="{{ $h2 }}" name="{{ $h2 }}"/>
             @else
             <x-starterkid-frontend::heading-item routeLink="#{{ Str::slug($h2) }}" routeTitle="{{ $h2 }}" name="{{ $h2 }}"/>
             @endif
           @endforeach
+        @endif
          
         </x-starterkid-frontend::heading-item-wrapper>
          

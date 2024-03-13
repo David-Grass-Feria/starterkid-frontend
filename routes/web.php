@@ -29,7 +29,7 @@ Route::middleware(['web'])->group(function () {
    
     Route::get('/',Homepage::class)->name('front.homepage');
     Route::get(config('starterkid-frontend.service_slug'),FrontServiceIndex::class)->name('front.service.index');
-    Route::get(config('starterkid-frontend.service_slug').'/{slug}',FrontServiceShow::class)->name('front.service.show');
+    Route::get(config('starterkid-frontend.service_slug').'/{slug}',FrontServiceShow::class)->name('front.service.show')->middleware('cache');
    
    
 
