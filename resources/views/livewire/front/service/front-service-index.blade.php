@@ -1,9 +1,12 @@
+<x-slot:title>{{config('starterkid-frontend.service_title')}}</x-slot>
+<x-slot:robots>noindex, follow</x-slot>
+
 <div>
     @include('starterkid-frontend::header')
     
 
 <x-starterkid-frontend::card>
-    <x-starterkid-frontend::card-header heading="{{ucfirst(config('starterkid-frontend.service_slug'))}}" />
+    <x-starterkid-frontend::card-header heading="{{config('starterkid-frontend.service_title')}}" />
       
     <x-starterkid-frontend::wrapper>
    

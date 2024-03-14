@@ -1,3 +1,7 @@
+<x-slot:title>{{$service->name}}</x-slot>
+<x-slot:robots>noindex, follow</x-slot>
+
+
 <div>
     @include('starterkid-frontend::header')
     

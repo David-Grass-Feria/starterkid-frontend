@@ -16,7 +16,7 @@ class FrontServiceIndex extends Component
    use LivewireIndexTrait;
   
   
-    #[Layout('starterkid-frontend::components.layouts.front')] 
+    #[Layout('starterkid-frontend::components.layouts.front')]
     public function render()
     {
      

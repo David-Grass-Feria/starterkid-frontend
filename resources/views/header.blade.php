@@ -47,7 +47,9 @@
                     @include('front.navbar-mobile')
                 </div>
                 <div class="py-6">
+                  @if(config('starterkid-frontend.login_link'))
                     <x-starterkid-frontend::navlink-mobile href="{{route('login')}}" title="{{__('Login')}}">{{__('Log in')}}</x-starterkid-frontend::navlink-mobile>
+                    @endif
                 </div>
               </div>
             </div>

@@ -1,1 +1,1 @@
-<x-starterkid-frontend::navlink-mobile href="{{route('front.service.index')}}" title="{{ucfirst(config('starterkid-frontend.service_slug'))}}">{{ucfirst(config('starterkid-frontend.service_slug'))}}</x-starterkid-frontend::navlink-mobile>
+<x-starterkid-frontend::navlink-mobile href="{{route('front.service.index')}}" title="{{config('starterkid-frontend.service_title')}}">{{config('starterkid-frontend.service_title')}}</x-starterkid-frontend::navlink-mobile>

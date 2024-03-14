@@ -27,7 +27,7 @@ use GrassFeria\StarterkidFrontend\Livewire\Front\Service\FrontServiceIndex;
 
 Route::middleware(['web'])->group(function () {
    
-    Route::get('/',Homepage::class)->name('front.homepage');
+    Route::get('/',Homepage::class)->name('front.homepage')->where('locale', implode('|', array_diff(config('starterkid.locales'), [config('app.locale')])));
     Route::get(config('starterkid-frontend.service_slug'),FrontServiceIndex::class)->name('front.service.index');
     Route::get(config('starterkid-frontend.service_slug').'/{slug}',FrontServiceShow::class)->name('front.service.show')->middleware('cache');
    

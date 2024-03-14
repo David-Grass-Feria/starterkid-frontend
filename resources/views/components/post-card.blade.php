@@ -1,4 +1,4 @@
-<article class="flex flex-col items-start justify-between p-5 rounded-md bg-white shadow-md settingFontColor">
+<article class="flex flex-col items-start justify-between p-5 bg-white shadow-lg settingFontColor">
     @if(isset($imgSrc))
     <div class="relative w-full">
       <img src="{{$imgSrc}}" alt="{{$imgAlt}}" class="aspect-[16/9] w-full rounded-md bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]">
