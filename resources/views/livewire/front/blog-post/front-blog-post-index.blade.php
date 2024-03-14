@@ -1,0 +1,32 @@
+<x-slot:title>{{config('starterkid-frontend.blog_post_title')}}</x-slot>
+<x-slot:robots>index, follow</x-slot>
+
+<div>
+    @include('starterkid-frontend::header')
+    
+
+<x-starterkid-frontend::card>
+    <x-starterkid-frontend::card-header heading="{{config('starterkid-frontend.blog_post_title')}}" />
+      
+    <x-starterkid-frontend::wrapper>
+   
+  
+     
+            <x-starterkid-frontend::card-grid>
+            
+            @foreach($blogposts as $blogpost)
+           <x-starterkid-frontend::post-card name="{{$blogpost->name}}" linkRoute="{{route('front.blog-post.show',$blogpost->slug)}}" linkTitle="{{$blogpost->name}}" buttonText="{{__('More info')}}" description="{!!$blogpost->preview!!}" imgSrc="{{$blogpost->getFirstMediaUrl('images',config('starterkid.spatie_conversions.large.name'))}}" imgAlt="{{$blogpost->name}}" />
+            @endforeach
+
+            
+        </x-starterkid-frontend::card-grid>
+    
+      
+    </x-starterkid-frontend::wrapper>
+ 
+</x-starterkid-frontend::card>
+
+
+    
+    @include('starterkid-frontend::footer',['services' => $services])
+</div>

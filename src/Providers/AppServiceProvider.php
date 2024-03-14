@@ -70,11 +70,17 @@ class AppServiceProvider extends ServiceProvider
         Livewire::component('starterkid-frontend::service-create',\GrassFeria\StarterkidFrontend\Livewire\Service\ServiceCreate::class);
         Livewire::component('starterkid-frontend::service-edit',\GrassFeria\StarterkidFrontend\Livewire\Service\ServiceEdit::class);
         Livewire::component('starterkid-frontend::service-index',\GrassFeria\StarterkidFrontend\Livewire\Service\ServiceIndex::class);
+        Livewire::component('starterkid-frontend::blog-post-create',\GrassFeria\StarterkidFrontend\Livewire\BlogPost\BlogPostCreate::class);
+        Livewire::component('starterkid-frontend::blog-post-edit',\GrassFeria\StarterkidFrontend\Livewire\BlogPost\BlogPostEdit::class);
+        Livewire::component('starterkid-frontend::blog-post-index',\GrassFeria\StarterkidFrontend\Livewire\BlogPost\BlogPostIndex::class);
         Livewire::component('starterkid-frontend::organization-edit',\GrassFeria\StarterkidFrontend\Livewire\OrganizationEdit::class);
 
         //front
         Livewire::component('starterkid-frontend::front-service-index',\GrassFeria\StarterkidFrontend\Livewire\Front\Service\FrontServiceIndex::class);
         Livewire::component('starterkid-frontend::front-service-show',\GrassFeria\StarterkidFrontend\Livewire\Front\Service\FrontServiceShow::class);
+        Livewire::component('starterkid-frontend::front-blog-post-index',\GrassFeria\StarterkidFrontend\Livewire\Front\BlogPost\FrontBlogPostIndex::class);
+        Livewire::component('starterkid-frontend::front-blog-post-show',\GrassFeria\StarterkidFrontend\Livewire\Front\BlogPost\FrontBlogPostShow::class);
+       
         Livewire::component('starterkid-frontend::homepage',\GrassFeria\StarterkidFrontend\Livewire\Front\Homepage::class);
         
 
@@ -124,7 +130,15 @@ class AppServiceProvider extends ServiceProvider
        //     'url' => env('DOG_DISK') == 's3' ? env('AWS_URL') : null,
        // ]);
         
+       $this->app->config->set('filesystems.disks.ckimage', [
+        'driver' => 'local',
+        'root' => storage_path('app/public/ckimages'),
+        'url' => env('APP_URL').'/storage/ckimages',
+        'visibility' => 'public',
+        'throw' => false,
+       ]);
 
+       
 
        
     }

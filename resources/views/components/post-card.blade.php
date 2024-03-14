@@ -1,11 +1,13 @@
-<article class="flex flex-col items-start justify-between p-5 bg-white shadow-lg settingFontColor">
+<article class="flex flex-col items-start justify-between bg-white settingFontColor">
     @if(isset($imgSrc))
     <div class="relative w-full">
-      <img src="{{$imgSrc}}" alt="{{$imgAlt}}" class="aspect-[16/9] w-full rounded-md bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]">
+      @if($imgSrc)
+      <img src="{{$imgSrc}}" alt="{{$imgAlt}}" class="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]">
+      @endif
       <div class="absolute inset-0 rounded-md ring-1 ring-inset ring-gray-900/10"></div>
     </div>
     @endif
-    <div class="max-w-xl">
+    <div class="max-w-xl p-5 bg-white">
       @if(isset($dateTime))
       <div class="mt-8 flex items-center gap-x-4 text-xs">
         <time datetime="{{$dateTime}}">{{$dateTime}}</time>

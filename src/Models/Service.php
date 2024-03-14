@@ -5,11 +5,11 @@ namespace GrassFeria\StarterkidFrontend\Models;
 use App\Models\User;
 use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Builder;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class Service extends Model implements HasMedia
 {
@@ -80,12 +80,8 @@ class Service extends Model implements HasMedia
          });
     }
 
-    //public function scopeFrontGetServicesWhereStatusIsOnline(Builder $query): Builder
-    //{
-    //    return $query->select('id', 'name', 'title', 'published', 'status', 'slug','preview')->where('status',true);
-    //}
-
-    public function scopeFrontGetServicesWhereStatusIsOnline(Builder $query, $search = '', $orderBy = 'id', $sort = 'asc'): Builder
+    
+    public function scopeFrontGetServicesWhereStatusIsOnline(\Illuminate\Database\Eloquent\Builder $query, $search = '', $orderBy = 'id', $sort = 'asc'): \Illuminate\Database\Eloquent\Builder
     {
         $query = $query->select('id', 'name', 'title', 'published', 'status', 'slug', 'preview')
             ->where('status', true);
@@ -101,5 +97,16 @@ class Service extends Model implements HasMedia
         $query->orderBy($orderBy, $sort);
 
         return $query;
+    }
+
+    public function registerMediaConversions(?Media $media = null): void
+    {
+        $this->addMediaConversion(config('starterkid.spatie_conversions.small.name'))
+              ->width(config('starterkid.spatie_conversions.small.size'));
+        $this->addMediaConversion(config('starterkid.spatie_conversions.large.name'))
+              ->width(config('starterkid.spatie_conversions.large.size'));
+        $this->addMediaConversion(config('starterkid.spatie_conversions.medium.name'))
+              ->width(config('starterkid.spatie_conversions.medium.size'));
+              
     }
 }

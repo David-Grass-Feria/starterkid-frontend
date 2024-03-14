@@ -14,6 +14,14 @@ return new class extends Migration
         Schema::create('blog_posts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->index()->constrained()->onDelete('cascade');
+            $table->string('name');
+            $table->string('title');
+            $table->string('slug');
+            $table->longText('content');
+            $table->dateTime('published');
+            $table->boolean('status')->default(true);
+            $table->text('preview')->nullable();
+            $table->text('author');
             //$table->string('title');
             //$table->string('color');
             //$table->string('range');

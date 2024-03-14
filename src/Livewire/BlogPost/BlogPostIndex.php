@@ -24,7 +24,8 @@ class BlogPostIndex extends Component
         foreach ($this->selected as $recordId) {
             $findRecord = \GrassFeria\StarterkidFrontend\Models\BlogPost::find($recordId);
             $this->authorize('delete',[\GrassFeria\StarterkidFrontend\Models\BlogPost::class,$findRecord]);
-            //\GrassFeria\Starterkid\Jobs\SpatieMediaLibary\DeleteMediaCollection::dispatch($findRecord,'photos');
+            \GrassFeria\Starterkid\Jobs\SpatieMediaLibary\DeleteMediaCollection::dispatch($findRecord,'images');
+            \GrassFeria\Starterkid\Jobs\SpatieMediaLibary\DeleteMediaCollection::dispatch($findRecord,'ckimages');
             $findRecord->delete();
 
         }
@@ -40,14 +41,9 @@ class BlogPostIndex extends Component
 
       
         $blogposts = \GrassFeria\StarterkidFrontend\Models\BlogPost::query()
-        ->with('media')
-        ->select('id','user_id')
-        ->ofUser(auth()->user()->id)
-        //->where(function($query) {
-        //$query->where('id','like','%'.$this->search.'%')
-        //    ->orWhere('title','like','%'.$this->search.'%');
-        //    
-        //})
+        ->select('id','user_id','name','published','status','slug','author')
+        ->where('id','like','%'.$this->search.'%')
+        ->orWhere('name','like','%'.$this->search.'%')
         ->orderBy($this->orderBy, $this->sort)
         ->paginate($this->perPage);
 

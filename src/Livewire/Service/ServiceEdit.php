@@ -84,7 +84,7 @@ class ServiceEdit extends Component
         //(new \GrassFeria\Starterkid\Services\SpatieMediaLibary\SaveMediaService($this->public_photos, $this->service, 'photos', 'public'));
         //}
         
-        (new \GrassFeria\Starterkid\Services\CheckCkEditorContent($this->service->content,'content'))->checkForCkEditorImages($this->service,'services','public');
+        (new \GrassFeria\Starterkid\Services\CheckCkEditorContent($this->service->content,'content'))->checkForCkEditorImages($this->service,'services','ckimage');
         return redirect()->route('services.index')->with('success', __('Service updated'));
 
     }

@@ -39,6 +39,53 @@ $content = preg_replace_callback(
 );
 @endphp
 
+@php
+    
+    // get all image links
+    $imageLinks = [];
+    preg_match_all('/<img.*?src="(.*?)"/', $content, $matches);
+    if (!empty($matches[1])) {
+        $imageLinks = $matches[1];
+    }
+    
+    // add conversions to the image path
+    $updatedLinks = [];
+    foreach ($imageLinks as $link) {
+        $updatedLinks[] = preg_replace_callback(
+            '/(ckimages\/\d+)/',
+            function ($matches) {
+                return $matches[1] . '/conversions';
+            },
+            $link
+        );
+    }
+    
+    // add -large to the image link before the file extension
+    foreach ($updatedLinks as $large) {
+    $largeLinks[] = preg_replace_callback(
+        '/(ckimages\/\d+\/conversions\/.*?)(\.\w+)$/',
+        function ($matches) {
+            return $matches[1] . '-large' . $matches[2];
+        },
+        $large
+    );
+}
+
+// save in the content
+foreach ($imageLinks as $index => $originalLink) {
+    $content = str_replace($originalLink, $largeLinks[$index], $content);
+}
+
+// replace all .jpeg in .jpg
+$content = str_replace('.jpeg', '.jpg', $content);
+
+// remove all width and height from the image links
+$content = preg_replace('/<img(.*?)src="(.*?)"(.*?)width=".*?"(.*?)height=".*?"(.*?)>/i', '<img$1src="$2"$3$4$5>', $content);
+$content = preg_replace('/<img(.*?)width=".*?"(.*?)height=".*?"(.*?)src="(.*?)"(.*?)>/i', '<img$1$2$3src="$4"$5>', $content);
+$content = preg_replace('/<img(.*?)height=".*?"(.*?)width=".*?"(.*?)src="(.*?)"(.*?)>/i', '<img$1$2$3src="$4"$5>', $content);
+
+@endphp
+
     <div class="grid grid-cols-12 gap-5">
 
 <div class="col-span-12 xl:col-span-3">

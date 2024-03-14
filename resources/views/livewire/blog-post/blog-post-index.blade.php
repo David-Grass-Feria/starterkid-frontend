@@ -29,6 +29,11 @@
             <x-starterkid::starterkid.tr>
             <x-starterkid::starterkid.th></x-starterkid::starterkid.th>
             <x-starterkid::starterkid.th>{{__('ID')}}</x-starterkid::starterkid.th>
+            <x-starterkid::starterkid.th>{{__('Image')}}</x-starterkid::starterkid.th>
+            <x-starterkid::starterkid.th>{{__('Name')}}</x-starterkid::starterkid.th>
+            <x-starterkid::starterkid.th>{{__('Published')}}</x-starterkid::starterkid.th>
+            <x-starterkid::starterkid.th>{{__('View')}}</x-starterkid::starterkid.th>
+            <x-starterkid::starterkid.th>{{__('Status')}}</x-starterkid::starterkid.th>
             
             </x-starterkid::starterkid.tr>
             </thead>
@@ -42,6 +47,27 @@
                 @endcan
                 </x-starterkid::starterkid.td>
                 <x-starterkid::starterkid.td>{{$blogpost->id}}</x-starterkid::starterkid.td>
+                <x-starterkid::starterkid.td>
+                    @if($blogpost->getFirstMediaUrl('images',config('starterkid.spatie_conversions.small.name')))
+                    <img src="{{$blogpost->getFirstMediaUrl('images',config('starterkid.spatie_conversions.small.name'))}}" alt="{{$blogpost->name}}" class="h-12 w-auto" />
+                    @endif
+                </x-starterkid::starterkid.td>
+                <x-starterkid::starterkid.td>{{$blogpost->name}}</x-starterkid::starterkid.td>
+                <x-starterkid::starterkid.td>{{$blogpost->getPublished()}}</x-starterkid::starterkid.td>
+                <x-starterkid::starterkid.td>
+                    @if($blogpost->status === true)
+                    <a target="_blank" href="#" title="{{__('View')}}">
+                        <x-starterkid::starterkid.button-secondary type="button">{{__('View')}}</x-starterkid::starterkid.button-secondary>
+                    </a>
+                    @endif
+                </x-starterkid::starterkid.td>
+                <x-starterkid::starterkid.td>
+                    @if($blogpost->status === true)
+                    <x-starterkid::starterkid.badge-success>{{__('Online')}}</x-starterkid::starterkid.badge-success>
+                    @else
+                    <x-starterkid::starterkid.badge-danger>{{__('Offline')}}</x-starterkid::starterkid.badge-danger>
+                    @endif
+                </x-starterkid::starterkid.td>
                 <x-starterkid::starterkid.td>
                     @can('update',[\GrassFeria\StarterkidFrontend\Models\BlogPost::class,$blogpost])
                     <a href="{{route('blogposts.edit',$blogpost->id)}}" title="{{__('Edit')}}">

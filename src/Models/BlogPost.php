@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -16,16 +17,24 @@ class BlogPost extends Model implements HasMedia
     use InteractsWithMedia;
 
     protected $fillable = [
-       'user_id',
+        'user_id',
+        'name',
+        'title',
+        'preview',
+        'content',
+        'published',
+        'status',
+        'slug',
+        'author'
     ];
 
-    //protected $casts = [
-    //    'date' => 'date',
-    //    'date_time' => 'datetime',
-    //    'time' => 'datetime',
-    //    'active' => 'boolean',
-    //    
-    //];
+
+    protected $casts = [
+
+        'published' => 'datetime',
+        'status' => 'boolean',
+
+    ];
 
     public function scopeOfUser($query, $userId)
     {
@@ -37,26 +46,58 @@ class BlogPost extends Model implements HasMedia
         return $this->belongsTo(User::class);
     }
 
-    //public function getDate()
-    //{
-    //    return $this->date->format(config('starterkid.time_format.date_format'));
-    //}
+    public function getPublished()
+    {
+        return $this->published->format(config('starterkid.time_format.date_time_format'));
+    }
+    
+    protected function name(): Attribute
+    {
+        return Attribute::make(
+            get: fn (string $value) => ucfirst($value),
 
-    //public function getDateTime()
-    //{
-    //    return $this->date_time->format(config('starterkid.time_format.date_time_format'));
-    //}
+        );
+    }
 
-    //public function getTime()
-    //{
-    //    return $this->time->format(config('starterkid.time_format.time_format'));
-    //}
+    protected static function boot()
+    {
+        parent::boot();
 
-    //protected function name(): Attribute
-    //{
-    //    return Attribute::make(
-    //        get: fn (string $value) => ucfirst($value),
-    //        set: fn (string $value) => ucfirst($value),
-    //    );
-    //}
+        static::updated(function ($model) {
+           \Spatie\ResponseCache\Facades\ResponseCache::forget(url('/').'/'.config('starterkid-frontend.blog_post_slug').'/'.$model->slug);
+        });
+        static::deleted(function ($model) {
+            \Spatie\ResponseCache\Facades\ResponseCache::forget(url('/').'/'.config('starterkid-frontend.blog_post_slug').'/'.$model->slug);
+         });
+    }
+
+    public function scopeFrontGetBlogPostWhereStatusIsOnline(\Illuminate\Database\Eloquent\Builder $query, $search = '', $orderBy = 'id', $sort = 'asc'): \Illuminate\Database\Eloquent\Builder
+    {
+        $query = $query->select('id', 'name', 'title', 'published', 'status', 'slug', 'preview','author')
+            ->where('status', true);
+
+        if (!empty($search)) {
+            $query->where(function ($query) use ($search) {
+                $query->where('name', 'like', '%' . $search . '%')
+                    ->orWhere('title', 'like', '%' . $search . '%')
+                    ->orWhere('slug', 'like', '%' . $search . '%')
+                    ->orWhere('author', 'like', '%' . $search . '%');
+            });
+        }
+
+        $query->orderBy($orderBy, $sort);
+
+        return $query;
+    }
+
+    public function registerMediaConversions(?Media $media = null): void
+    {
+        $this->addMediaConversion(config('starterkid.spatie_conversions.small.name'))
+              ->width(config('starterkid.spatie_conversions.small.size'));
+        $this->addMediaConversion(config('starterkid.spatie_conversions.large.name'))
+              ->width(config('starterkid.spatie_conversions.large.size'));
+        $this->addMediaConversion(config('starterkid.spatie_conversions.medium.name'))
+              ->width(config('starterkid.spatie_conversions.medium.size'));
+              
+    }
 }

@@ -9,7 +9,7 @@
     @if(isset($description))
     <meta name="description" content="{{$description}}">
     @endif
-    
+    <link rel="canonical" href="{{url()->current()}}">
     <title>{{$title}} | {{ config('app.name', 'Laravel') }}</title>
 
  
