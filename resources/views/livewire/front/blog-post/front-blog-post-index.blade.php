@@ -1,12 +1,13 @@
 <x-slot:title>{{config('starterkid-frontend.blog_post_title')}}</x-slot>
 <x-slot:robots>index, follow</x-slot>
+<x-slot:description>{{config('starterkid-frontend.blog_post_description')}}</x-slot>
 
 <div>
     @include('starterkid-frontend::header')
     
 
 <x-starterkid-frontend::card>
-    <x-starterkid-frontend::card-header heading="{{config('starterkid-frontend.blog_post_title')}}" />
+    <x-starterkid-frontend::card-header heading="{{config('starterkid-frontend.blog_post_title')}}" description="{{config('starterkid-frontend.blog_post_description')}}" />
       
     <x-starterkid-frontend::wrapper>
    

@@ -41,7 +41,7 @@ class BlogPostIndex extends Component
 
       
         $blogposts = \GrassFeria\StarterkidFrontend\Models\BlogPost::query()
-        ->select('id','user_id','name','published','status','slug','author')
+        ->select('id','user_id','name','published','status','slug','author',)
         ->where('id','like','%'.$this->search.'%')
         ->orWhere('name','like','%'.$this->search.'%')
         ->orderBy($this->orderBy, $this->sort)
