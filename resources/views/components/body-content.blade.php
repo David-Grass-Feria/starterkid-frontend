@@ -124,9 +124,11 @@ $content = preg_replace('/<img(.*?)height=".*?"(.*?)width=".*?"(.*?)src="(.*?)"(
      </div>
      @endif
      @if(isset($imgSrc))
+     @if($imgSrc)
      <div class="mt-5">
         <img src="{{$imgSrc}}" alt="{{$imgAlt}}" />
      </div>
+     @endif
      @endif
         </div>
      <div class="prose mt-10 overflow-hidden">

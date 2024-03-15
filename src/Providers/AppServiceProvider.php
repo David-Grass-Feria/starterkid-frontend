@@ -22,9 +22,9 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->register(RouteServiceProvider::class);
         $this->app->register(AuthServiceProvider::class);
-        //$this->mergeConfigFrom(
-        //    __DIR__.'/../../config/starterkid-frontend.php', 'starterkid-frontend'
-        //);
+        $this->mergeConfigFrom(
+            __DIR__.'/../../config/starterkid-frontend.php', 'starterkid-frontend'
+        );
         
     }
 
@@ -61,7 +61,8 @@ class AppServiceProvider extends ServiceProvider
         }
         
         
-        
+        $router = $this->app['router'];
+        $router->aliasMiddleware('cache', \Spatie\ResponseCache\Middlewares\CacheResponse::class);
         
         $this->loadViewsFrom(__DIR__.'/../../resources/views', 'starterkid-frontend');
         $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
@@ -84,9 +85,7 @@ class AppServiceProvider extends ServiceProvider
         Livewire::component('starterkid-frontend::homepage',\GrassFeria\StarterkidFrontend\Livewire\Front\Homepage::class);
         
 
-        $this->publishes([
-            __DIR__.'/../../config/navlink.php' => base_path('/config/starterkid/grass-feria/starterkid-frontend/navlink.php'),
-        ], 'StarterkidFrontend config');
+       
 
         $this->publishes([
             __DIR__.'/../../stubs' => base_path('/'),
