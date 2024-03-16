@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array<class-string, class-string>
      */
     protected $policies = [
-        \GrassFeria\StarterkidFrontend\Models\Service::class => \GrassFeria\StarterkidFrontend\Policies\ServicePolicy::class,
+        \GrassFeria\StarterkidService\Models\Service::class => \GrassFeria\StarterkidFrontend\Policies\ServicePolicy::class,
     ];
 
     /**

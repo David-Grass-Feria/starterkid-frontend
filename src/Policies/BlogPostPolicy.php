@@ -3,7 +3,7 @@
 namespace GrassFeria\StarterkidFrontend\Policies;
 
 use App\Models\User;
-use \GrassFeria\StarterkidFrontend\Models\BlogPost;
+use \GrassFeria\StarterkidBlog\Models\BlogPost;
 use Illuminate\Auth\Access\Response;
 use GrassFeria\Starterkid\Traits\OnlyUserRecordPolicyTrait;;
 

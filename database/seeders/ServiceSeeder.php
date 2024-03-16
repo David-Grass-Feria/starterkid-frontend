@@ -12,7 +12,7 @@ class ServiceSeeder extends Seeder
      */
     public function run(): void
     {
-        \GrassFeria\StarterkidFrontend\Models\Service::create([
+        \GrassFeria\StarterkidService\Models\Service::create([
             'id'                                        => 1,
             
         ]);

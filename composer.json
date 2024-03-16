@@ -21,16 +21,12 @@
     },
     
     "extra": {
-      "thumb-name":"Starterkid Frontend",
-      "thumb-vendor":"Grass Feria",
-      "logo-url":"/starterkid-frontend.png",
-      "starterkid": {
+      "laravel": {
         "providers": [
           "GrassFeria\\StarterkidFrontend\\Providers\\AppServiceProvider"
         ]
         
       }
-     
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

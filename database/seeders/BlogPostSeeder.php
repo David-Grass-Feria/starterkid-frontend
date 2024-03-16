@@ -12,7 +12,7 @@ class BlogPostSeeder extends Seeder
      */
     public function run(): void
     {
-        \GrassFeria\StarterkidFrontend\Models\BlogPost::create([
+        \GrassFeria\StarterkidBlog\Models\BlogPost::create([
             'id'                                        => 1,
             
         ]);

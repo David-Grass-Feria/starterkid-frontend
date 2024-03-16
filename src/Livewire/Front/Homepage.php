@@ -15,7 +15,7 @@ class Homepage extends Component
     #[Layout('starterkid-frontend::components.layouts.front')] 
     public function render()
     {
-      $services = \GrassFeria\StarterkidFrontend\Models\Service::frontGetServicesWhereStatusIsOnline()->get();
+      $services = \GrassFeria\StarterkidService\Models\Service::frontGetServicesWhereStatusIsOnline()->get();
       return view('starterkid-frontend::livewire.front.homepage',['services' => $services]);
 
         

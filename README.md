@@ -20,10 +20,10 @@ protected static function boot()
         parent::boot();
 
         static::updated(function ($model) {
-           \Spatie\ResponseCache\Facades\ResponseCache::forget(url('/').'/'.config('starterkid-frontend.service_slug').'/'.$model->slug);
+           \Spatie\ResponseCache\Facades\ResponseCache::forget(url('/').'/'.config('starterkid-service.service_slug').'/'.$model->slug);
         });
         static::deleted(function ($model) {
-            \Spatie\ResponseCache\Facades\ResponseCache::forget(url('/').'/'.config('starterkid-frontend.service_slug').'/'.$model->slug);
+            \Spatie\ResponseCache\Facades\ResponseCache::forget(url('/').'/'.config('starterkid-service.service_slug').'/'.$model->slug);
          });
     }
 ```
