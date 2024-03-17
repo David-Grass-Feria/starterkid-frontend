@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use GrassFeria\StarterkidFrontend\Livewire\Front\Homepage;
+use GrassFeria\StarterkidFrontend\Livewire\Front\OrganizationEdit;
 
 
 
@@ -40,7 +41,7 @@ Route::middleware([
    
     
     
-    
+    Route::get('/dashboard/organization/edit',OrganizationEdit::class)->name('organization.edit');
 
     
 
