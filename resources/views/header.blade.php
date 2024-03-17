@@ -16,7 +16,11 @@
             </button>
           </div>
           <div class="hidden lg:flex lg:gap-x-12">
-            @include('front.navbar')
+            @foreach($frontNavLinks as $frontNavLink)
+          @if(Route::has($frontNavLink['route']))
+    <x-starterkid-frontend::navlink href="{{ route($frontNavLink['route']) }}" title="{{ $frontNavLink['title'] }}">{{ $frontNavLink['title'] }}</x-starterkid-frontend::navlink>
+  @endif
+@endforeach
           </div>
           <div class="hidden lg:flex lg:flex-1 lg:justify-end">
             @if(config('starterkid-frontend.login_link'))
@@ -44,7 +48,11 @@
             <div class="mt-6 flow-root">
               <div class="-my-6 divide-y divide-gray-500/25">
                 <div class="space-y-2 py-6">
-                    @include('front.navbar-mobile')
+                  @foreach($frontNavLinks as $frontNavLink)
+                  @if(Route::has($frontNavLink['route']))
+            <x-starterkid-frontend::navlink-mobile href="{{ route($frontNavLink['route']) }}" title="{{ $frontNavLink['title'] }}">{{ $frontNavLink['title'] }}</x-starterkid-frontend::navlink-mobile>
+          @endif
+        @endforeach
                 </div>
                 <div class="py-6">
                   @if(config('starterkid-frontend.login_link'))
