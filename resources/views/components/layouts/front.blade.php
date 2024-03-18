@@ -12,6 +12,27 @@
     <link rel="canonical" href="{{url()->current()}}">
     <title>{{$title}} | {{ config('app.name', 'Laravel') }}</title>
 
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "{{config('starterkid-frontend.organization_type')}}",
+          "name": "{{$settingOrganizationName}}",
+          "url": "{{url()->current()}}",
+          "logo": "{{ Cache::has('logo') ? Cache::get('logo') : asset('/logo.png') }}",
+          "sameAs": [
+            "{{$settingOrganizationFacebookUrl ?? ''}}",
+            "{{$settingOrganizationTwitterUrl ?? ''}}",
+            "{{$settingOrganizationInstagramUrl ?? ''}}",
+            "{{$settingOrganizationYoutubeUrl ?? ''}}",
+            "{{$settingOrganizationLinkedinUrl ?? ''}}",
+            "{{$settingOrganizationPinterestUrl ?? ''}}",
+            "{{$settingOrganizationGithubUrl ?? ''}}",
+            "{{$settingOrganizationWikipediaUrl ?? ''}}"
+    
+          ]
+        }
+      </script>
+    
  
     <x-starterkid::starterkid.font />
     <x-starterkid::starterkid.favicon />
@@ -23,6 +44,7 @@
     <x-starterkid::starterkid.extra-styles />
     @stack('styles')
     @livewireStyles
+
 </head>
 
 <body class="h-full w-full bg-white">

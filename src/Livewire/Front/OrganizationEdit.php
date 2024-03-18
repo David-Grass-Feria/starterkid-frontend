@@ -11,8 +11,6 @@ class OrganizationEdit extends Component
     use WithFileUploads;
 
     public $setting;
-    public $username;
-    public $phone_number;
     public $name;
     public $alternate_name;
     public $facebook_url;
@@ -36,8 +34,6 @@ class OrganizationEdit extends Component
        
         $this->setting                          = \GrassFeria\Starterkid\Models\Setting::find(1);
         $this->name                             = $this->setting->extra['organization']['name'] ?? null;
-        $this->username                         = $this->setting->extra['organization']['user_name'] ?? null;
-        $this->phone_number                     = $this->setting->extra['organization']['phone_number'] ?? null;
         $this->alternate_name                   = $this->setting->extra['organization']['alternate_name'] ?? null;
         $this->facebook_url                     = $this->setting->extra['organization']['facebook_url'] ?? null;
         $this->twitter_url                      = $this->setting->extra['organization']['twitter_url'] ?? null;
@@ -67,8 +63,7 @@ class OrganizationEdit extends Component
 
         $validated = $this->validate([
             
-            'username'                              => 'required|string',
-            'phone_number'                          => 'nullable|string',
+            
             'name'                                  => 'required|string',
             'alternate_name'                        => 'required|string',
             'facebook_url'                          => 'nullable|string',

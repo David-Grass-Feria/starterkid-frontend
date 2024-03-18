@@ -5,8 +5,7 @@
             </x-slot>
             <x-starterkid::starterkid.form cancelRoute="{{route('dashboard')}}">
             
-            <x-starterkid::starterkid.form.text wire:model="username" for="username" id="username" type="text" label="{{__('Responsible for the content')}}" placeholder="Max Mustermann" required/>
-            <x-starterkid::starterkid.form.text wire:model="phone_number" for="phone_number" id="phone_number" type="text" label="{{__('Phone number')}}" placeholder="03671455676" />
+         
             <x-starterkid::starterkid.form.text wire:model="name" for="name" id="name" type="text" label="{{__('Name')}}" placeholder="Microsoft" required/>
             <x-starterkid::starterkid.form.text wire:model="alternate_name" for="alternate_name" id="alternate_name" type="text" label="{{__('Alternate Name')}}" placeholder="MS" required/>
             <x-starterkid::starterkid.form.text wire:model="facebook_url" for="facebook_url" id="facebook_url" type="text" label="{{__('Facebook')}}" placeholder="https://www.facebook.com/MicrosoftDE"/>

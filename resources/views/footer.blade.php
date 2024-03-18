@@ -87,5 +87,10 @@
       </div>
      <p class="text-xs text-center mt-10 leading-5 settingFontColor">&copy; {{now()->format('Y')}} {{config('app.name')}}, {{__('Inc. All rights reserved.')}} - {{__('Build by')}} <a class="settingFontColor underline" href="{{config('starterkid-frontend.created_by_on_footer_url')}}" target="_blank">{{config('starterkid-frontend.created_by_on_footer_anchor')}}</a></p>
     </div>
+
+    
+    
+    
+
   </footer>
   
