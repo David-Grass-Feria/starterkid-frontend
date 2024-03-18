@@ -4,6 +4,7 @@ LOGIN_LINK=true
 CREATED_BY_ON_FOOTER_URL="https://all-inkl.com"
 CREATED_BY_ON_FOOTER_ANCHOR="Tierheim CMS"
 ORGANIZATION_TYPE="Organization"
+RESPONSE_CACHE_ENABLED=true
 ```
 
 # add observer in model
