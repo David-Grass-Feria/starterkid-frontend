@@ -9,7 +9,7 @@
         </div>
         <div class="flex min-w-0 flex-1 justify-between space-x-4 max-w-40 -mt-2">
           <div>
-            <a href="{{$routeLink}}" title="{{$routeTitle}}" class="text-xs settingFontColor">{{$name}}</a>
+            <a href="{{$routeLink}}" title="{!!$routeTitle!!}" class="text-xs settingFontColor">{!!$name!!}</a>
           </div>
        
         </div>

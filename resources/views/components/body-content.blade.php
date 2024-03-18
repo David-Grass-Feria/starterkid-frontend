@@ -98,9 +98,9 @@ $content = preg_replace('/<img(.*?)height=".*?"(.*?)width=".*?"(.*?)src="(.*?)"(
          <x-starterkid-frontend::heading-item routeLink="#" routeTitle="{{ $heading }}" name="{{ $heading }}"/>   
             @foreach($h2WithId as $h2)
             @if($loop->last)
-            <x-starterkid-frontend::heading-item-last routeLink="#{{ Str::slug($h2) }}" routeTitle="{{ $h2 }}" name="{{ $h2 }}"/>
+            <x-starterkid-frontend::heading-item-last routeLink="#{{ Str::slug($h2) }}" routeTitle="{!! $h2 !!}" name="{!! $h2 !!}"/>
             @else
-            <x-starterkid-frontend::heading-item routeLink="#{{ Str::slug($h2) }}" routeTitle="{{ $h2 }}" name="{{ $h2 }}"/>
+            <x-starterkid-frontend::heading-item routeLink="#{{ Str::slug($h2) }}" routeTitle="{!! $h2 !!}" name="{!! $h2 !!}"/>
             @endif
           @endforeach
         @endif
