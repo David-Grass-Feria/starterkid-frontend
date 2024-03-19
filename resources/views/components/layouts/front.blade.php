@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="h-full bodyColor" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html class="h-full bg-body" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
@@ -16,18 +16,18 @@
         {
           "@context": "https://schema.org",
           "@type": "{{config('starterkid-frontend.organization_type')}}",
-          "name": "{{$settingOrganizationName}}",
+          "name": "{{config('app.name')}}",
           "url": "{{url()->current()}}",
           "logo": "{{ Cache::has('logo') ? Cache::get('logo') : asset('/logo.png') }}",
           "sameAs": [
-            "{{$settingOrganizationFacebookUrl ?? ''}}",
-            "{{$settingOrganizationTwitterUrl ?? ''}}",
-            "{{$settingOrganizationInstagramUrl ?? ''}}",
-            "{{$settingOrganizationYoutubeUrl ?? ''}}",
-            "{{$settingOrganizationLinkedinUrl ?? ''}}",
-            "{{$settingOrganizationPinterestUrl ?? ''}}",
-            "{{$settingOrganizationGithubUrl ?? ''}}",
-            "{{$settingOrganizationWikipediaUrl ?? ''}}"
+            "{{config('starterkid-frontend.organization_facebook_url') ?? ''}}",
+            "{{config('starterkid-frontend.organization_twitter_url') ?? ''}}",
+            "{{config('starterkid-frontend.organization_instagram_url') ?? ''}}",
+            "{{config('starterkid-frontend.organization_youtube_url') ?? ''}}",
+            "{{config('starterkid-frontend.organization_linkedin_url') ?? ''}}",
+            "{{config('starterkid-frontend.organization_pinterest_url') ?? ''}}",
+            "{{config('starterkid-frontend.organization_github_url') ?? ''}}",
+            "{{config('starterkid-frontend.organization_wikipedia_url') ?? ''}}"
     
           ]
         }
@@ -48,7 +48,7 @@
 
 </head>
 
-<body class="h-full w-full bodyColor">
+<body class="h-full w-full bg-body">
     
     <x-starterkid::starterkid.banner-message />
  

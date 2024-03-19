@@ -1,4 +1,4 @@
-<div class="bodyColor settingFontColor max-w-2xl mt-5 xl:mt-10">
+<div class="bodyColor text-font_primary max-w-2xl mt-5 xl:mt-10">
     <div>
       
     

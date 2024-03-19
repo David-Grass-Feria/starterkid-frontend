@@ -41,7 +41,7 @@ Route::middleware([
    
     
     
-    Route::get('/dashboard/organization/edit',OrganizationEdit::class)->name('organization.edit');
+    //
 
     
 

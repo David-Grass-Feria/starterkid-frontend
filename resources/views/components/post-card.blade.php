@@ -1,5 +1,5 @@
 <div class="bg-white border border-gray-300 rounded-3xl group relative">
-<article class="flex flex-col items-start justify-between settingFontColor">
+<article class="flex flex-col items-start justify-between text-font_primary">
     
   
   @if(isset($imgSrc))

@@ -1,5 +1,5 @@
 <div class="relative pl-9">
-    <dt class="inline font-semibold settingFontColor">
+    <dt class="inline font-semibold text-font_primary">
       {{$icon}}
       {{$heading}}
     </dt>

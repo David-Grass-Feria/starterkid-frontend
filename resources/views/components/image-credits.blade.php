@@ -1,1 +1,1 @@
-<span class="text-xs settingFontColor opacity-70 ml-1">{{$imageCredits ?? url('/')}}</span>
+<span class="text-xs text-font_primary opacity-70 ml-1">{{$imageCredits ?? url('/')}}</span>

@@ -15,4 +15,12 @@ return [
 "hero_button_secondary_anchor"                  => env('HERO_BUTTON_SECONDARY_ANCHOR','Other info'),
 "hero_image_credits"                            => env('HERO_IMAGE_CREDITS',env('APP_URL')),
 "hero_image_alt"                                => env('HERO_IMAGE_ALT',env('APP_NAME')),
+"organization_facebook_url"                     => env('ORGANIZATION_FACEBOOK_URL',''),
+"organization_twitter_url"                      => env('ORGANIZATION_TWITTER_URL',''),
+"organization_instagram_url"                    => env('ORGANIZATION_INSTAGRAM_URL',''),
+"organization_youtube_url"                      => env('ORGANIZATION_YOUTUBE_URL',''),
+"organization_linkedin_url"                     => env('ORGANIZATION_LINKEDIN_URL',''),
+"organization_pinterest_url"                    => env('ORGANIZATION_PINTEREST_URL',''),
+"organization_github_url"                       => env('ORGANIZATION_GITHUB_URL',''),
+"organization_wikipedia_url"                    => env('ORGANIZATION_WIKIPEDIA_URL',''),
 ];

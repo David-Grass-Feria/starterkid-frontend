@@ -2,8 +2,8 @@
     <div class="relative isolate">
       <div>
          <div class="text-center">
-           <h1 class="text-4xl font-bold tracking-tight settingFontColor sm:text-6xl">{{$h1}}<br><span class="settingPrimaryFontColor">{{$h1Color}}</span></h1>
-           <p class="mt-6 text-lg leading-8 settingFontColor">{{$description}}</p>
+           <h1 class="text-4xl font-bold tracking-tight text-font_primary sm:text-6xl">{{$h1}}<br><span class="text-primary">{{$h1Color}}</span></h1>
+           <p class="mt-6 text-lg leading-8 text-font_primary">{{$description}}</p>
            <div class="mt-10 flex items-center justify-center gap-x-6">
             @if(isset($buttonPrimaryRoute))
              <a href="{{$buttonPrimaryRoute}}" title="{{$buttonPrimaryAnchor}}">
