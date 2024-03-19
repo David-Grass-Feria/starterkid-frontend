@@ -1,10 +1,24 @@
-<div class="mx-auto max-w-7xl p-3 xl:p-12 flex flex-col space-y-10">
+<div class="mx-auto max-w-[1900px] flex flex-col">
     @if(isset($header))
-    <div class="flex items-center space-x-2">
+    <div class="flex flex-col items-center xl:flex-row mt-5">
         {{$header}}
         </div>
         @endif
-        <div>
+        @if(isset($paginationLinks))
+<div class="mt-5">
+    {{$paginationLinks}}
+</div>
+@endif
+     
+
+<div>
 {{$slot}}
-        </div>
+</div>
+
+
+@if(isset($paginationLinks))
+<div class="mt-5">
+    {{$paginationLinks}}
+</div>
+@endif
 </div>

@@ -1,6 +1,6 @@
-<div x-data="{open:false}" x-cloak>
-    <header class="bg-white">
-        <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+<div class="sticky top-0 z-10 border-b border-gray-300" x-data="{open:false}" x-cloak>
+    <header class="bodyColor border-b border-gray-400">
+        <nav class="mx-auto flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div class="flex lg:flex-1">
             <a href="{{route('front.homepage')}}" title="{{config('app.name')}}" class="-m-1.5 p-1.5">
               <span class="sr-only">{{config('app.name')}}</span>
@@ -16,9 +16,10 @@
             </button>
           </div>
           <div class="hidden lg:flex lg:gap-x-12">
-            @foreach($frontNavLinks as $frontNavLink)
+           
+            @foreach(collect($frontNavLinks)->sortBy('order') as $frontNavLink)
           @if(Route::has($frontNavLink['route']))
-    <x-starterkid-frontend::navlink href="{{ route($frontNavLink['route']) }}" title="{{ $frontNavLink['title'] }}">{{ $frontNavLink['title'] }}</x-starterkid-frontend::navlink>
+    <x-starterkid-frontend::navlink href="{{ route($frontNavLink['route']) }}" title="{{ $frontNavLink['title'] }}" :active="request()->routeIs($frontNavLink['active'])">{{ $frontNavLink['title'] }}</x-starterkid-frontend::navlink>
   @endif
 @endforeach
           </div>
@@ -32,7 +33,7 @@
         <div x-show="open" class="lg:hidden" role="dialog" aria-modal="true">
           <!-- Background backdrop, show/hide based on slide-over state. -->
           <div class="fixed inset-0 z-10"></div>
-          <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10">
+          <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bodyColor px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10">
             <div class="flex items-center justify-between">
               <a href="{{route('front.homepage')}}" title="{{config('app.name')}}" class="-m-1.5 p-1.5">
                 <span class="sr-only">{{config('app.name')}}</span>
@@ -50,7 +51,7 @@
                 <div class="space-y-2 py-6">
                   @foreach($frontNavLinks as $frontNavLink)
                   @if(Route::has($frontNavLink['route']))
-            <x-starterkid-frontend::navlink-mobile href="{{ route($frontNavLink['route']) }}" title="{{ $frontNavLink['title'] }}">{{ $frontNavLink['title'] }}</x-starterkid-frontend::navlink-mobile>
+            <x-starterkid-frontend::navlink-mobile href="{{ route($frontNavLink['route']) }}" title="{{ $frontNavLink['title'] }}" :active="request()->routeIs($frontNavLink['active'])">{{ $frontNavLink['title'] }}</x-starterkid-frontend::navlink-mobile>
           @endif
         @endforeach
                 </div>

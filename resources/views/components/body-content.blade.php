@@ -113,7 +113,7 @@ $content = preg_replace('/<img(.*?)height=".*?"(.*?)width=".*?"(.*?)src="(.*?)"(
 
 
 
-     <div class="col-span-12 xl:col-span-9">   
+     <div class="col-span-12 xl:col-span-9 w-full xl:max-w-xl">   
     <div class="w-full overflow-hidden">
         <div class="mb-5">
      <h1 class="text-2xl font-bold settingFontColor md:text-4xl xl:text-5xl">{{$heading}}</h1>
@@ -127,6 +127,7 @@ $content = preg_replace('/<img(.*?)height=".*?"(.*?)width=".*?"(.*?)src="(.*?)"(
      @if($imgSrc)
      <div class="mt-5">
         <img src="{{$imgSrc}}" alt="{{$imgAlt}}" />
+        <span class="text-xs settingFontColor">{{$imageCredits ?? url('/')}}</span>
      </div>
      @endif
      @endif

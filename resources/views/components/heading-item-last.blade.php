@@ -2,7 +2,7 @@
     <div class="relative pb-8">
       <div class="relative flex space-x-3">
         <div>
-          <span class="h-3 w-3 rounded-full settingPrimaryBackgroundColor flex items-center justify-center ring-8 ring-white">
+          <span class="h-3 w-3 rounded-full settingPrimaryBackgroundColor flex items-center justify-center ring-8 ring-transparent">
            
           </span>
         </div>

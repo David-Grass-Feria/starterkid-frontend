@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="h-full bg-white" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html class="h-full bodyColor" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
@@ -48,8 +48,8 @@
 
 </head>
 
-<body class="h-full w-full bg-white">
-   
+<body class="h-full w-full bodyColor">
+    
     <x-starterkid::starterkid.banner-message />
  
     {{$slot}}
