@@ -1,16 +1,10 @@
-# install composer require spatie/laravel-responsecache
+# .env setting
 ```shell
-composer require spatie/laravel-responsecache
-```
-
-# add middleware in kernel
-```shell
-'cache'    => \Spatie\ResponseCache\Middlewares\CacheResponse::class,
-```
-
-# add middleware your show route
-```shell
-->middleware('cache');
+LOGIN_LINK=true
+CREATED_BY_ON_FOOTER_URL="https://all-inkl.com"
+CREATED_BY_ON_FOOTER_ANCHOR="Tierheim CMS"
+ORGANIZATION_TYPE="Organization"
+RESPONSE_CACHE_ENABLED=true
 ```
 
 # add observer in model
