@@ -2,7 +2,7 @@
 
 
 
-<div class="w-full xl:max-w-2xl mx-auto">
+<div class="w-full xl:max-w-2xl mx-auto mt-10">
     <div class="relative isolate">
       <div>
          <div class="text-center">
@@ -25,8 +25,8 @@
      </div>
    </div>
 
-   <div>
-    <img class="border border-gray-300 rounded-3xl" src="{{$imgSrc}}" alt="{{$imgAlt}}" />
+   <div class="relative">
+    <img class="border border-gray-300 rounded-3xl w-full mt-10" src="{{$imgSrc}}" alt="{{$imgAlt}}" />
     <x-starterkid-frontend::image-credits imageCredits="{{config('starterkid-frontend.hero_image_credits')}}"/>
    </div>
 

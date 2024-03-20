@@ -5,7 +5,7 @@
         </div>
         @endif
         @if(isset($paginationLinks))
-<div class="mt-5">
+<div class="mt-5 flex items-center justify-start space-x-5">
     {{$paginationLinks}}
 </div>
 @endif
@@ -17,7 +17,7 @@
 
 
 @if(isset($paginationLinks))
-<div class="mt-5">
+<div class="mt-5 flex items-center justify-start space-x-5">
     {{$paginationLinks}}
 </div>
 @endif

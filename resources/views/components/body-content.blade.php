@@ -86,7 +86,10 @@ $content = preg_replace('/<img(.*?)height=".*?"(.*?)width=".*?"(.*?)src="(.*?)"(
 
 @endphp
 
-    <div class="grid grid-cols-12 gap-5">
+
+
+
+    <div class="grid grid-cols-12 gap-5 mt-2 xl:mt-20">
 
 <div class="col-span-12 xl:col-span-3">
    
@@ -125,9 +128,9 @@ $content = preg_replace('/<img(.*?)height=".*?"(.*?)width=".*?"(.*?)src="(.*?)"(
      @endif
      @if(isset($imgSrc))
      @if($imgSrc)
-     <div class="mt-5">
+     <div class="mt-5 relative">
         <img src="{{$imgSrc}}" alt="{{$imgAlt}}" />
-        <span class="text-xs text-font_primary">{{$imageCredits ?? url('/')}}</span>
+        <x-starterkid-frontend::image-credits imageCredits="{{$imageCredits}}"/>
      </div>
      @endif
      @endif
@@ -141,3 +144,7 @@ $content = preg_replace('/<img(.*?)height=".*?"(.*?)width=".*?"(.*?)src="(.*?)"(
     
     </div>
 
+
+
+
+</div>
