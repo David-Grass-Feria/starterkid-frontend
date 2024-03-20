@@ -2,7 +2,7 @@
     <header class="bodyColor border-b border-gray-400">
         <nav class="mx-auto flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div class="flex lg:flex-1">
-            <a href="{{route('front.homepage')}}" title="{{config('app.name')}}" class="-m-1.5 p-1.5">
+            <a wire:navigate href="{{route('front.homepage')}}" title="{{config('app.name')}}" class="-m-1.5 p-1.5">
               <span class="sr-only">{{config('app.name')}}</span>
               <x-starterkid::starterkid.logo class="h-8 w-auto"/>
             </a>
@@ -17,10 +17,10 @@
           </div>
           <div class="hidden lg:flex lg:gap-x-12">
             @if(Route::has('front.blog-post.index'))
-            <x-starterkid-frontend::navlink href="{{ route('front.blog-post.index') }}" title="{{ config('starterkid-blog.blog_post_title') }}" :active="request()->routeIs(['front.blog-post.index','front.blog-post.show'])">{{ config('starterkid-blog.blog_post_title') }}</x-starterkid-frontend::navlink>
+            <x-starterkid-frontend::navlink wire:navigate href="{{ route('front.blog-post.index') }}" title="{{ config('starterkid-blog.blog_post_title') }}" :active="request()->routeIs(['front.blog-post.index','front.blog-post.show'])">{{ config('starterkid-blog.blog_post_title') }}</x-starterkid-frontend::navlink>
           @endif
             @if(Route::has('front.service.index'))
-    <x-starterkid-frontend::navlink href="{{ route('front.service.index') }}" title="{{ config('starterkid-service.service_title') }}" :active="request()->routeIs(['front.service.index','front.service.show'])">{{ config('starterkid-service.service_title') }}</x-starterkid-frontend::navlink>
+    <x-starterkid-frontend::navlink wire:navigate href="{{ route('front.service.index') }}" title="{{ config('starterkid-service.service_title') }}" :active="request()->routeIs(['front.service.index','front.service.show'])">{{ config('starterkid-service.service_title') }}</x-starterkid-frontend::navlink>
   @endif
            
             @foreach(collect($frontNavLinks)->sortBy('order') as $frontNavLink)
@@ -55,6 +55,12 @@
             <div class="mt-6 flow-root">
               <div class="-my-6 divide-y divide-gray-500/25">
                 <div class="space-y-2 py-6">
+                  @if(Route::has('front.blog-post.index'))
+                  <x-starterkid-frontend::navlink wire:navigate href="{{ route('front.blog-post.index') }}" title="{{ config('starterkid-blog.blog_post_title') }}" :active="request()->routeIs(['front.blog-post.index','front.blog-post.show'])">{{ config('starterkid-blog.blog_post_title') }}</x-starterkid-frontend::navlink>
+                @endif
+                  @if(Route::has('front.service.index'))
+          <x-starterkid-frontend::navlink wire:navigate href="{{ route('front.service.index') }}" title="{{ config('starterkid-service.service_title') }}" :active="request()->routeIs(['front.service.index','front.service.show'])">{{ config('starterkid-service.service_title') }}</x-starterkid-frontend::navlink>
+        @endif
                   @foreach($frontNavLinks as $frontNavLink)
                   @if(Route::has($frontNavLink['route']))
             <x-starterkid-frontend::navlink-mobile href="{{ route($frontNavLink['route']) }}" title="{{ $frontNavLink['title'] }}" :active="request()->routeIs($frontNavLink['active'])">{{ $frontNavLink['title'] }}</x-starterkid-frontend::navlink-mobile>

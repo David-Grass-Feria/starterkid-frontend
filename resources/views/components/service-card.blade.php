@@ -4,7 +4,7 @@
      <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>
    
     <h2 class="mt-1 text-lg font-semibold text-white">
-       <a href="{{$linkRoute}}" title="{{$linkTitle}}">
+       <a wire:navigate href="{{$linkRoute}}" title="{{$linkTitle}}">
          <span class="absolute inset-0"></span>
          {{Str::limit($name,100)}}
        </a>
