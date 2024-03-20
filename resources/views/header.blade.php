@@ -16,6 +16,12 @@
             </button>
           </div>
           <div class="hidden lg:flex lg:gap-x-12">
+            @if(Route::has('front.blog-post.index'))
+            <x-starterkid-frontend::navlink href="{{ route('front.blog-post.index') }}" title="{{ config('starterkid-blog.blog_post_title') }}" :active="request()->routeIs(['front.blog-post.index','front.blog-post.show'])">{{ config('starterkid-blog.blog_post_title') }}</x-starterkid-frontend::navlink>
+          @endif
+            @if(Route::has('front.service.index'))
+    <x-starterkid-frontend::navlink href="{{ route('front.service.index') }}" title="{{ config('starterkid-service.service_title') }}" :active="request()->routeIs(['front.service.index','front.service.show'])">{{ config('starterkid-service.service_title') }}</x-starterkid-frontend::navlink>
+  @endif
            
             @foreach(collect($frontNavLinks)->sortBy('order') as $frontNavLink)
           @if(Route::has($frontNavLink['route']))
