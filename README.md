@@ -21,3 +21,28 @@ protected static function boot()
          });
     }
 ```
+
+# homepage blade
+```shell
+<x-starterkid-frontend::heros.with-image 
+h1="{{config('starterkid-frontend.hero_h1')}}" 
+h1Color="{{config('starterkid-frontend.hero_h1_color')}}" 
+description="{{config('starterkid-frontend.hero_description')}}" 
+buttonPrimaryRoute="{{config('starterkid-frontend.hero_button_primary_route')}}" 
+buttonPrimaryAnchor="{{config('starterkid-frontend.hero_button_primary_anchor')}}" 
+buttonSecondaryRoute="{{config('starterkid-frontend.hero_button_secondary_route')}}" 
+buttonSecondaryAnchor="{{config('starterkid-frontend.hero_button_secondary_anchor')}}" 
+imgSrc="{{Cache::has('logo') ? Cache::get('logo') : asset('/logo.png')}}" 
+imgAlt="{{config('starterkid-frontend.hero_image_alt')}}" />
+```
+
+```shell
+<x-starterkid-frontend::heros.simple 
+h1="{{config('starterkid-frontend.hero_h1')}}" 
+h1Color="{{config('starterkid-frontend.hero_h1_color')}}" 
+description="{{config('starterkid-frontend.hero_description')}}" 
+buttonPrimaryRoute="{{config('starterkid-frontend.hero_button_primary_route')}}" 
+buttonPrimaryAnchor="{{config('starterkid-frontend.hero_button_primary_anchor')}}" 
+buttonSecondaryRoute="{{config('starterkid-frontend.hero_button_secondary_route')}}" 
+buttonSecondaryAnchor="{{config('starterkid-frontend.hero_button_secondary_anchor')}}" /> 
+```
