@@ -33,7 +33,7 @@ $content = preg_replace_callback(
     function ($matches) use (&$h2WithId) {
         $id = Str::slug($matches[2]);
         $h2WithId[] = $matches[2];
-        return "<h2 id=\"{$id}\"{$matches[1]}>{$matches[2]}</h2>";
+        return "<h2 class=\"anchored\" id=\"{$id}\"{$matches[1]}>{$matches[2]}</h2>";
     },
     $content
 );
