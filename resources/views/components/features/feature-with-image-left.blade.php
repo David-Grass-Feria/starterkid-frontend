@@ -1,7 +1,7 @@
 <div class="mt-20 grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-40 items-center text-center xl:text-left">
    
 <div class="relative order-2 xl:order-1">
-<img class="rounded-3xl" src="{{$imgSrc}}" alt="{{$imgAlt}}">
+<img class="rounded-3xl w-96" src="{{$imgSrc}}" alt="{{$imgAlt}}">
 <x-starterkid-frontend::image-credits imageCredits="{{$imgCredits}}"/>
 </div>
 
