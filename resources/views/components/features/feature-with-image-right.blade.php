@@ -19,7 +19,7 @@
 </div>
 
 <div class="relative">
-  <img class="rounded-3xl w-96" src="{{$imgSrc}}" alt="{{$imgAlt}}">
+  <img class="rounded-3xl w-[600px]" src="{{$imgSrc}}" alt="{{$imgAlt}}">
   <x-starterkid-frontend::image-credits imageCredits="{{$imgCredits}}"/>
   </div>
 
