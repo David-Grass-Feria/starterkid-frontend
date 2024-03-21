@@ -2,7 +2,7 @@
    
 <div class="relative order-2 xl:order-1">
 <img class="rounded-3xl" src="{{$imgSrc}}" alt="{{$imgAlt}}">
-<x-starterkid-frontend::image-credits imageCredits="{{config('starterkid-frontend.hero_image_credits')}}"/>
+<x-starterkid-frontend::image-credits imageCredits="{{$imgCredits}}"/>
 </div>
 
 

@@ -20,7 +20,7 @@
 
 <div class="relative">
   <img class="rounded-3xl" src="{{$imgSrc}}" alt="{{$imgAlt}}">
-  <x-starterkid-frontend::image-credits imageCredits="{{config('starterkid-frontend.hero_image_credits')}}"/>
+  <x-starterkid-frontend::image-credits imageCredits="{{$imgCredits}}"/>
   </div>
 
   </div>
