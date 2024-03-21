@@ -8,7 +8,10 @@
 
 <div class="text-font_primary max-w-4xl order-1 xl:order-2">
 <x-starterkid-frontend::h2 h2="{{$heading}}" />
-<x-starterkid-frontend::description description="{!!$description!!}" />
+@if(isset($description))
+<x-starterkid-frontend::description description="{{$description}}" />
+@endif
+{{$slot}}
 @if(isset($buttonPrimaryRoute))
 <div class="mt-10">
 <a href="{{$buttonPrimaryRoute}}" title="{{$buttonPrimaryAnchor}}">
