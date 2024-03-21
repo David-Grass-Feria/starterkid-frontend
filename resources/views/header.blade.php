@@ -16,18 +16,20 @@
             </button>
           </div>
           <div class="hidden lg:flex lg:gap-x-12">
-            @if(Route::has('front.blog-post.index'))
+            
+           
+            @foreach(collect($frontNavLinks)->sortBy('order') as $frontNavLink)
+          @if(Route::has($frontNavLink['route']))
+    <x-starterkid-frontend::navlink wire:navigate href="{{ route($frontNavLink['route']) }}" title="{{ $frontNavLink['title'] }}" :active="request()->routeIs($frontNavLink['active'])">{{ $frontNavLink['title'] }}</x-starterkid-frontend::navlink>
+  @endif
+@endforeach
+
+@if(Route::has('front.blog-post.index'))
             <x-starterkid-frontend::navlink wire:navigate href="{{ route('front.blog-post.index') }}" title="{{ config('starterkid-blog.blog_post_title') }}" :active="request()->routeIs(['front.blog-post.index','front.blog-post.show'])">{{ config('starterkid-blog.blog_post_title') }}</x-starterkid-frontend::navlink>
           @endif
             @if(Route::has('front.service.index'))
     <x-starterkid-frontend::navlink wire:navigate href="{{ route('front.service.index') }}" title="{{ config('starterkid-service.service_title') }}" :active="request()->routeIs(['front.service.index','front.service.show'])">{{ config('starterkid-service.service_title') }}</x-starterkid-frontend::navlink>
   @endif
-           
-            @foreach(collect($frontNavLinks)->sortBy('order') as $frontNavLink)
-          @if(Route::has($frontNavLink['route']))
-    <x-starterkid-frontend::navlink href="{{ route($frontNavLink['route']) }}" title="{{ $frontNavLink['title'] }}" :active="request()->routeIs($frontNavLink['active'])">{{ $frontNavLink['title'] }}</x-starterkid-frontend::navlink>
-  @endif
-@endforeach
           </div>
           <div class="hidden lg:flex lg:flex-1 lg:justify-end">
             @if(config('starterkid-frontend.login_link'))
@@ -55,17 +57,18 @@
             <div class="mt-6 flow-root">
               <div class="-my-6 divide-y divide-gray-500/25">
                 <div class="space-y-2 py-6">
-                  @if(Route::has('front.blog-post.index'))
-                  <x-starterkid-frontend::navlink wire:navigate href="{{ route('front.blog-post.index') }}" title="{{ config('starterkid-blog.blog_post_title') }}" :active="request()->routeIs(['front.blog-post.index','front.blog-post.show'])">{{ config('starterkid-blog.blog_post_title') }}</x-starterkid-frontend::navlink>
-                @endif
-                  @if(Route::has('front.service.index'))
-          <x-starterkid-frontend::navlink wire:navigate href="{{ route('front.service.index') }}" title="{{ config('starterkid-service.service_title') }}" :active="request()->routeIs(['front.service.index','front.service.show'])">{{ config('starterkid-service.service_title') }}</x-starterkid-frontend::navlink>
-        @endif
+                 
                   @foreach($frontNavLinks as $frontNavLink)
                   @if(Route::has($frontNavLink['route']))
-            <x-starterkid-frontend::navlink-mobile href="{{ route($frontNavLink['route']) }}" title="{{ $frontNavLink['title'] }}" :active="request()->routeIs($frontNavLink['active'])">{{ $frontNavLink['title'] }}</x-starterkid-frontend::navlink-mobile>
+            <x-starterkid-frontend::navlink-mobile wire:navigate href="{{ route($frontNavLink['route']) }}" title="{{ $frontNavLink['title'] }}" :active="request()->routeIs($frontNavLink['active'])">{{ $frontNavLink['title'] }}</x-starterkid-frontend::navlink-mobile>
           @endif
         @endforeach
+        @if(Route::has('front.blog-post.index'))
+        <x-starterkid-frontend::navlink wire:navigate href="{{ route('front.blog-post.index') }}" title="{{ config('starterkid-blog.blog_post_title') }}" :active="request()->routeIs(['front.blog-post.index','front.blog-post.show'])">{{ config('starterkid-blog.blog_post_title') }}</x-starterkid-frontend::navlink>
+      @endif
+        @if(Route::has('front.service.index'))
+<x-starterkid-frontend::navlink wire:navigate href="{{ route('front.service.index') }}" title="{{ config('starterkid-service.service_title') }}" :active="request()->routeIs(['front.service.index','front.service.show'])">{{ config('starterkid-service.service_title') }}</x-starterkid-frontend::navlink>
+@endif
                 </div>
                 <div class="py-6">
                   @if(config('starterkid-frontend.login_link'))
