@@ -3,9 +3,9 @@
       
     
       <div>
-        <x-starterkid-frontend::h1 h1="{{$heading}}" />
+        <h1 class="text-4xl font-bold tracking-tight text-font_primary sm:text-6xl xl:text-8xl">{{$heading}}</h1>
         @if(isset($description))
-        <x-starterkid-frontend::description description="{{$description}}" />
+        <p class="mt-6 text-lg leading-8 text-font_primary">{{$description}}</p>
         @endif
         </div>
      
