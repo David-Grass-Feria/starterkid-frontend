@@ -16,7 +16,7 @@
             </button>
           </div>
           <div class="hidden lg:flex lg:gap-x-12">
-            
+            <x-starterkid-frontend::navlink wire:navigate href="{{ route('front.homepage') }}" title="{{ config('app.name') }}" :active="request()->routeIs(['front.homepage'])">{{__('Home')}}</x-starterkid-frontend::navlink>
            
             @foreach(collect($frontNavLinks)->sortBy('order') as $frontNavLink)
           @if(Route::has($frontNavLink['route']))
@@ -57,7 +57,8 @@
             <div class="mt-6 flow-root">
               <div class="-my-6 divide-y divide-gray-500/25">
                 <div class="space-y-2 py-6">
-                 
+                  <x-starterkid-frontend::navlink-mobile wire:navigate href="{{ route('front.homepage') }}" title="{{ config('app.name') }}" :active="request()->routeIs(['front.homepage'])">{{__('Home')}}</x-starterkid-frontend::navlink-mobile>
+
                   @foreach($frontNavLinks as $frontNavLink)
                   @if(Route::has($frontNavLink['route']))
                   <x-starterkid-frontend::navlink-mobile wire:navigate href="{{ route($frontNavLink['route']) }}" title="{{ $frontNavLink['title'] }}" :active="request()->routeIs($frontNavLink['active'])">{{ $frontNavLink['title'] }}</x-starterkid-frontend::navlink-mobile>
