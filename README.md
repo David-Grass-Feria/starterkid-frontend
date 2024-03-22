@@ -39,43 +39,7 @@ protected static function boot()
     }
 ```
 
-# hero
-```shell
-<x-starterkid-frontend::heros.with-image 
-h1="{{config('starterkid-frontend.hero_h1')}}" 
-h1Color="{{config('starterkid-frontend.hero_h1_color')}}" 
-description="{{config('starterkid-frontend.hero_description')}}" 
-buttonPrimaryRoute="{{config('starterkid-frontend.hero_button_primary_route')}}" 
-buttonPrimaryAnchor="{{config('starterkid-frontend.hero_button_primary_anchor')}}" 
-buttonSecondaryRoute="{{config('starterkid-frontend.hero_button_secondary_route')}}" 
-buttonSecondaryAnchor="{{config('starterkid-frontend.hero_button_secondary_anchor')}}" 
-imgSrc="{{Cache::has('logo') ? Cache::get('logo') : asset('/logo.png')}}" 
-imgAlt="{{config('starterkid-frontend.hero_image_alt')}}" />
-```
 
-# featrue image left with description
-```shell
-<x-starterkid-frontend::features.feature-with-image-left 
-heading="{{config('starterkid-frontend.hero_h1')}}" 
-description="{{config('starterkid-frontend.hero_description')}}" 
-imgSrc="https://tierschutzverein-muenchen.de/img/containers/assets/v1/startseite/shop-startseite-finish.jpg/8afa9ab3541f90875830f0d7814585b0.jpg" 
-imgAlt="{{config('starterkid-frontend.hero_image_alt')}}"
-imgCredits="#"
-buttonPrimaryRoute="{{config('starterkid-frontend.hero_button_primary_route')}}" 
-buttonPrimaryAnchor="{{config('starterkid-frontend.hero_button_primary_anchor')}}" /> 
-```
-
-# featrue image right with description
-```shell
-<x-starterkid-frontend::features.feature-with-image-right 
-heading="{{config('starterkid-frontend.hero_h1')}}" 
-description="{{config('starterkid-frontend.hero_description')}}" 
-imgSrc="https://tierschutzverein-muenchen.de/img/containers/assets/v1/startseite/shop-startseite-finish.jpg/8afa9ab3541f90875830f0d7814585b0.jpg" 
-imgAlt="{{config('starterkid-frontend.hero_image_alt')}}"
-imgCredits="#"
-buttonPrimaryRoute="{{config('starterkid-frontend.hero_button_primary_route')}}" 
-buttonPrimaryAnchor="{{config('starterkid-frontend.hero_button_primary_anchor')}}" /> 
-```
 
 # featrue image left with checkmarks
 ```shell
@@ -84,39 +48,4 @@ buttonPrimaryAnchor="{{config('starterkid-frontend.hero_button_primary_anchor')}
 @else
         // Ungerade
 @endif
-```
-
-```shell
-<x-starterkid-frontend::features.feature-with-image-left-with-checks 
-heading="{{config('starterkid-frontend.hero_h1')}}" 
-description="{{config('starterkid-frontend.hero_description')}}" 
-imgSrc="https://tierschutzverein-muenchen.de/img/containers/assets/v1/startseite/shop-startseite-finish.jpg/8afa9ab3541f90875830f0d7814585b0.jpg" 
-imgAlt="{{config('starterkid-frontend.hero_image_alt')}}"
-imgCredits="#"
-buttonPrimaryRoute="{{config('starterkid-frontend.hero_button_primary_route')}}" 
-buttonPrimaryAnchor="{{config('starterkid-frontend.hero_button_primary_anchor')}}">
-
-<x-starterkid-frontend::features.check-item>Bürger informieren und Beteiligung ermöglichen</x-starterkid-frontend::features.check-item>
-<x-starterkid-frontend::features.check-item>Papier sparen - Bürgerinfoportal ausbauen</x-starterkid-frontend::features.check-item>
-<x-starterkid-frontend::features.check-item>Brieftauben abschaffen! Stadtratsarbeit digitalisieren!</x-starterkid-frontend::features.check-item>
-<x-starterkid-frontend::features.check-item>Behördengänge online ermöglichen</x-starterkid-frontend::features.check-item>
-</x-starterkid-frontend::features.feature-with-image-left-with-checks>
-```
-
-# featrue image right with checkmarks
-```shell
-<x-starterkid-frontend::features.feature-with-image-right-with-checks 
-heading="{{config('starterkid-frontend.hero_h1')}}" 
-description="{{config('starterkid-frontend.hero_description')}}" 
-imgSrc="https://tierschutzverein-muenchen.de/img/containers/assets/v1/startseite/shop-startseite-finish.jpg/8afa9ab3541f90875830f0d7814585b0.jpg" 
-imgAlt="{{config('starterkid-frontend.hero_image_alt')}}"
-imgCredits="#"
-buttonPrimaryRoute="{{config('starterkid-frontend.hero_button_primary_route')}}" 
-buttonPrimaryAnchor="{{config('starterkid-frontend.hero_button_primary_anchor')}}">
-
-<x-starterkid-frontend::features.check-item>Bürger informieren und Beteiligung ermöglichen</x-starterkid-frontend::features.check-item>
-<x-starterkid-frontend::features.check-item>Papier sparen - Bürgerinfoportal ausbauen</x-starterkid-frontend::features.check-item>
-<x-starterkid-frontend::features.check-item>Brieftauben abschaffen! Stadtratsarbeit digitalisieren!</x-starterkid-frontend::features.check-item>
-<x-starterkid-frontend::features.check-item>Behördengänge online ermöglichen</x-starterkid-frontend::features.check-item>
-</x-starterkid-frontend::features.feature-with-image-right-with-checks>
 ```
