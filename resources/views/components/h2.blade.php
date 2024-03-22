@@ -1,1 +1,0 @@
-<h2 class="text-2xl xl:text-6xl font-semibold">{{$h2}}</h2>

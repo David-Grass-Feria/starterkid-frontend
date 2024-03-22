@@ -4,8 +4,10 @@
 
 
     <div class="text-font_primary max-w-4xl text-center">
-      <x-starterkid-frontend::h1 h1="{{$h1}}" h1Color="{{$h1Color}}" />
-    <x-starterkid-frontend::description description="{{$description}}" />
+      <h1 class="text-4xl font-bold tracking-tight text-font_primary sm:text-6xl xl:text-8xl">{{$h1}}
+        <br><span class="text-primary">{{$h1Color}}</span>
+        </h1>
+        <p class="mt-6 text-lg leading-8 text-font_primary">{{$description}}</p>
     
     <div class="flex items-center mt-10 space-x-5 justify-center">
     @if(isset($buttonPrimaryRoute))
@@ -24,7 +26,7 @@
     </div>
     
     <div class="relative">
-      <img class="rounded-3xl shadow-xl" src="{{$imgSrc}}" alt="{{$imgAlt}}">
+      <img class="rounded-3xl shadow-xl w-full xl:max-w-[600px]" src="{{$imgSrc}}" alt="{{$imgAlt}}">
       <x-starterkid-frontend::image-credits imageCredits="{{config('starterkid-frontend.hero_image_credits')}}"/>
       </div>
     

@@ -4,22 +4,22 @@
 
 
 <div class="text-font_primary max-w-4xl">
-<x-starterkid-frontend::h2 h2="{{$heading}}" />
-@if(isset($description))
-<x-starterkid-frontend::description description="{{$description}}" />
-@endif
-{{$slot}}
-@if(isset($buttonPrimaryRoute))
+  <h2 class="text-2xl xl:text-6xl font-semibold">{{$heading}}</h2>
+
+<p class="mt-6 text-lg leading-8 text-font_primary">{{$description}}</p>
+
+
+
 <div class="mt-10">
 <a href="{{$buttonPrimaryRoute}}" title="{{$buttonPrimaryAnchor}}">
 <x-starterkid-frontend::button-secondary>{{$buttonPrimaryAnchor}}</x-starterkid-frontend::button-secondary>
 </a>
 </div>
-@endif
+
 </div>
 
 <div class="relative">
-  <img class="rounded-3xl w-[600px]" src="{{$imgSrc}}" alt="{{$imgAlt}}">
+  <img class="rounded-3xl w-full xl:max-w-[600px]" src="{{$imgSrc}}" alt="{{$imgAlt}}">
   <x-starterkid-frontend::image-credits imageCredits="{{$imgCredits}}"/>
   </div>
 
