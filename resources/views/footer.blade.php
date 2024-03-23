@@ -1,4 +1,4 @@
-<footer class="bodyColor border-t border-gray-400 mt-20 max-w-7xl mx-auto">
+<footer class="bodyColor border-t border-gray-400 mt-20 w-full mx-auto">
     <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
       <nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
 
