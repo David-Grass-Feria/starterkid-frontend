@@ -1,4 +1,4 @@
-<div class="sticky top-0 z-10 border-b border-gray-300 bg-body max-w-7xl mx-auto" x-data="{open:false}" x-cloak>
+<div class="sticky top-0 z-10 bg-body max-w-7xl mx-auto" x-data="{open:false}" x-cloak>
     <header class="bodyColor border-b border-gray-400">
         <nav class="mx-auto flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div class="flex lg:flex-1">

@@ -6,33 +6,9 @@
 
 
 
-
-<x-starterkid-frontend::card>
-
-<x-starterkid-frontend::wrapper>
-
-
-
-
-
-
 @include('homepage')
 
 
-
-
-
-
-
-
-  
-      
-     
-     
-</x-starterkid-frontend::wrapper>
-
-
-</x-starterkid-frontend::card>
 
 
 @include('starterkid-frontend::footer',['services' => $services])
