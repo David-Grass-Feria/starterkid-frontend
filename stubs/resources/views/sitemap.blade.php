@@ -1,8 +1,10 @@
 {{--
 @php
-//
+$blogposts = \GrassFeria\StarterkidBlog\Models\BlogPost::frontGetBlogPostWhereStatusIsOnline()->get();
 @endphp
-<li>
-    <a class="underline text-xs text-font_primary" href="#" title="#">#</a>
-</li>
+@foreach($blogposts as $blogpost)
+    <li>
+     <a class="underline text-xs text-font_primary" href="{{route('front.blog-post.show',$blogpost->slug)}}" title="{{$blogpost->title}}" class="hover:underline">{{$blogpost->name}}</a>
+    </li>
+@endforeach
 --}}
