@@ -1,15 +1,12 @@
-<footer class="bodyColor border-t border-gray-400 mt-20 w-full mx-auto">
-    <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
-      <nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
-
-          @foreach($services as $service)
-          <x-starterkid-frontend::footer-link href="{{route('front.service.show',$service->slug)}}" title="{{$service->title}}">{{$service->name}}</x-starterkid-frontend::footer-link>
-          @endforeach
-      
-      </nav>
-      <div class="mt-10 flex justify-center space-x-10">
-        
-        @if(config('starterkid-frontend.organization_facebook_url') !== '')
+<footer class="border-t border-gray-400" aria-labelledby="footer-heading">
+    <h2 id="footer-heading" class="sr-only">Footer</h2>
+    <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+      <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+        <div class="space-y-8">
+          <x-starterkid::starterkid.logo class="h-7" />
+         
+          <div class="flex space-x-6">
+            @if(config('starterkid-frontend.organization_facebook_url') !== '')
         <a href="{{config('starterkid-frontend.organization_facebook_url')}}" title="{{__('Facebook')}}" target="_blank" class="text-font_primary">
           <span class="sr-only">Facebook</span>
           <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="h-5 w-5" viewBox="0 0 16 16">
@@ -80,17 +77,49 @@
           </svg>
         </a>
         @endif
-
-        
-       
-        
+          </div>
+        </div>
+        <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+          <div class="md:grid md:grid-cols-2 md:gap-8">
+            <div>
+              <h3 class="text-sm font-semibold leading-6 text-gray-900">{{config('starterkid-service.service_title')}}</h3>
+              <ul role="list" class="mt-6 space-y-4">
+                @foreach($services as $service)
+                <x-starterkid-frontend::footer-link wire:navigate href="{{route('front.service.show',$service->slug)}}" title="{{$service->title}}">{{$service->name}}</x-starterkid-frontend::footer-link>
+                @endforeach
+              </ul>
+            </div>
+            <div class="mt-10 md:mt-0">
+              <h3 class="text-sm font-semibold leading-6 text-gray-900"></h3>
+              <ul role="list" class="mt-6 space-y-4">
+               
+              </ul>
+            </div>
+          </div>
+          <div class="md:grid md:grid-cols-2 md:gap-8">
+            
+            <div>
+              <h3 class="text-sm font-semibold leading-6 text-gray-900">{{__('Sitemap')}}</h3>
+              <ul role="list" class="mt-6 space-y-4">
+               
+            <x-starterkid-frontend::footer-link wire:navigate  href="{{ route('front.sitemap-page') }}" title="{{ __('Sitemap') }}">{{ __('Sitemap') }}</x-starterkid-frontend::footer-link>
+         
+            
+              </ul>
+            </div>
+         
+            <div class="mt-10 md:mt-0">
+              <h3 class="text-sm font-semibold leading-6 text-gray-900"></h3>
+              <ul role="list" class="mt-6 space-y-4">
+               
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
-     <p class="text-xs text-center mt-10 leading-5 text-font_primary">&copy; {{now()->format('Y')}} {{config('app.name')}}, {{__('Inc. All rights reserved.')}} - {{__('Build by')}} <a class="text-font_primary underline" href="{{config('starterkid-frontend.created_by_on_footer_url')}}" target="_blank">{{config('starterkid-frontend.created_by_on_footer_anchor')}}</a></p>
+      <div class="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
+        <p class="text-xs mt-10 leading-5 text-font_primary">&copy; {{now()->format('Y')}} {{config('app.name')}}, {{__('Inc. All rights reserved.')}} - {{__('Build by')}} <a class="text-font_primary underline" href="{{config('starterkid-frontend.created_by_on_footer_url')}}" target="_blank">{{config('starterkid-frontend.created_by_on_footer_anchor')}}</a></p>
+      </div>
     </div>
-
-    
-    
-    
-
   </footer>
   

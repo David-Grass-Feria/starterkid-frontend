@@ -50,6 +50,7 @@ class AppServiceProvider extends ServiceProvider
        
        
         Livewire::component('starterkid-frontend::homepage',\GrassFeria\StarterkidFrontend\Livewire\Front\Homepage::class);
+        Livewire::component('starterkid-frontend::sitemap-page',\GrassFeria\StarterkidFrontend\Livewire\Front\SitemapPage::class);
         
 
        

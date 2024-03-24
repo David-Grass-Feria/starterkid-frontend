@@ -3,13 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use GrassFeria\StarterkidFrontend\Livewire\Front\Homepage;
 use GrassFeria\StarterkidFrontend\Livewire\Front\OrganizationEdit;
-
-
-
-
-
-
-
+use GrassFeria\StarterkidFrontend\Livewire\Front\SitemapPage;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,8 +18,8 @@ use GrassFeria\StarterkidFrontend\Livewire\Front\OrganizationEdit;
 
 Route::middleware(['web'])->group(function () {
    
-    Route::get('/',Homepage::class)->name('front.homepage')->where('locale', implode('|', array_diff(config('starterkid.locales'), [config('app.locale')])));
-  
+    Route::get('/',Homepage::class)->name('front.homepage');
+    Route::get('/sitemap',SitemapPage::class)->name('front.sitemap-page');
 
    
    
