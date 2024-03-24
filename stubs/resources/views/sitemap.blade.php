@@ -4,7 +4,8 @@ $blogposts = \GrassFeria\StarterkidBlog\Models\BlogPost::frontGetBlogPostWhereSt
 @endphp
 @foreach($blogposts as $blogpost)
     <li>
-     <a class="underline text-xs text-font_primary" href="{{route('front.blog-post.show',$blogpost->slug)}}" title="{{$blogpost->title}}" class="hover:underline">{{$blogpost->name}}</a>
+     <a class="underline text-xs text-font_primary" href="{{route('front.blog-post.show',$blogpost->slug)}}" title="{{$blogpost->title}}">{{$blogpost->name}}</a>
     </li>
 @endforeach
+<br>
 --}}
