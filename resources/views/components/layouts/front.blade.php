@@ -32,6 +32,9 @@
           ]
         }
       </script>
+
+     @include('breadcrumb-schema') 
+      
     
     @yield('schema')
  
