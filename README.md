@@ -49,8 +49,9 @@ protected static function boot()
         // Ungerade
 @endif
 ```
-# featrue image left with checkmarks
+# card grid item
 ```shell
+ <x-starterkid-frontend::card-grid>
 <x-starterkid-frontend::card-grid-with-slot-item 
                imgSrc="{{$blogpost->getFirstMediaUrl('images', 'medium')}}" 
                imgAlt="{{$blogpost->name}}" 
@@ -59,5 +60,6 @@ protected static function boot()
                href="{{route('front.blog-post.show',$blogpost->slug)}}" 
                hrefTitle="{{$blogpost->name}}">
 //content here
-</x-starterkid-frontend::card-grid-with-slot-item> 
+</x-starterkid-frontend::card-grid-with-slot-item>
+ </x-starterkid-frontend::card-grid>
 ```
