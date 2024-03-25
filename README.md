@@ -39,6 +39,12 @@ protected static function boot()
     }
 ```
 
+# add this to tailwind.config.js
+```shell
+ './vendor/grass-feria/starterkid-frontend/**/*.blade.php',
+'./vendor/grass-feria/starterkid-blog/**/*.blade.php',
+'./vendor/grass-feria/starterkid-service/**/*.blade.php',
+```
 
 
 # featrue image left with checkmarks
