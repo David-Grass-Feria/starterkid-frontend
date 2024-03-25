@@ -49,3 +49,15 @@ protected static function boot()
         // Ungerade
 @endif
 ```
+# featrue image left with checkmarks
+```shell
+<x-starterkid-frontend::card-grid-with-slot-item 
+               imgSrc="{{$blogpost->getFirstMediaUrl('images', 'medium')}}" 
+               imgAlt="{{$blogpost->name}}" 
+               imgCredits="{{$blogpost->image_credits}}" 
+               heading="{{$blogpost->name}}"
+               href="{{route('front.blog-post.show',$blogpost->slug)}}" 
+               hrefTitle="{{$blogpost->name}}">
+//content here
+</x-starterkid-frontend::card-grid-with-slot-item> 
+```
