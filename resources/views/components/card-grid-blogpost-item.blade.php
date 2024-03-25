@@ -17,7 +17,7 @@
         <p>{{$author}}</p>
       </div>
       <div class="group relative">
-        <h2 class="mt-3 text-lg font-semibold">{{$heading}}</h2>
+        <h2 class="mt-3 text-lg font-bold">{{$heading}}</h2>
         <p class="mt-5 line-clamp-3 text-sm">{!!$preview!!}</p>
       </div>
      

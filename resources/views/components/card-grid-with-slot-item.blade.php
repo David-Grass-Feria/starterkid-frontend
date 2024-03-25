@@ -12,7 +12,7 @@
     
     <a href="{{$href}}" title="{{$hrefTitle}}">
     <div class="w-full text-font_primary p-3">
-      <h2 class="mt-3 text-lg font-semibold">{{$heading}}</h2>
+      <h2 class="mt-3 text-lg font-bold">{{$heading}}</h2>
      {{$slot}}
      
     </div>
