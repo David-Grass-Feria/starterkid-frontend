@@ -118,7 +118,7 @@
         </div>
       </div>
       <div class="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
-        <p class="text-xs mt-10 leading-5 text-font_primary">&copy; {{now()->format('Y')}} {{config('app.name')}}, {{__('Inc. All rights reserved.')}} - {{__('Build by')}} <a class="text-font_primary underline" href="{{config('starterkid-frontend.created_by_on_footer_url')}}" target="_blank">{{config('starterkid-frontend.created_by_on_footer_anchor')}}</a></p>
+        <p class="text-xs mt-10 leading-5 text-font_primary">&copy; {{now()->format('Y')}} {{config('app.name')}}, {{__('Inc. All rights reserved.')}} - {{__('Build by')}} <a class="text-font_primary underline" href="{{config('starterkid-frontend.created_by_url')}}" target="_blank">{{config('starterkid-frontend.created_by_anchor')}}</a></p>
       </div>
     </div>
   </footer>

@@ -3,8 +3,8 @@
 return [
 
 'login_link'                                    => env('LOGIN_LINK',true),
-'created_by_on_footer_url'                      => env('CREATED_BY_ON_FOOTER_URL','https://all-inkl.com'),
-'created_by_on_footer_anchor'                   => env('CREATED_BY_ON_FOOTER_ANCHOR','Tierheim CMS'),
+'created_by_url'                                => env('CREATED_BY_URL','https://all-inkl.com'),
+'created_by_anchor'                             => env('CREATED_BY_ANCHOR','Tierheim CMS'),
 'organization_type'                             => env('ORGANIZATION_TYPE','Organization'),
 'hero_h1'                                       => env('HERO_H1','Ein Verein für'),
 "hero_h1_color"                                 => env('HERO_H1_COLOR','deine Stadt'),
