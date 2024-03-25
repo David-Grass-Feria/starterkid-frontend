@@ -47,7 +47,7 @@ protected static function boot()
 ```
 
 
-# featrue image left with checkmarks
+# loop left right left right
 ```shell
 @if($loop->iteration % 2 == 0)
         // Gerade
