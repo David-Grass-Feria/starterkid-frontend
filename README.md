@@ -39,13 +39,33 @@ protected static function boot()
     }
 ```
 
+# add this to tailwind.config.js
+```shell
+ './vendor/grass-feria/starterkid-frontend/**/*.blade.php',
+'./vendor/grass-feria/starterkid-blog/**/*.blade.php',
+'./vendor/grass-feria/starterkid-service/**/*.blade.php',
+```
 
 
-# featrue image left with checkmarks
+# loop left right left right
 ```shell
 @if($loop->iteration % 2 == 0)
         // Gerade
 @else
         // Ungerade
 @endif
+```
+# card grid item
+```shell
+ <x-starterkid-frontend::card-grid>
+<x-starterkid-frontend::card-grid-with-slot-item 
+               imgSrc="{{$blogpost->getFirstMediaUrl('images', 'medium')}}" 
+               imgAlt="{{$blogpost->name}}" 
+               imgCredits="{{$blogpost->image_credits}}" 
+               heading="{{$blogpost->name}}"
+               href="{{route('front.blog-post.show',$blogpost->slug)}}" 
+               hrefTitle="{{$blogpost->name}}">
+//content here
+</x-starterkid-frontend::card-grid-with-slot-item>
+ </x-starterkid-frontend::card-grid>
 ```
