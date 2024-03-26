@@ -20,14 +20,6 @@
            
             @foreach(collect($frontNavLinks)->sortBy('order') as $frontNavLink)
             @if(Route::has($frontNavLink['route']))
-            @php
-                $isActive = false;
-                if(isset($frontNavLink['parameters']['slug'])) {
-                    $isActive = request()->routeIs($frontNavLink['active']) && request()->slug === $frontNavLink['parameters']['slug'];
-                } else {
-                    $isActive = request()->routeIs($frontNavLink['active']);
-                }
-            @endphp
             <x-starterkid-frontend::navlink wire:navigate href="{{ route($frontNavLink['route'], $frontNavLink['parameters'] ?? []) }}" title="{{ $frontNavLink['title'] }}" :active="$isActive">{{ $frontNavLink['title'] }}</x-starterkid-frontend::navlink>
         @endif
 @endforeach
