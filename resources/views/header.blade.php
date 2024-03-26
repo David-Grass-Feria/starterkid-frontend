@@ -20,7 +20,7 @@
            
             @foreach(collect($frontNavLinks)->sortBy('order') as $frontNavLink)
           @if(Route::has($frontNavLink['route']))
-    <x-starterkid-frontend::navlink wire:navigate href="{{ route($frontNavLink['route']) }}" title="{{ $frontNavLink['title'] }}" :active="request()->routeIs($frontNavLink['active'])">{{ $frontNavLink['title'] }}</x-starterkid-frontend::navlink>
+    <x-starterkid-frontend::navlink wire:navigate href="{{ route($frontNavLink['route'], $frontNavLink['parameters'] ?? []) }}" title="{{ $frontNavLink['title'] }}" :active="request()->routeIs($frontNavLink['active'])">{{ $frontNavLink['title'] }}</x-starterkid-frontend::navlink>
   @endif
 @endforeach
 
@@ -61,7 +61,7 @@
 
                   @foreach($frontNavLinks as $frontNavLink)
                   @if(Route::has($frontNavLink['route']))
-                  <x-starterkid-frontend::navlink-mobile wire:navigate href="{{ route($frontNavLink['route']) }}" title="{{ $frontNavLink['title'] }}" :active="request()->routeIs($frontNavLink['active'])">{{ $frontNavLink['title'] }}</x-starterkid-frontend::navlink-mobile>
+                  <x-starterkid-frontend::navlink-mobile wire:navigate href="{{ route($frontNavLink['route'], $frontNavLink['parameters'] ?? []) }}" title="{{ $frontNavLink['title'] }}" :active="request()->routeIs($frontNavLink['active'])">{{ $frontNavLink['title'] }}</x-starterkid-frontend::navlink-mobile>
                   @endif
                   @endforeach
                   
