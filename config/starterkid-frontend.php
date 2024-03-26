@@ -23,4 +23,6 @@ return [
 "organization_pinterest_url"                    => env('ORGANIZATION_PINTEREST_URL',''),
 "organization_github_url"                       => env('ORGANIZATION_GITHUB_URL',''),
 "organization_wikipedia_url"                    => env('ORGANIZATION_WIKIPEDIA_URL',''),
+'homepage_title'                                => env('HOMEPAGE_TITLE','Ein Verein für deine Stadt'),
+'homepage_description'                          => env('HOMEPAGE_DESCRIPTION','Wir engagieren uns für unsere Stadt Saalfeld/Saale. Im Saalfelder Stadtrat, im gesellschaftlichen Leben, bei Projekten, Aktionen und Veranstaltungen.'),
 ];
