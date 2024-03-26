@@ -39,8 +39,8 @@ class AppServiceProvider extends ServiceProvider
         
         
         
-        $router = $this->app['router'];
-        $router->aliasMiddleware('cache', \Spatie\ResponseCache\Middlewares\CacheResponse::class);
+        //$router = $this->app['router'];
+        //$router->aliasMiddleware('cache', \Spatie\ResponseCache\Middlewares\CacheResponse::class);
         
         $this->loadViewsFrom(__DIR__.'/../../resources/views', 'starterkid-frontend');
         $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
