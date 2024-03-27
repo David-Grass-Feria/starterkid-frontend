@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\ServiceProvider;
 use GrassFeria\StarterkidFrontend\Console\Commands\InstallStarterkidFrontendCommand;
-
+use GrassFeria\StarterkidFrontend\Http\Middleware\CacheResponseMiddleware;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -39,8 +39,8 @@ class AppServiceProvider extends ServiceProvider
         
         
         
-        //$router = $this->app['router'];
-        //$router->aliasMiddleware('cache', \Spatie\ResponseCache\Middlewares\CacheResponse::class);
+        $router = $this->app['router'];
+        $router->aliasMiddleware('cache', CacheResponseMiddleware::class);
         
         $this->loadViewsFrom(__DIR__.'/../../resources/views', 'starterkid-frontend');
         $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');

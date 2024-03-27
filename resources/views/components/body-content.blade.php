@@ -89,6 +89,8 @@ $content = preg_replace('/<img(.*?)height=".*?"(.*?)width=".*?"(.*?)src="(.*?)"(
 
 
 
+
+
     <div class="grid grid-cols-12 gap-5 mt-2 xl:mt-20">
 
 <div class="col-span-12 xl:col-span-3">

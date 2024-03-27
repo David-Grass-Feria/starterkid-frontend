@@ -21,6 +21,7 @@ class Homepage extends Component
       
       
       $services = \GrassFeria\StarterkidService\Models\Service::frontGetServicesWhereStatusIsOnline()->get();
+     
       return view('starterkid-frontend::livewire.front.homepage',['services' => $services]);
 
         
