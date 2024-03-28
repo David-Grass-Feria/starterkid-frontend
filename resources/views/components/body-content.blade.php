@@ -131,7 +131,7 @@ $content = preg_replace('/<img(.*?)height=".*?"(.*?)width=".*?"(.*?)src="(.*?)"(
      @if(isset($imgSrc))
      @if($imgSrc)
      <div class="mt-5 relative">
-        <img class="w-full max-w-[400px] xl:max-w-[600px]" 
+        <img width="600" height="400" class="w-full max-w-[400px] xl:max-w-[600px]" 
         srcset="
         {{$imgSrcMedium}} 360w,
         {{$imgSrc}} 600w" 
