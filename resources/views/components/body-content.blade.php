@@ -79,6 +79,36 @@ foreach ($imageLinks as $index => $originalLink) {
 // replace all .jpeg in .jpg
 $content = str_replace('.jpeg', '.jpg', $content);
 
+// remove all width and height from the image links
+$content = preg_replace_callback(
+    '/<img(.*?)src="(.*?)"(.*?)width=".*?"(.*?)height=".*?"(.*?)>/i',
+    function ($matches) {
+        $width = 900;
+        $height = round(($width / 16) * 9); // Basierend auf einem 16:9 Seitenverhältnis
+        return '<img' . $matches[1] . 'src="' . $matches[2] . '"' . $matches[3] . 'width="' . $width . '"' . $matches[4] . 'height="' . $height . '"' . $matches[5] . '>';
+    },
+    $content
+);
+
+$content = preg_replace_callback(
+    '/<img(.*?)width=".*?"(.*?)height=".*?"(.*?)src="(.*?)"(.*?)>/i',
+    function ($matches) {
+        $width = 900;
+        $height = round(($width / 16) * 9); // Basierend auf einem 16:9 Seitenverhältnis
+        return '<img' . $matches[1] . $matches[2] . $matches[3] . 'src="' . $matches[4] . '"' . $matches[5] . 'width="' . $width . '" height="' . $height . '">';
+    },
+    $content
+);
+
+$content = preg_replace_callback(
+    '/<img(.*?)height=".*?"(.*?)width=".*?"(.*?)src="(.*?)"(.*?)>/i',
+    function ($matches) {
+        $width = 900;
+        $height = round(($width / 16) * 9); // Basierend auf einem 16:9 Seitenverhältnis
+        return '<img' . $matches[1] . $matches[2] . $matches[3] . 'src="' . $matches[4] . '"' . $matches[5] . 'width="' . $width . '" height="' . $height . '">';
+    },
+    $content
+);
 
 
 @endphp
