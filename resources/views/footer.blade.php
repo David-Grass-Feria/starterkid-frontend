@@ -3,7 +3,7 @@
     <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
       <div class="xl:grid xl:grid-cols-3 xl:gap-8">
         <div class="space-y-8">
-          <x-starterkid::starterkid.logo class="h-7" />
+          <x-starterkid::starterkid.logo width="57" height="32" class="h-8 w-auto" />
          
           <div class="flex space-x-6">
             @if(config('starterkid-frontend.organization_facebook_url') !== '')
