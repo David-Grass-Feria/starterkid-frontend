@@ -131,7 +131,11 @@ $content = preg_replace('/<img(.*?)height=".*?"(.*?)width=".*?"(.*?)src="(.*?)"(
      @if(isset($imgSrc))
      @if($imgSrc)
      <div class="mt-5 relative">
-        <img class="w-full xl:max-w-[600px]" src="{{$imgSrc}}" alt="{{$imgAlt}}" />
+        <img class="w-full xl:max-w-[600px]" 
+        srcset="
+        {{$imgSrcMedium}} 360w,
+        {{$imgSrc}} 600w" 
+        src="{{$imgSrc}}" alt="{{$imgAlt}}" />
         <x-starterkid-frontend::image-credits imageCredits="{{$imageCredits}}"/>
      </div>
      @endif
