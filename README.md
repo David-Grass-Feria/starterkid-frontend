@@ -21,20 +21,30 @@ ORGANIZATION_LINKEDIN_URL=""
 ORGANIZATION_PINTEREST_URL=""
 ORGANIZATION_GITHUB_URL=""
 ORGANIZATION_WIKIPEDIA_URL=""
-RESPONSE_CACHE_ENABLED=false
+HOMEPAGE_TITLE="Ein Verein für deine Stadt"
+HOMEPAGE_DESCRIPTION="Wir engagieren uns für unsere Stadt Saalfeld/Saale. Im Saalfelder Stadtrat, im gesellschaftlichen Leben, bei Projekten, Aktionen und Veranstaltungen."
 ```
 
 # add observer in model
 ```shell
-protected static function boot()
+ protected static function boot()
     {
         parent::boot();
 
         static::updated(function ($model) {
-           \Spatie\ResponseCache\Facades\ResponseCache::forget(url('/').'/'.config('starterkid-service.service_slug').'/'.$model->slug);
+            $url = route('front.subject.show', ['slug' => $model->slug]);
+            $cacheKey = \GrassFeria\StarterkidFrontend\Services\GetCacheKey::ForUrl($url);
+            \Illuminate\Support\Facades\Cache::forget($cacheKey);
+            $cacheKeyHomepage = \GrassFeria\StarterkidFrontend\Services\GetCacheKey::ForUrl(route('front.homepage'));
+            \Illuminate\Support\Facades\Cache::forget($cacheKeyHomepage);
+           
         });
         static::deleted(function ($model) {
-            \Spatie\ResponseCache\Facades\ResponseCache::forget(url('/').'/'.config('starterkid-service.service_slug').'/'.$model->slug);
+            $url = route('front.subject.show', ['slug' => $model->slug]);
+            $cacheKey = \GrassFeria\StarterkidFrontend\Services\GetCacheKey::ForUrl($url);
+            \Illuminate\Support\Facades\Cache::forget($cacheKey);
+            $cacheKeyHomepage = \GrassFeria\StarterkidFrontend\Services\GetCacheKey::ForUrl(route('front.homepage'));
+            \Illuminate\Support\Facades\Cache::forget($cacheKeyHomepage);
          });
     }
 ```
