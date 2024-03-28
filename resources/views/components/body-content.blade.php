@@ -79,10 +79,7 @@ foreach ($imageLinks as $index => $originalLink) {
 // replace all .jpeg in .jpg
 $content = str_replace('.jpeg', '.jpg', $content);
 
-// remove all width and height from the image links
-$content = preg_replace('/<img(.*?)src="(.*?)"(.*?)width=".*?"(.*?)height=".*?"(.*?)>/i', '<img$1src="$2"$3$4$5>', $content);
-$content = preg_replace('/<img(.*?)width=".*?"(.*?)height=".*?"(.*?)src="(.*?)"(.*?)>/i', '<img$1$2$3src="$4"$5>', $content);
-$content = preg_replace('/<img(.*?)height=".*?"(.*?)width=".*?"(.*?)src="(.*?)"(.*?)>/i', '<img$1$2$3src="$4"$5>', $content);
+
 
 @endphp
 
