@@ -134,7 +134,6 @@ $content = preg_replace('/<img(.*?)height=".*?"(.*?)width=".*?"(.*?)src="(.*?)"(
         <img width="600" height="400" class="w-full max-w-[400px] xl:max-w-[600px]" 
         srcset="
         {{$imgSrcMedium}} 300w,
-        {{$imgSrcMediumLarge}} 700w,
         {{$imgSrc}} 600w" 
         src="{{$imgSrc}}" alt="{{$imgAlt}}" />
         <x-starterkid-frontend::image-credits imageCredits="{{$imageCredits}}"/>
