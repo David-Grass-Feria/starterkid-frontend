@@ -83,11 +83,19 @@ $content = str_replace('.jpeg', '.jpg', $content);
 $content = preg_replace_callback(
     '/<img(.*?)src="(.*?)"(.*?)(width=".*?")(.*?)(height=".*?")(.*?)>/i',
     function ($matches) {
-        $width = "width=\"" . config('starterkid.image_width_height_attributes.width') . "\"";
-        $aspectRatio = 16 / 9; // Angenommenes Seitenverhältnis
+        $widthAttribute = config('starterkid.image_width_height_attributes.width');
+        $width = "width=\"{$widthAttribute}\"";
+        
+        $aspectRatio = 16 / 9;
         $heightValue = round(900 / $aspectRatio);
-        $height = 'height="' . $heightValue . '"';
-        return "<img$matches[1]src=\"$matches[2]\"$matches[3] $width $matches[5] $height$matches[7]>";
+        $height = "height=\"{$heightValue}\"";
+        
+        $mediumWidth = config('starterkid.image_conversions.medium.width');
+        $largeWidth = config('starterkid.image_conversions.large.width');
+        $mediumSrc = str_replace("-large", "-medium", $matches[2]);
+        $srcset = "srcset=\"{$mediumSrc} {$mediumWidth}w, {$matches[2]} {$largeWidth}w\"";
+        
+        return "<img$matches[1] src=\"$matches[2]\"$matches[3] $width $matches[5] $height $srcset$matches[7]>";
     },
     $content
 );
@@ -95,14 +103,24 @@ $content = preg_replace_callback(
 $content = preg_replace_callback(
     '/<img(.*?)(width=".*?")(.*?)(height=".*?")(.*?)src="(.*?)"(.*?)>/i',
     function ($matches) {
-        $width = "width=\"" . config('starterkid.image_width_height_attributes.width') . "\"";
-        $aspectRatio = 16 / 9; // Angenommenes Seitenverhältnis
+        $widthAttribute = config('starterkid.image_width_height_attributes.width');
+        $width = "width=\"{$widthAttribute}\"";
+        
+        $aspectRatio = 16 / 9;
         $heightValue = round(900 / $aspectRatio);
-        $height = 'height="' . $heightValue . '"';
-        return "<img$matches[1] $width $matches[3] $height $matches[5]src=\"$matches[6]\"$matches[7]>";
+        $height = "height=\"{$heightValue}\"";
+        
+        $mediumWidth = config('starterkid.image_conversions.medium.width');
+        $largeWidth = config('starterkid.image_conversions.large.width');
+        $mediumSrc = str_replace("-large", "-medium", $matches[6]);
+        $srcset = "srcset=\"{$mediumSrc} {$mediumWidth}w, {$matches[6]} {$largeWidth}w\"";
+        
+        return "<img$matches[1] $width $matches[3] $height $matches[5] src=\"$matches[6]\" $srcset$matches[7]>";
     },
     $content
 );
+
+
 
 
 
@@ -153,10 +171,8 @@ $content = preg_replace_callback(
      @if(isset($imgSrc))
      @if($imgSrc)
      <div class="mt-5 relative">
-        <img width="600" height="400" class="w-full xl:max-w-[600px]" 
-        srcset="
-        {{$imgSrcMedium}} 300w,
-        {{$imgSrc}} 600w" 
+        <img width="{{config('starterkid.image_conversions.image_width_height_attributes.width')}}" height="{{config('starterkid.image_conversions.image_width_height_attributes.height')}}" class="w-full xl:max-w-[600px]" 
+        srcset="{{$imgSrcMedium}} {{config('starterkid.image_conversions.medium.width')}}w,{{$imgSrc}} {{config('starterkid.image_conversions.large.width')}}w" 
         src="{{$imgSrc}}" alt="{{$imgAlt}}" />
         <x-starterkid-frontend::image-credits imageCredits="{{$imageCredits}}"/>
      </div>
