@@ -83,7 +83,7 @@ $content = str_replace('.jpeg', '.jpg', $content);
 $content = preg_replace_callback(
     '/<img(.*?)src="(.*?)"(.*?)(width=".*?")(.*?)(height=".*?")(.*?)>/i',
     function ($matches) {
-        $width = 'width="600"';
+        $width = "width=\"" . config('starterkid.image_width_height_attributes.width') . "\"";
         $aspectRatio = 16 / 9; // Angenommenes Seitenverhältnis
         $heightValue = round(900 / $aspectRatio);
         $height = 'height="' . $heightValue . '"';
@@ -95,7 +95,7 @@ $content = preg_replace_callback(
 $content = preg_replace_callback(
     '/<img(.*?)(width=".*?")(.*?)(height=".*?")(.*?)src="(.*?)"(.*?)>/i',
     function ($matches) {
-        $width = 'width="600"';
+        $width = "width=\"" . config('starterkid.image_width_height_attributes.width') . "\"";
         $aspectRatio = 16 / 9; // Angenommenes Seitenverhältnis
         $heightValue = round(900 / $aspectRatio);
         $height = 'height="' . $heightValue . '"';
