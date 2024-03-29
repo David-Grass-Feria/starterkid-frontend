@@ -83,7 +83,7 @@ $content = str_replace('.jpeg', '.jpg', $content);
 $content = preg_replace_callback(
     '/<img(.*?)src="(.*?)"(.*?)(width=".*?")(.*?)(height=".*?")(.*?)>/i',
     function ($matches) {
-        $width = 'width="900"';
+        $width = 'width="600"';
         $aspectRatio = 16 / 9; // Angenommenes Seitenverhältnis
         $heightValue = round(900 / $aspectRatio);
         $height = 'height="' . $heightValue . '"';
@@ -95,7 +95,7 @@ $content = preg_replace_callback(
 $content = preg_replace_callback(
     '/<img(.*?)(width=".*?")(.*?)(height=".*?")(.*?)src="(.*?)"(.*?)>/i',
     function ($matches) {
-        $width = 'width="900"';
+        $width = 'width="600"';
         $aspectRatio = 16 / 9; // Angenommenes Seitenverhältnis
         $heightValue = round(900 / $aspectRatio);
         $height = 'height="' . $heightValue . '"';
@@ -153,7 +153,7 @@ $content = preg_replace_callback(
      @if(isset($imgSrc))
      @if($imgSrc)
      <div class="mt-5 relative">
-        <img width="900" height="506" class="w-full max-w-[400px] xl:max-w-[600px]" 
+        <img width="600" height="400" class="w-full xl:max-w-[600px]" 
         srcset="
         {{$imgSrcMedium}} 300w,
         {{$imgSrc}} 600w" 
