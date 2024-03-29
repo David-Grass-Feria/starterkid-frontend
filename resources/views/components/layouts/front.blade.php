@@ -38,7 +38,7 @@
     
     @yield('schema')
  
-    
+    <x-starterkid::starterkid.font />
     <x-starterkid::starterkid.favicon />
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -69,5 +69,5 @@
     @livewireScripts
     
 </body>
-<x-starterkid::starterkid.font />
+
 </html>
