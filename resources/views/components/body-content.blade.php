@@ -1,4 +1,4 @@
-<div class="w-full xl:max-w-7xl mx-auto">
+<div class="w-full xl:w-7xl mx-auto">
 
 @php
  //replace youtube videos
@@ -158,7 +158,7 @@ $content = preg_replace_callback(
 
 
 
-     <div class="col-span-12 xl:col-span-9 w-full xl:max-w-xl">   
+     <div class="col-span-12 xl:col-span-9 w-full xl:w-xl">   
     <div class="w-full overflow-hidden">
         <div class="mb-5">
      <h1 class="text-2xl font-bold text-font_primary md:text-4xl xl:text-5xl">{{$heading}}</h1>
