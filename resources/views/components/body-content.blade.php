@@ -1,4 +1,4 @@
-<div class="max-w-7xl mx-auto">
+<div class="w-full xl:max-w-7xl mx-auto">
 
 @php
  //replace youtube videos
@@ -6,7 +6,7 @@
        '/<oembed url="https:\/\/www\.youtube\.com\/watch\?v=([a-zA-Z0-9_-]+)(?:&[^"]+)?"><\/oembed>/',
        function ($matches) {
            $videoId = $matches[1];
-           return '<div><iframe class="aspect-video h-full w-full" loading="lazy" src="https://www.youtube-nocookie.com/embed/' . $videoId . '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
+           return '<div><iframe class="aspect-video h-full w-full" width="900" height="506" loading="lazy" src="https://www.youtube-nocookie.com/embed/' . $videoId . '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
        },
        $content
    );
@@ -18,7 +18,7 @@ $content = preg_replace_callback(
     '/<oembed url="https:\/\/vimeo\.com\/([a-zA-Z0-9_-]+)"><\/oembed>/',
     function ($matches) {
         $videoId = $matches[1];
-        return '<div><iframe class="aspect-video h-full w-full" loading="lazy" src="https://player.vimeo.com/video/' . $videoId . '" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>';
+        return '<div><iframe class="aspect-video h-full w-full" loading="lazy" width="900" height="506" src="https://player.vimeo.com/video/' . $videoId . '" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>';
     },
     $content
 );
@@ -79,36 +79,31 @@ foreach ($imageLinks as $index => $originalLink) {
 // replace all .jpeg in .jpg
 $content = str_replace('.jpeg', '.jpg', $content);
 
-// remove all width and height from the image links
+// change all width and height from the image links
 $content = preg_replace_callback(
-    '/<img(.*?)src="(.*?)"(.*?)width=".*?"(.*?)height=".*?"(.*?)>/i',
+    '/<img(.*?)src="(.*?)"(.*?)(width=".*?")(.*?)(height=".*?")(.*?)>/i',
     function ($matches) {
-        $width = 900;
-        $height = round(($width / 16) * 9); // Basierend auf einem 16:9 Seitenverhältnis
-        return '<img' . $matches[1] . 'src="' . $matches[2] . '"' . $matches[3] . 'width="' . $width . '"' . $matches[4] . 'height="' . $height . '"' . $matches[5] . '>';
+        $width = 'width="900"';
+        $aspectRatio = 16 / 9; // Angenommenes Seitenverhältnis
+        $heightValue = round(900 / $aspectRatio);
+        $height = 'height="' . $heightValue . '"';
+        return "<img$matches[1]src=\"$matches[2]\"$matches[3] $width $matches[5] $height$matches[7]>";
     },
     $content
 );
 
 $content = preg_replace_callback(
-    '/<img(.*?)width=".*?"(.*?)height=".*?"(.*?)src="(.*?)"(.*?)>/i',
+    '/<img(.*?)(width=".*?")(.*?)(height=".*?")(.*?)src="(.*?)"(.*?)>/i',
     function ($matches) {
-        $width = 900;
-        $height = round(($width / 16) * 9); // Basierend auf einem 16:9 Seitenverhältnis
-        return '<img' . $matches[1] . $matches[2] . $matches[3] . 'src="' . $matches[4] . '"' . $matches[5] . 'width="' . $width . '" height="' . $height . '">';
+        $width = 'width="900"';
+        $aspectRatio = 16 / 9; // Angenommenes Seitenverhältnis
+        $heightValue = round(900 / $aspectRatio);
+        $height = 'height="' . $heightValue . '"';
+        return "<img$matches[1] $width $matches[3] $height $matches[5]src=\"$matches[6]\"$matches[7]>";
     },
     $content
 );
 
-$content = preg_replace_callback(
-    '/<img(.*?)height=".*?"(.*?)width=".*?"(.*?)src="(.*?)"(.*?)>/i',
-    function ($matches) {
-        $width = 900;
-        $height = round(($width / 16) * 9); // Basierend auf einem 16:9 Seitenverhältnis
-        return '<img' . $matches[1] . $matches[2] . $matches[3] . 'src="' . $matches[4] . '"' . $matches[5] . 'width="' . $width . '" height="' . $height . '">';
-    },
-    $content
-);
 
 
 @endphp
@@ -118,9 +113,9 @@ $content = preg_replace_callback(
 
 
 
-    <div class="grid grid-cols-12 gap-5 mt-2 xl:mt-20">
+    <div class="grid grid-cols-12 gap-5 xl:gap-40 mt-2 xl:mt-20">
 
-<div class="col-span-12 xl:col-span-3">
+<div class="col-span-12 mx-auto xl:col-span-3">
    
          
          <x-starterkid-frontend::heading-item-wrapper>
@@ -158,7 +153,7 @@ $content = preg_replace_callback(
      @if(isset($imgSrc))
      @if($imgSrc)
      <div class="mt-5 relative">
-        <img width="600" height="400" class="w-full max-w-[400px] xl:max-w-[600px]" 
+        <img width="900" height="506" class="w-full max-w-[400px] xl:max-w-[600px]" 
         srcset="
         {{$imgSrcMedium}} 300w,
         {{$imgSrc}} 600w" 
