@@ -1,3 +1,5 @@
+
+
 <div class="mx-auto max-w-[1900px] flex flex-col">
     @if(isset($header))
     <div class="flex flex-col items-center xl:flex-row mt-5">
@@ -22,3 +24,4 @@
 </div>
 @endif
 </div>
+

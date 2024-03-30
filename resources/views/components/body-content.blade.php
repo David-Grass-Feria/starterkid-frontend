@@ -165,7 +165,7 @@ $content = preg_replace_callback(
      @if(isset($imgSrc))
      @if($imgSrc)
      
-     <livewire-starterkid-frontend::show-image lazy :imgSrc="$imgSrc" :imgAlt="$imgAlt" :imageCredits="$imageCredits" />
+     <livewire-starterkid-frontend::show-image lazy :imgSrc="$imgSrc" :imgAlt="$imgAlt" :imageCredits="$imageCredits" width="{{config('starterkid.image_width_height_attributes.large.width')}}" height="{{config('starterkid.image_width_height_attributes.large.height')}}" class="w-full xl:max-w-[600px]" />
      @endif
      @endif
         </div>

@@ -1,10 +1,17 @@
+
+
+
 <article class="flex flex-col items-start justify-between bg-white rounded-3xl border border-gray-400">
     <div class="relative w-full">
       @if (!empty($imgSrc))
-      <img width="{{config('starterkid.image_width_height_attributes.medium.width')}}" height="{{config('starterkid.image_width_height_attributes.medium.height')}}" src="{{$imgSrc}}" alt="{{$imgAlt}}" class="w-full object-cover rounded-t-3xl aspect-[2/2] lg:aspect-[3/3]">
       
+      
+        <img width="{{config('starterkid.image_width_height_attributes.medium.width')}}" height="{{config('starterkid.image_width_height_attributes.medium.height')}}" class="w-full object-cover rounded-t-3xl aspect-[2/2] lg:aspect-[3/3]" 
+        src="{{$imgSrc}}" alt="{{$imgAlt}}" />
       @else
-      <img width="{{config('starterkid.image_width_height_attributes.medium.width')}}" height="{{config('starterkid.image_width_height_attributes.medium.height')}}" src="{{Cache::has('logo') ? Cache::get('logo') : asset('/logo.png')}}" alt="{{$imgAlt}}" class="w-full object-contain rounded-t-3xl aspect-[2/2] lg:aspect-[3/3]">
+      <img width="{{config('starterkid.image_width_height_attributes.medium.width')}}" height="{{config('starterkid.image_width_height_attributes.medium.height')}}" class="w-full object-contain rounded-t-3xl aspect-[2/2] lg:aspect-[3/3]" 
+    src="{{Cache::has('logo') ? Cache::get('logo') : asset('/logo.png')}}" alt="{{$imgAlt}}" />
+     
       @endif
       
       <x-starterkid-frontend::image-credits imageCredits="{{$imgCredits}}"/>
@@ -24,3 +31,4 @@
     </div>
   </a>
   </article>
+

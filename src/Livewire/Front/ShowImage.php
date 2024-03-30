@@ -12,10 +12,19 @@ use GrassFeria\Starterkid\Traits\LivewireIndexTrait;
 
 class ShowImage extends Component
 {
-
+    public $blogpost;
+    public $width;
+    public $height;
     public $imgSrc;
     public $imgAlt;
     public $imageCredits;
+    public $class;
+    public $href;
+    public $hrefTitle;
+    public $dateTime;
+    public $author;
+    public $heading;
+    public $preview;
     
     
     public function render()
