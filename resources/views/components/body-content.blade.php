@@ -69,11 +69,18 @@ $content = preg_replace_callback(
         },
         $large
     );
+
+    // replace all images with webp
+    $webpLinks = [];
+foreach ($largeLinks as $link) {
+    $webpLinks[] = preg_replace('/\.(jpg|jpeg|png)$/i', '.webp', $link);
+}
+
 }
 
 // save in the content
 foreach ($imageLinks as $index => $originalLink) {
-    $content = str_replace($originalLink, $largeLinks[$index], $content);
+    $content = str_replace($originalLink, $webpLinks[$index], $content);
 }
 
 // replace all .jpeg in .jpg
