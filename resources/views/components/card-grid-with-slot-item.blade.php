@@ -1,10 +1,10 @@
 <article class="flex flex-col items-start justify-between bg-white rounded-3xl border border-gray-400">
     <div class="relative w-full">
       @if (!empty($imgSrc))
-      <img src="{{$imgSrc}}" srcset="{{$imgSrcMedium}} {{config('starterkid.image_conversions.medium.width')}}w,{{$imgSrc}} {{config('starterkid.image_conversions.large.width')}}w" alt="{{$imgAlt}}" class="w-full object-cover rounded-t-3xl aspect-[2/2] lg:aspect-[3/3]">
+      <img src="{{$imgSrc}}" alt="{{$imgAlt}}" class="w-full object-cover rounded-t-3xl aspect-[2/2] lg:aspect-[3/3]">
       
       @else
-      <img src="{{Cache::has('logo') ? Cache::get('logo') : asset('/logo.png')}}" srcset="{{$imgSrcMedium}} {{config('starterkid.image_conversions.medium.width')}}w,{{$imgSrc}} {{config('starterkid.image_conversions.large.width')}}w" alt="{{$imgAlt}}" class="w-full object-contain rounded-t-3xl aspect-[2/2] lg:aspect-[3/3]">
+      <img src="{{Cache::has('logo') ? Cache::get('logo') : asset('/logo.png')}}" alt="{{$imgAlt}}" class="w-full object-contain rounded-t-3xl aspect-[2/2] lg:aspect-[3/3]">
       @endif
       
       <x-starterkid-frontend::image-credits imageCredits="{{$imgCredits}}"/>
