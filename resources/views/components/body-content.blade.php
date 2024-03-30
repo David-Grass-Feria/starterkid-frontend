@@ -90,12 +90,9 @@ $content = preg_replace_callback(
         $heightValue = round(900 / $aspectRatio);
         $height = "height=\"{$heightValue}\"";
         
-        $mediumWidth = config('starterkid.image_conversions.medium.width');
-        $largeWidth = config('starterkid.image_conversions.large.width');
-        $mediumSrc = str_replace("-large", "-medium", $matches[2]);
-        $srcset = "srcset=\"{$mediumSrc} {$mediumWidth}w, {$matches[2]} {$largeWidth}w\"";
+       
         
-        return "<img$matches[1] src=\"$matches[2]\"$matches[3] $width $matches[5] $height $srcset$matches[7]>";
+        return "<img$matches[1] src=\"$matches[2]\"$matches[3] $width $matches[5] $height>";
     },
     $content
 );
@@ -110,12 +107,9 @@ $content = preg_replace_callback(
         $heightValue = round(900 / $aspectRatio);
         $height = "height=\"{$heightValue}\"";
         
-        $mediumWidth = config('starterkid.image_conversions.medium.width');
-        $largeWidth = config('starterkid.image_conversions.large.width');
-        $mediumSrc = str_replace("-large", "-medium", $matches[6]);
-        $srcset = "srcset=\"{$mediumSrc} {$mediumWidth}w, {$matches[6]} {$largeWidth}w\"";
         
-        return "<img$matches[1] $width $matches[3] $height $matches[5] src=\"$matches[6]\" $srcset$matches[7]>";
+        
+        return "<img$matches[1] $width $matches[3] $height $matches[5] src=\"$matches[6]\">";
     },
     $content
 );
@@ -172,8 +166,6 @@ $content = preg_replace_callback(
      @if($imgSrc)
      <div class="mt-5 relative">
         <img width="{{config('starterkid.image_width_height_attributes.large.width')}}" height="{{config('starterkid.image_width_height_attributes.large.height')}}" class="w-full xl:max-w-[600px]" 
-        srcset="{{$imgSrcMedium}} {{config('starterkid.image_conversions.medium.width')}}w,{{$imgSrc}} {{config('starterkid.image_conversions.large.width')}}w"
-        sizes="(max-width: {{config('starterkid.image_conversions.large.width')}}px) {{config('starterkid.image_conversions.medium.width')}}px, {{config('starterkid.image_conversions.large.width')}}px" 
         src="{{$imgSrc}}" alt="{{$imgAlt}}" />
         <x-starterkid-frontend::image-credits imageCredits="{{$imageCredits}}"/>
      </div>
