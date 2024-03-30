@@ -1,4 +1,4 @@
-<div class="sticky top-0 z-10 bg-body w-full border-b border-gray-400 mx-auto" x-data="{open:false}" x-cloak>
+<div class="sticky top-0 z-10 bg-body w-full border-b border-gray-400 mx-auto">
     <header class="bodyColor border-b border-gray-400">
         <nav class="mx-auto flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div class="flex lg:flex-1">
@@ -39,7 +39,7 @@
           </div>
         </nav>
         <!-- Mobile menu, show/hide based on menu open state. -->
-        <div x-show="open" class="lg:hidden" role="dialog" aria-modal="true">
+        <div x-data="{open:false}" x-cloak x-show="open" class="lg:hidden" role="dialog" aria-modal="true">
           <!-- Background backdrop, show/hide based on slide-over state. -->
           <div class="fixed inset-0 z-10"></div>
           <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-body px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10">
