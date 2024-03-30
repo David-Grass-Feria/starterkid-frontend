@@ -179,7 +179,7 @@ $content = preg_replace_callback(
      @endif
      @endif
         </div>
-     <div class="prose mt-10 overflow-hidden">
+     <div class="mt-10 overflow-hidden">
      {!!$content!!}
      </div>   
     
