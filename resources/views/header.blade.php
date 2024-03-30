@@ -39,7 +39,8 @@
           </div>
         </nav>
         <!-- Mobile menu, show/hide based on menu open state. -->
-        <div x-data="{open:false}" x-cloak x-show="open" class="lg:hidden" role="dialog" aria-modal="true">
+        <div x-data="{open:false}" x-cloak>
+        <div x-show="open" class="lg:hidden" role="dialog" aria-modal="true">
           <!-- Background backdrop, show/hide based on slide-over state. -->
           <div class="fixed inset-0 z-10"></div>
           <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-body px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10">
@@ -84,5 +85,6 @@
             </div>
           </div>
         </div>
+      </div>
       </header>
     </div>
