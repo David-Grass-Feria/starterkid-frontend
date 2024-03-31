@@ -1,10 +1,10 @@
-<div class="sticky top-0 z-10 bg-body w-full border-b border-gray-400 mx-auto" x-data="{open:false}">
+<div class="sticky top-0 z-10 bg-white w-full border-b border-gray-400 mx-auto" x-data="{open:false}">
     <header class="bodyColor border-b border-gray-400">
         <nav class="mx-auto flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div class="flex lg:flex-1">
             <a wire:navigate href="{{route('front.homepage')}}" title="{{config('app.name')}}" class="-m-1.5 p-1.5">
               <span class="sr-only">{{config('app.name')}}</span>
-              <x-starterkid::starterkid.logo conversion="logo-thumb" width="57" height="32" class="h-8 w-auto" alt="{{config('app.name')}}" />
+              <x-starterkid::starterkid.logo conversion="logo-thumb" width="57" height="32" class="h-8 w-auto" alt="{{__('This is the image logo of')}} {{config('app.name')}}" />
             </a>
           </div>
           <div class="flex lg:hidden">
@@ -47,7 +47,7 @@
             <div class="flex items-center justify-between">
               <a href="{{route('front.homepage')}}" title="{{config('app.name')}}" class="-m-1.5 p-1.5">
                 <span class="sr-only">{{config('app.name')}}</span>
-                <x-starterkid::starterkid.logo conversion="logo-thumb" width="57" height="32" class="h-8 w-auto" alt="{{config('app.name')}}" />
+                <x-starterkid::starterkid.logo conversion="logo-thumb" width="57" height="32" class="h-8 w-auto" alt="{{__('This is the image logo of')}} {{config('app.name')}}" />
               </a>
               <button x-on:click="open = !open" type="button" class="-m-2.5 rounded-md p-2.5 text-font_primary">
                 <span class="sr-only">Close menu</span>
