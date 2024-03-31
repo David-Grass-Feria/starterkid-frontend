@@ -1,4 +1,4 @@
-<article class="relative flex items-center space-x-3 rounded-lg border border-primary bg-white px-6 py-5">
+<div class="relative flex items-center space-x-3 rounded-lg border border-primary bg-white px-6 py-5">
 <div>
  
     <div class="flex-shrink-0">
@@ -13,5 +13,5 @@
     </div>
  
   </div>
-</article>
+</div>
 
