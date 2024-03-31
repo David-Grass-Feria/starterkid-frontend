@@ -5,7 +5,7 @@
       <div class="mx-auto lg:flex lg:items-center lg:gap-x-10">
         <div class="mx-auto">
         
-          <h1 class="mt-10 text-center text-4xl font-bold text-font_primary xl:text-8xl">{{$h1}} <br> <div class="text-white bg-font_primary p-3 rounded-md mt-5 mb-5">{{$h1Color}}</span></div>
+          <h1 class="mt-10 text-center text-4xl font-bold text-font_primary xl:text-8xl">{{$h1}} <br> {{$h1Color}}</h1>
           <p class="mt-6 w.full md:max-w-2xl mx-auto text-lg leading-8 text-font_primary text-center">{{$description}}</p>
           <div class="mt-10 flex flex-col space-y-5 items-center sm:flex-row sm:items-center sm:justify-center sm:space-x-3 sm:space-y-0 ">
             <a href="{{$href}}" title="{{$hrefTitle}}">
