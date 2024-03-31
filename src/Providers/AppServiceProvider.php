@@ -40,10 +40,12 @@ class AppServiceProvider extends ServiceProvider
     {
         
         
+        $cacheMiddleware = $this->app['router'];
+        $cacheMiddleware->aliasMiddleware('cache', CacheResponseMiddleware::class);
+        $minifyMiddleware = $this->app['router'];
+        $minifyMiddleware->aliasMiddleware('minify', MinifyHtmlMiddleware::class);
+       
         
-        $router = $this->app['router'];
-        $router->aliasMiddleware('cache', CacheResponseMiddleware::class);
-        $router->aliasMiddleware('minify', MinifyHtmlMiddleware::class);
         
         $this->loadViewsFrom(__DIR__.'/../../resources/views', 'starterkid-frontend');
         $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');

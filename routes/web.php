@@ -18,7 +18,7 @@ use GrassFeria\StarterkidFrontend\Livewire\Front\SitemapPage;
 
 Route::middleware(['web'])->group(function () {
    
-    Route::get('/',Homepage::class)->name('front.homepage')->middleware('minify','cache');
+    Route::get('/',Homepage::class)->name('front.homepage')->middleware('cache','minify');
     Route::get('/sitemap',SitemapPage::class)->name('front.sitemap-page');
 
    
