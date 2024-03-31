@@ -1,7 +1,7 @@
 
 
 
-<article class="flex flex-col items-start justify-between bg-white rounded-3xl border border-gray-400">
+<article class="flex flex-col items-start justify-between bg-white rounded-3xl border border-primary">
     <div class="relative w-full">
       @if (!empty($imgSrc))
       
