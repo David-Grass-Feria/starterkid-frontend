@@ -1,4 +1,4 @@
-<div>
+<div class="relative">
 
   <div class="flex items-center space-x-3 rounded-lg border border-primary bg-white px-6 py-5">
     <div class="flex-shrink-0">
