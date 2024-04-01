@@ -110,7 +110,7 @@
     return { transition: this.isOpen, "transform-180": this.isOpen };
   },
 
-  ...
+
 }));
       </script>
     @endpush
