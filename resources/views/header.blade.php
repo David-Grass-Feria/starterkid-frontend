@@ -89,7 +89,7 @@
       </header>
     </div>
 
-    @push('scripts')
+  
     <script>
       Alpine.data("navbar", () => ({
   isOpen: false,
@@ -113,4 +113,4 @@
 
 }));
       </script>
-    @endpush
+   
