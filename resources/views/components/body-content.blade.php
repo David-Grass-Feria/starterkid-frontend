@@ -173,6 +173,10 @@ $content = preg_replace_callback(
      @if($imgSrc)
      <div class="relative mt-5">
      <img src="{{$imgSrc}}" alt="{{$imgAlt}}" width="{{config('starterkid.image_width_height_attributes.large.width')}}" height="{{config('starterkid.image_width_height_attributes.large.height')}}" class="w-full xl:max-w-[600px]" />
+     <picture>
+        <source srcset="{{$imgSrcMedium ?? ''}}" media="(max-width: 768px)">
+        <img src="{{$imgSrc}}" alt="{{$imgAlt}}" width="{{config('starterkid.image_width_height_attributes.large.width')}}" height="{{config('starterkid.image_width_height_attributes.large.height')}}" class="w-full xl:max-w-[600px]">
+    </picture>
      <x-starterkid-frontend::image-credits imageCredits="{{$imageCredits}}"/>
      </div>
      @endif
