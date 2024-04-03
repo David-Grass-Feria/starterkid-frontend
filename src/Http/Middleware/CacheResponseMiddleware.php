@@ -23,9 +23,24 @@ class CacheResponseMiddleware
         }
 
         $response = $next($request);
+        $htmlContent = $response->getContent();
 
-        Cache::forever($cacheKey, $response->getContent());
+        // Pseudo-Code zum Parsen des HTML-Inhalts und Hinzufügen der Versionsnummer
+        $document = new \DOMDocument();
+        @$document->loadHTML($htmlContent);
+        $images = $document->getElementsByTagName('img');
 
-        return $response;
+        foreach ($images as $img) {
+            $src = $img->getAttribute('src');
+            // Generiere eine Versionsnummer, z.B. basierend auf dem aktuellen Timestamp
+            $version = time(); // Beispiel, besser wäre eine spezifische Logik, die sich bei jedem Cache-Reset ändert
+            $newSrc = $src . '?version=' . $version;
+            $img->setAttribute('src', $newSrc);
+        }
+
+        $htmlContent = $document->saveHTML();
+        Cache::forever($cacheKey, $htmlContent);
+
+        return response($htmlContent);
     }
 }
