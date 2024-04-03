@@ -15,7 +15,6 @@
         </div>
         </div>
         <div class="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow">
-        <livewire:starterkid-frontend::show-image lazy="on-load" width="{{config('starterkid.image_width_height_attributes.medium.width')}}" height="{{config('starterkid.image_width_height_attributes.medium.height')}}" imgSrc="{{$imgSrc}}" imgAlt="{{$imgAlt}}" class="rounded-3xl shadow-lg ring-1 ring-primary w-full md:max-w-md mx-auto xl:max-w-lg" />
         </div>
       </div>
     </div>
