@@ -24,7 +24,7 @@ class CacheResponseMiddleware
 
         $response = $next($request);
 
-        Cache::forever($cacheKey, $response->getContent());
+        Cache::put($cacheKey, $response->getContent(), 60 * 24 * 7); // Speichert für 1 Woche
 
         return $response;
     }
