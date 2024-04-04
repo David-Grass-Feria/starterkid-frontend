@@ -47,7 +47,7 @@
     <!-- Styles -->
     <x-starterkid::starterkid.extra-styles />
     @stack('styles')
-    @livewireStyles
+    
 
 </head>
 
@@ -66,7 +66,7 @@
   
     @yield('scripts')
     @stack('scripts')
-    @livewireScripts
+    
     
 </body>
 

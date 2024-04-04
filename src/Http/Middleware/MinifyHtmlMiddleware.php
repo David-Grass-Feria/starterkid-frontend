@@ -16,6 +16,11 @@ class MinifyHtmlMiddleware
      */
     public function handle($request, Closure $next)
     {
+        
+        if(!config('starterkid-frontend.frontend_minify')){
+            return $next($request);
+        }
+        
         $response = $next($request);
 
         if ($response instanceof Response && strpos($response->headers->get('Content-Type'), 'text/html') === 0) {
@@ -24,10 +29,14 @@ class MinifyHtmlMiddleware
             $response->setContent($minifiedContent);
         }
 
+       
         return $response;
+   
+       
     }
 
     protected function minifyHtml(string $html): string
+
     {
         $search = [
             '/\>[^\S ]+/s',     // strip whitespaces after tags, except space
@@ -43,6 +52,13 @@ class MinifyHtmlMiddleware
             ''
         ];
 
-        return preg_replace($search, $replace, $html);
+        
+       
+            return preg_replace($search, $replace, $html);
+         
+       
+        
+
+        
     }
 }

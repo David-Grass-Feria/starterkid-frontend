@@ -2,6 +2,7 @@
 
 return [
 'frontend_cache'                                => env('FRONTEND_CACHE',false),
+'frontend_minify'                               => env('FRONTEND_MINIFY',false),
 'login_link'                                    => env('LOGIN_LINK',true),
 'created_by_url'                                => env('CREATED_BY_URL','https://all-inkl.com'),
 'created_by_anchor'                             => env('CREATED_BY_ANCHOR','Tierheim CMS'),
