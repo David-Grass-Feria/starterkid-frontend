@@ -198,6 +198,6 @@ $content = preg_replace_callback(
 </div>
 
 @push('styles')
-<link rel="preload" href="{{$imgSrc}}" as="image">
+
 <link rel="preload" href="{{$imgSrcMedium}}" as="image">
 @endpush
