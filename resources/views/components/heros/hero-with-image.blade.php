@@ -24,5 +24,5 @@
   </div>
 
   @push('styles')
-  <link rel="preload" href="{{$imgSrc}}" as="image">
+  <link fetchpriority="high" rel="preload" href="{{$imgSrc}}" as="image">
   @endpush

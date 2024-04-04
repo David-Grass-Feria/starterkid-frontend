@@ -199,5 +199,5 @@ $content = preg_replace_callback(
 
 @push('styles')
 
-<link rel="preload" href="{{$imgSrcMedium}}" as="image">
+<link fetchpriority="high" rel="preload" href="{{$imgSrcMedium}}" as="image">
 @endpush
