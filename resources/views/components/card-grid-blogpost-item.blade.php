@@ -17,7 +17,7 @@
       <x-starterkid-frontend::image-credits imageCredits="{{$imgCredits}}"/>
     </div>
     
-    <a {{$attributes}} href="{{$href}}" title="{{$hrefTitle}}">
+    <a wire:navigate href="{{$href}}" title="{{$hrefTitle}}">
     <div class="w-full text-font_primary p-3">
       <div class="mt-8 flex items-center gap-x-4 text-xs">
         <time datetime="{{$dateTime}}">{{$dateTime}}</time>

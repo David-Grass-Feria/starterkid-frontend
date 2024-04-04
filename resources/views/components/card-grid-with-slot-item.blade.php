@@ -10,7 +10,7 @@
       <x-starterkid-frontend::image-credits imageCredits="{{$imgCredits}}"/>
     </div>
     
-    <a {{$attributes}} href="{{$href}}" title="{{$hrefTitle}}">
+    <a target="_blank" href="{{$href}}" title="{{$hrefTitle}}">
     <div class="w-full text-font_primary p-3">
       <h2 class="mt-3 text-lg font-bold">{{$heading}}</h2>
      {{$slot}}
