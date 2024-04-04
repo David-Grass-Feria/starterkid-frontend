@@ -169,7 +169,7 @@ $content = preg_replace_callback(
         <span class="text-xs text-font_primary xl:text-sm">{{$author}}</span>
      </div>
      @endif
-     @if(isset($imgSrc))
+     @if(isset($imgSrc) AND isset($imgSrcMedium))
      @if($imgSrc)
      <div class="relative mt-5">
         <picture>
@@ -198,5 +198,7 @@ $content = preg_replace_callback(
 </div>
 
 @push('styles')
+@if(isset($imgSrc) AND isset($imgSrcMedium))
 <link fetchpriority="high" rel="preload" href="{{$imgSrcMedium}}" as="image">
+@endif
 @endpush
