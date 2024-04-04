@@ -1,4 +1,4 @@
-<div class="sticky top-0 z-10 bg-white w-full border-b border-gray-400 mx-auto" x-data="{open:false}">
+<div class="sticky top-0 z-10 bg-white w-full border-b border-gray-400 mx-auto" x-data="navbar">
     <header class="bodyColor border-b border-gray-400">
         <nav class="mx-auto flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div class="flex lg:flex-1">
@@ -8,7 +8,7 @@
             </a>
           </div>
           <div class="flex lg:hidden">
-            <button x-on:click="open = !open" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-font_primary">
+            <button x-on:click="toggle" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-font_primary">
               <span class="sr-only">Open main menu</span>
               <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -49,7 +49,7 @@
                 <span class="sr-only">{{config('app.name')}}</span>
                 <x-starterkid::starterkid.logo conversion="logo-thumb" width="57" height="32" class="h-8 w-auto" alt="{{__('This is the image logo of')}} {{config('app.name')}}" />
               </a>
-              <button x-on:click="open = !open" type="button" class="-m-2.5 rounded-md p-2.5 text-font_primary">
+              <button x-on:click="toggle" type="button" class="-m-2.5 rounded-md p-2.5 text-font_primary">
                 <span class="sr-only">Close menu</span>
                 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -91,4 +91,15 @@
 
   
 
-   
+    <script>
+      document.addEventListener('alpine:init', () => {
+          Alpine.data('navbar', () => ({
+              open: false,
+              toggle() {
+                 this.open = !this.open;
+                  
+                  
+              }
+          }));
+      });
+  </script>
