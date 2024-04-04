@@ -175,7 +175,7 @@ $content = preg_replace_callback(
         <picture>
             <source media="(max-width: 480px)" srcset="{{$imgSrcMedium}}">
             <source media="(min-width: 600px)" srcset="{{$imgSrc}}">
-            <img src="{{$imgSrc}}" alt="{{$imgAlt}}" width="{{config('starterkid.image_width_height_attributes.large.width')}}" height="{{config('starterkid.image_width_height_attributes.large.height')}}" class="w-full xl:max-w-[600px]">
+            <img fetchpriority="high" src="{{$imgSrc}}" alt="{{$imgAlt}}" width="{{config('starterkid.image_width_height_attributes.large.width')}}" height="{{config('starterkid.image_width_height_attributes.large.height')}}" class="w-full xl:max-w-[600px]">
 
           </picture>
      <x-starterkid-frontend::image-credits imageCredits="{{$imageCredits}}"/>
@@ -197,7 +197,3 @@ $content = preg_replace_callback(
 
 </div>
 
-@push('styles')
-
-<link fetchpriority="high" rel="preload" href="{{$imgSrcMedium}}" as="image">
-@endpush
