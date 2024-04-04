@@ -47,7 +47,7 @@
     <!-- Styles -->
     <x-starterkid::starterkid.extra-styles />
     @stack('styles')
-    @livewireStyles(['nonce' => csp_nonce() ])
+    @livewireStyles
 
 </head>
 
@@ -67,7 +67,7 @@
     @yield('scripts')
     @stack('scripts')
     
-    @livewireScripts(['nonce' => csp_nonce() ])
+    @livewireScripts
 </body>
 
 </html>
