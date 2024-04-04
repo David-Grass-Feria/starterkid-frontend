@@ -16,6 +16,10 @@ class CacheResponseMiddleware
      */
     public function handle($request, Closure $next)
     {
+        if(!config('starterkid-frontend.frontend_cache')){
+            return $next($request);
+        }
+        
         $cacheKey = \GrassFeria\StarterkidFrontend\Services\GetCacheKey::ForUrl($request->url());
 
         if (Cache::has($cacheKey)) {
