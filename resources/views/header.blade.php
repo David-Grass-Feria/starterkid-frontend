@@ -4,7 +4,7 @@
           <div class="flex lg:flex-1">
             <a wire:navigate href="{{route('front.homepage')}}" title="{{config('app.name')}}" class="-m-1.5 p-1.5">
               <span class="sr-only">{{config('app.name')}}</span>
-              <x-starterkid::starterkid.logo conversion="logo-thumb" width="57" height="32" class="h-8 w-auto" alt="{{__('This is the image logo of')}} {{config('app.name')}}" />
+              <x-starterkid::starterkid.logo conversion="logo-thumb" width="64" height="64" class="h-16 w-auto" alt="{{__('This is the image logo of')}} {{config('app.name')}}" />
             </a>
           </div>
           <div class="flex lg:hidden">
@@ -47,7 +47,7 @@
             <div class="flex items-center justify-between">
               <a href="{{route('front.homepage')}}" title="{{config('app.name')}}" class="-m-1.5 p-1.5">
                 <span class="sr-only">{{config('app.name')}}</span>
-                <x-starterkid::starterkid.logo conversion="logo-thumb" width="57" height="32" class="h-8 w-auto" alt="{{__('This is the image logo of')}} {{config('app.name')}}" />
+                <x-starterkid::starterkid.logo conversion="logo-thumb" width="32" height="32" class="h-8 w-auto" alt="{{__('This is the image logo of')}} {{config('app.name')}}" />
               </a>
               <button x-on:click="toggle" type="button" class="-m-2.5 rounded-md p-2.5 text-font_primary">
                 <span class="sr-only">Close menu</span>

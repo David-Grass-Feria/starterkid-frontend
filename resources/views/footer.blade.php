@@ -3,7 +3,7 @@
     <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
       <div class="xl:grid xl:grid-cols-3 xl:gap-8">
         <div class="space-y-8">
-          <x-starterkid::starterkid.logo conversion="logo-thumb" width="57" height="32" class="h-8 w-auto" alt="{{__('This is the image logo of')}} {{config('app.name')}}" />
+          <x-starterkid::starterkid.logo conversion="logo-thumb" width="64" height="64" class="h-16 w-auto" alt="{{__('This is the image logo of')}} {{config('app.name')}}" />
          
           <div class="flex space-x-6">
             @if(config('starterkid-frontend.organization_facebook_url') !== '')
