@@ -15,16 +15,14 @@
         </div>
         </div>
         <div class="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow">
-          <picture>
-            <source media="(max-width: 480px)" srcset="{{$imgSrcMedium}}">
-            <source media="(min-width: 600px)" srcset="{{$imgSrc}}">
+          
               <img width="{{config('starterkid.image_width_height_attributes.medium.width')}}" height="{{config('starterkid.image_width_height_attributes.medium.height')}}" src="{{$imgSrc}}" alt="{{$imgAlt}}" class="rounded-3xl shadow-lg ring-1 ring-primary w-full md:max-w-md mx-auto xl:max-w-lg">
-            </picture>
+       
         </div>
       </div>
     </div>
   </div>
 
   @push('styles')
-  <link rel="preload" href="{{$imgSrcMedium}}" as="image">
+  <link rel="preload" href="{{$imgSrc}}" as="image">
   @endpush
