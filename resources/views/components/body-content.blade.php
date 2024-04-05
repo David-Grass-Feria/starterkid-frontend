@@ -86,7 +86,23 @@ foreach ($imageLinks as $index => $originalLink) {
 // replace all .jpeg in .jpg
 $content = str_replace('.jpeg', '.jpg', $content);
 
-
+// change all width and height from the image links
+$content = preg_replace_callback(
+    '/<img(.*?)src="(.*?)"(.*?)(width=".*?")(.*?)(height=".*?")(.*?)>/i',
+    function ($matches) {
+        $widthAttribute = config('starterkid.image_width_height_attributes.large.width');
+        $width = "width=\"{$widthAttribute}\"";
+        
+        $aspectRatio = 16 / 9;
+        $heightValue = round(900 / $aspectRatio);
+        $height = "height=\"{$heightValue}\"";
+        
+       
+        
+        return "<img$matches[1] src=\"$matches[2]\"$matches[3] $width $matches[5] $height>";
+    },
+    $content
+);
 
 
 
