@@ -16,7 +16,7 @@
      {{$slot}}
      <div class="mt-5">
       <a wire:navigate href="{{$href}}" title="{{$hrefTitle}}">
-   <x-starterkid-frontend::button-secondary>{{__('hrefAnchor')}}</x-starterkid-frontend::button-secondary>
+   <x-starterkid-frontend::button-secondary>{{$hrefAnchor}}</x-starterkid-frontend::button-secondary>
       </a>
     </div>
     </div>
