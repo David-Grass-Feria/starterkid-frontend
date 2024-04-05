@@ -134,7 +134,7 @@ $content = preg_replace_callback(
 
     <div class="grid grid-cols-12 gap-5 xl:gap-40 mt-2 xl:mt-20">
 
-<div class="col-span-12 mx-auto xl:col-span-3">
+<div class="col-span-12 xl:col-span-3">
    
          
          <x-starterkid-frontend::heading-item-wrapper>
@@ -175,7 +175,7 @@ $content = preg_replace_callback(
         <picture>
             <source media="(max-width: 480px)" srcset="{{$imgSrcMedium}}">
             <source media="(min-width: 600px)" srcset="{{$imgSrc}}">
-            <img fetchpriority="high" src="{{$imgSrc}}" alt="{{$imgAlt}}" width="{{config('starterkid.image_width_height_attributes.large.width')}}" height="{{config('starterkid.image_width_height_attributes.large.height')}}" class="w-full xl:max-w-[600px]">
+            <img src="{{$imgSrc}}" alt="{{$imgAlt}}" width="{{config('starterkid.image_width_height_attributes.large.width')}}" height="{{config('starterkid.image_width_height_attributes.large.height')}}" class="w-full xl:max-w-[600px]">
 
           </picture>
      <x-starterkid-frontend::image-credits imageCredits="{{$imageCredits}}"/>

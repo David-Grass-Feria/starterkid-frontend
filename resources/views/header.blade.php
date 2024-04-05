@@ -1,4 +1,4 @@
-<div class="sticky top-0 z-10 bg-white w-full border-b border-gray-400 mx-auto" x-data="navbar">
+<div class="sticky top-0 z-20 bg-white w-full border-b border-gray-400 mx-auto" x-data="navbar">
     <header class="bodyColor border-b border-gray-400">
         <nav class="mx-auto flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div class="flex lg:flex-1">

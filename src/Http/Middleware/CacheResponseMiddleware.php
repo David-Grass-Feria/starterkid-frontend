@@ -19,6 +19,10 @@ class CacheResponseMiddleware
         if(!config('starterkid-frontend.frontend_cache')){
             return $next($request);
         }
+
+        if(request('page')){
+            return $next($request);
+        }
         
         $cacheKey = \GrassFeria\StarterkidFrontend\Services\GetCacheKey::ForUrl($request->url());
 
