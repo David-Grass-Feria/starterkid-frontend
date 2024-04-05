@@ -1,1 +1,1 @@
-<button {{$attributes->merge(['class' => 'rounded-3xl settingSecondaryBackgroundColor border border-gray-400 px-6 py-2.5 text-sm font-semibold text-font_primaryOnBackground shadow-sm text-xl'])}}>{{$slot}}</button>
+<button {{$attributes->merge(['class' => 'rounded-3xl settingSecondaryBackgroundColor border border-gray-400 px-6 py-2.5 text-sm font-semibold text-font_primaryOnBackground shadow-sm text-xl hover:bg-primary hover:text-white'])}}>{{$slot}}</button>

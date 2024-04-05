@@ -10,11 +10,15 @@
       <x-starterkid-frontend::image-credits imageCredits="{{$imgCredits}}"/>
     </div>
     
-    <a wire:navigate href="{{$href}}" title="{{$hrefTitle}}">
+    
     <div class="w-full text-font_primary p-3">
       <h2 class="mt-3 text-lg font-bold">{{$heading}}</h2>
      {{$slot}}
-     
+     <div class="mt-5">
+      <a wire:navigate href="{{$href}}" title="{{$hrefTitle}}">
+   <x-starterkid-frontend::button-secondary>{{__('hrefAnchor')}}</x-starterkid-frontend::button-secondary>
+      </a>
     </div>
-  </a>
+    </div>
+  
   </article>
