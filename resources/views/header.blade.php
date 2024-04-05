@@ -43,7 +43,7 @@
         <div x-cloak x-show="open" class="lg:hidden" role="dialog" aria-modal="true">
           <!-- Background backdrop, show/hide based on slide-over state. -->
           <div class="fixed inset-0 z-10"></div>
-          <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-body px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10">
+          <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10">
             <div class="flex items-center justify-between">
               <a href="{{route('front.homepage')}}" title="{{config('app.name')}}" class="-m-1.5 p-1.5">
                 <span class="sr-only">{{config('app.name')}}</span>
