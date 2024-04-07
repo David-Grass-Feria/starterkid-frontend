@@ -25,11 +25,11 @@
       </div>
       <div class="group relative">
         <h2 class="mt-3 text-lg font-bold">{{$heading}}</h2>
-        <p class="mt-5 line-clamp-3 text-sm">{!!$preview!!}</p>
+        <p class="mt-5 line-clamp-3 text-md">{!!$preview!!}</p>
       </div>
-      <div class="mt-5">
+      <div class="mt-10">
         <a wire:navigate href="{{$href}}" title="{{$hrefTitle}}">
-     <x-starterkid-frontend::button-secondary>{{$hrefAnchor}}</x-starterkid-frontend::button-secondary>
+     <x-starterkid-frontend::button-secondary class="w-full">{{$hrefAnchor}}</x-starterkid-frontend::button-secondary>
         </a>
       </div>
     </div>
