@@ -104,7 +104,14 @@ $content = preg_replace_callback(
     $content
 );
 
-
+// add loading lazy to the images
+$content = preg_replace_callback(
+    '/<img(.*?)>/i',
+    function ($matches) {
+        return "<img$matches[1] loading=\"lazy\">";
+    },
+    $content
+);
 
 
 @endphp
