@@ -2,7 +2,11 @@
 
  
     <div class="flex-shrink-0">
+      @if($firstLoop)
+      <img rel="preload" as="image" width="40" height="40" class="h-10 w-10 rounded-3xl object-contain" src="{{$imgSrc}}" alt="{{$imgAlt}}">
+      @else
       <img loading="lazy" width="40" height="40" class="h-10 w-10 rounded-3xl object-contain" src="{{$imgSrc}}" alt="{{$imgAlt}}">
+      @endif
     </div>
     <div class="min-w-0 flex-1 text-font_primary">
       <a target="_blank" href="{{$href}}" title="{{$hrefTitle}}" class="focus:outline-none">

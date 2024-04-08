@@ -16,13 +16,10 @@
         </div>
         <div class="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow">
           
-              <img width="{{config('starterkid.image_width_height_attributes.medium.width')}}" height="{{config('starterkid.image_width_height_attributes.medium.height')}}" src="{{$imgSrc}}" alt="{{$imgAlt}}" class="rounded-3xl shadow-lg ring-1 ring-primary w-full md:max-w-md mx-auto xl:max-w-lg">
+              <img rel="preload" as="image" width="{{config('starterkid.image_width_height_attributes.medium.width')}}" height="{{config('starterkid.image_width_height_attributes.medium.height')}}" src="{{$imgSrc}}" alt="{{$imgAlt}}" class="rounded-3xl shadow-lg ring-1 ring-primary w-full md:max-w-md mx-auto xl:max-w-lg">
        
         </div>
       </div>
     </div>
   </div>
 
-@push('styles')
-<link fetchpriority="high" rel="preload" href="{{$imgSrc}}" as="image">
-@endpush
