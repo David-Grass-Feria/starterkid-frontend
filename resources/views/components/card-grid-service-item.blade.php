@@ -2,7 +2,7 @@
 
  
     <div class="flex-shrink-0">
-      <img width="40" height="40" class="h-10 w-10 rounded-3xl object-contain" src="{{$imgSrc}}" alt="{{$imgAlt}}">
+      <img loading="lazy" width="40" height="40" class="h-10 w-10 rounded-3xl object-contain" src="{{$imgSrc}}" alt="{{$imgAlt}}">
     </div>
     <div class="min-w-0 flex-1 text-font_primary">
       <a wire:navigate href="{{$href}}" title="{{$hrefTitle}}" class="focus:outline-none">
