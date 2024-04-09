@@ -1,4 +1,4 @@
-<div class="ring-1 ring-gray-900/10 mt-5 xl:mt-20 rounded-3xl">
+<div class="ring-1 ring-primary mt-5 xl:mt-20 rounded-3xl">
     <div class="divide-y divide-gray-200 overflow-hidden rounded-3xl bg-white shadow">
       <div class="px-4 py-5 sm:px-6 text-font_primary">
        
