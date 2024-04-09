@@ -5,8 +5,8 @@
         </div>
         <div class="flex flex-col space-y-5 justify-center mt-10">
           
-          <img class="w-64 rounded-md mx-auto" loading="lazy" src="{{asset('iphone1.webp')}}" />
-          <img class="w-64 rounded-md mx-auto" loading="lazy" src="{{asset('iphone2.webp')}}" />
+          <img width="256" height="144" alt="Bild von Iphone" class="w-64 rounded-md mx-auto" loading="lazy" src="{{asset('iphone1.webp')}}" />
+          <img width="256" height="144" alt="Bild von Iphone Homescreen" class="w-64 rounded-md mx-auto" loading="lazy" src="{{asset('iphone2.webp')}}" />
   
          
         </div>
