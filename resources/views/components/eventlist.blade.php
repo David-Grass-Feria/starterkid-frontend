@@ -3,10 +3,10 @@
       <div class="px-4 py-5 sm:px-6 text-font_primary">
        
         <div class="flex items-center space-x-2">
-        <svg class="h-2 w-2 fill-green-500 animate animate-pulse" viewBox="0 0 6 6" aria-hidden="true">
+        <svg class="h-4 w-4 fill-green-500 animate animate-pulse" viewBox="0 0 6 6" aria-hidden="true">
           <circle cx="3" cy="3" r="3" />
         </svg>
-        <h2>{{$heading}}</h2>
+        <h2 class="text-md font-bold xl:text-lg">{{$heading}}</h2>
       </div>
 
       </div>
