@@ -11,6 +11,7 @@
     @endif
     <link rel="canonical" href="{{url()->current()}}">
     <title>{{$title}} | {{ config('app.name', 'Laravel') }}</title>
+    @yield('meta')
 
     <script type="application/ld+json">
         {
