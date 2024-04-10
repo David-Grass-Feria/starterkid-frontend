@@ -21,5 +21,10 @@
           </ul>
           </div>
       </div>
+      @if(isset($footer))
+      <div class="px-4 py-4 sm:px-6">
+       {{$footer}}
+      </div>
+      @endif
     </div>
     </div>
