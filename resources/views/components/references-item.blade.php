@@ -1,0 +1,1 @@
+<li><a {{$attributes->merge(['class' => 'text-font_primary text-xs underline'])}}>{{$slot}}</a></li>
