@@ -3,9 +3,9 @@
     <div>
       <span class="inline-flex rounded-lg p-3">
         @if($firstLoop)
-      <img rel="preload" as="image" width="40" height="40" class="h-10 w-10 rounded-3xl object-contain" src="{{$imgSrc}}" alt="{{$imgAlt}}">
+      <img rel="preload" as="image" width="40" height="40" class="h-10 w-10 rounded-sm object-contain" src="{{$imgSrc}}" alt="{{$imgAlt}}">
       @else
-      <img loading="lazy" width="40" height="40" class="h-10 w-10 rounded-3xl object-contain" src="{{$imgSrc}}" alt="{{$imgAlt}}">
+      <img loading="lazy" width="40" height="40" class="h-10 w-10 rounded-sm object-contain" src="{{$imgSrc}}" alt="{{$imgAlt}}">
       @endif
       </span>
     </div>
