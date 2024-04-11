@@ -1,5 +1,5 @@
 <div>
-  <div class="rounded-3xl group relative bg-white p-6 text-font_primary h-96 shadow-md">
+  <div class="rounded-3xl group relative bg-white p-6 text-font_primary h-96 shadow-md border border-primary">
     <div>
       <span class="inline-flex rounded-lg p-3">
         @if($firstLoop)
