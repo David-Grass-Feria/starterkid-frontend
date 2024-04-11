@@ -11,6 +11,9 @@
             <a wire:navigate href="{{$href}}" title="{{$hrefTitle}}">
          <x-starterkid-frontend::button-secondary type="button">{{$hrefAnchor}}</x-starterkid-frontend::button-secondary>
             </a>
+            @if(isset($moreButtons))
+           {{$moreButtons}}
+           @endif
            
         </div>
         </div>

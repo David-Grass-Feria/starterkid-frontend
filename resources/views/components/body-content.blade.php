@@ -1,4 +1,4 @@
-<div class="w-full sm:max-w-sm xl:max-w-7xl mx-auto">
+<div class="w-full sm:max-w-md xl:max-w-7xl mx-auto">
 
 @php
  //replace youtube videos
