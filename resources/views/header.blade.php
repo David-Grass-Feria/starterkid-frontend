@@ -20,7 +20,7 @@
                     </svg>
                 </button>
             </div>
-            <div class="hidden lg:flex lg:gap-x-12">
+            <div class="hidden lg:flex lg:gap-x-1">
                 <x-starterkid-frontend::navlink wire:navigate href="{{ route('front.homepage') }}"
                     title="{{ config('app.name') }}"
                     :active="request()->routeIs(['front.homepage'])">{{ __('Home') }}</x-starterkid-frontend::navlink>
