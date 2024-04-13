@@ -26,7 +26,7 @@ ORGANIZATION_WIKIPEDIA_URL=
 HOMEPAGE_TITLE=Ein Verein für deine Stadt
 HOMEPAGE_DESCRIPTION=Wir engagieren uns für unsere Stadt Saalfeld/Saale. Im Saalfelder Stadtrat, im gesellschaftlichen Leben, bei Projekten, Aktionen und Veranstaltungen.
 
-CACHE_STORE=file
+
 ```
 
 
