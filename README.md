@@ -2,29 +2,19 @@
 ```shell
 FRONTEND_CACHE=false
 FRONTEND_MINIFY=false
-LOGIN_LINK=true
-CREATED_BY_URL=https://all-inkl.com
-CREATED_BY_ANCHOR=Tierheim CMS
-ORGANIZATION_TYPE=Organization
-HERO_H1=Ein Verein für
-HERO_H1_COLOR=deine Stadt
-HERO_DESCRIPTION=Wir engagieren uns für unsere Stadt Saalfeld/Saale. Im Saalfelder Stadtrat, im gesellschaftlichen Leben, bei Projekten, Aktionen und Veranstaltungen.
-HERO_BUTTON_PRIMARY_ROUTE=#
-HERO_BUTTON_PRIMARY_ANCHOR=More info
-HERO_BUTTON_SECONDARY_ROUTE=#
-HERO_BUTTON_SECONDARY_ANCHOR=Other info
-HERO_IMAGE_CREDITS=http://localhost
-HERO_IMAGE_ALT=ProjectName
-ORGANIZATION_FACEBOOK_URL=
-ORGANIZATION_TWITTER_URL=
-ORGANIZATION_INSTAGRAM_URL=
-ORGANIZATION_YOUTUBE_URL=
-ORGANIZATION_LINKEDIN_URL=
-ORGANIZATION_PINTEREST_URL=
-ORGANIZATION_GITHUB_URL=
-ORGANIZATION_WIKIPEDIA_URL=
-HOMEPAGE_TITLE=Ein Verein für deine Stadt
-HOMEPAGE_DESCRIPTION=Wir engagieren uns für unsere Stadt Saalfeld/Saale. Im Saalfelder Stadtrat, im gesellschaftlichen Leben, bei Projekten, Aktionen und Veranstaltungen.
+CREATED_BY_ANCHOR="David Grass Feria"
+CREATED_BY_URL="#"
+ORGANIZATION_FACEBOOK_URL="https://www.facebook.com/buergerfuersaalfeld/"
+ORGANIZATION_INSTAGRAM_URL="https://www.instagram.com/buerger.fuer.saalfeld/"
+SERVICE_SLUG="verein"
+SERVICE_TITLE="Verein"
+#IMAGE_CONVERSIONS_MEDIUM_WIDTH=300
+#IMAGE_WIDTH_HEIGHT_ATTRIBUTES_WIDTH=600
+#IMAGE_WIDTH_HEIGHT_ATTRIBUTES_HEIGHT=400
+FRONTEND_CACHE=true
+FRONTEND_MINIFY=true
+DEFAULT_FONT_FAMILY="Nunito, sans-serif"
+SERP_API_KEY=0b85424a459e4826d36816f09d124f763e67398c37d7dc250f2c3b6aefe09327
 
 
 ```
