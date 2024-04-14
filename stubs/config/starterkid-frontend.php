@@ -1,7 +1,8 @@
 <?php
 
 return [
-
+'homepage_title'                => env('HOMEPAGE_TITLE','Ein Verein für deine Stadt'),
+'homepage_description'          => env('HOMEPAGE_DESCRIPTION','Wir engagieren uns für unsere Stadt Saalfeld/Saale. Im Saalfelder Stadtrat, im gesellschaftlichen Leben, bei Projekten, Aktionen und Veranstaltungen.'),
 'frontend_cache'                                => env('FRONTEND_CACHE',false),
 'frontend_minify'                               => env('FRONTEND_MINIFY',false),
 'login_link'                                    => env('LOGIN_LINK',true),
