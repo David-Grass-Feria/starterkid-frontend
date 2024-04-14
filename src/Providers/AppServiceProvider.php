@@ -25,9 +25,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->register(RouteServiceProvider::class);
         $this->app->register(AuthServiceProvider::class);
         $this->app->register(NavlinkServiceProvider::class);
-        $this->mergeConfigFrom(
-            __DIR__.'/../../config/starterkid-frontend.php', 'starterkid-frontend'
-        );
+        
         
     }
 
