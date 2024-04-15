@@ -6,8 +6,10 @@
         <svg class="h-4 w-4 fill-green-500 animate animate-pulse" viewBox="0 0 6 6" aria-hidden="true">
           <circle cx="3" cy="3" r="3" />
         </svg>
+        <div class="flex flex-col space-y-2">
         <h2 class="text-md font-bold xl:text-lg">{{$heading}}</h2>
-        <span class="text-xs">{{$lastUpdate}}</span>
+        <span class="text-xs">{{__('Last update:')}} {{$lastUpdate}}</span>
+        </div>
       </div>
 
       </div>
