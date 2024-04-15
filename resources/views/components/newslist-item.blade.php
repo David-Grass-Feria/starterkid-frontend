@@ -3,15 +3,22 @@
         
        <div class="col-span-2">
         <div class="flex flex-col"> 
-      <p class="text-sm font-bold text-font_primary">{{$dateForHumans}}</p>
+         <p class="text-xl font-bold text-font_primary">{{$dateForHumans}}</p>
+         @if($firstLoop)
+         <img rel="preload" as="image" width="56" height="32" class="w-14 rounded-md" src="{{$imgSrcThumb}}" alt="{{$imgAltThumb}}" />
+         @else
+         <img loading="lazy" width="56" height="32" class="w-14 rounded-md" src="{{$imgSrcThumb}}" alt="{{$imgAltThumb}}" />
+         @endif
        </div>
     </div>
       
 
     <div class="col-span-7 xl:col-span-8">
        <div class="flex flex-col">
+         
         <a target="_blank" href="{{$href}}" title="{{$linkTitle}}">
         <h2 class="text-md xl:text-md font-bold text-font_primary">{{$title}}</h2>
+        <p class="text-xs text-font_primary">{!!$description!!}</p>
        </a>
        </div>
     </div>
