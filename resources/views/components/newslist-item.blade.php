@@ -17,7 +17,7 @@
        <div class="flex flex-col">
          
         <a target="_blank" href="{{$href}}" title="{{$linkTitle}}">
-        <h2 class="text-md xl:text-md font-bold text-font_primary">{{$title}}</h2>
+        <h2 class="text-md xl:text-lg font-bold text-font_primary">{{$title}}</h2>
         <p class="text-xs text-font_primary">{!!$description!!}</p>
        </a>
        </div>
