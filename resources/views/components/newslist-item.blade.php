@@ -14,7 +14,7 @@
       
 
     <div class="col-span-7 xl:col-span-8">
-       <div class="flex flex-col">
+       <div class="flex flex-col p-5">
          
         <a target="_blank" href="{{$href}}" title="{{$linkTitle}}">
         <h2 class="text-md xl:text-md font-bold text-font_primary">{{$title}}</h2>
