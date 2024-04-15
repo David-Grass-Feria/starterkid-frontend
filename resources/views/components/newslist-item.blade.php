@@ -1,5 +1,5 @@
 <li>
-    <div class="grid grid-cols-12 gap-5 gap-y-5 mt-5">
+    <div class="grid grid-cols-12 gap-5 xl:gap-y-10 mt-5">
         
        <div class="col-span-2">
         <div class="flex flex-col"> 
