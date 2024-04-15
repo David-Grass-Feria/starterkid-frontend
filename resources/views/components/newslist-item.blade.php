@@ -5,9 +5,9 @@
         <div class="flex flex-col"> 
          <p class="text-xs font-bold text-font_primary">{{$dateForHumans}}</p>
          @if($firstLoop)
-         <img rel="preload" as="image" width="24" height="14" class="w-6 rounded-md" src="{{$imgSrcThumb}}" alt="{{$imgAltThumb}}" />
+         <img rel="preload" as="image" width="24" height="14" class="w-6" src="{{$imgSrcThumb}}" alt="{{$imgAltThumb}}" />
          @else
-         <img loading="lazy" width="24" height="14" class="w-6 rounded-md" src="{{$imgSrcThumb}}" alt="{{$imgAltThumb}}" />
+         <img loading="lazy" width="24" height="14" class="w-6" src="{{$imgSrcThumb}}" alt="{{$imgAltThumb}}" />
          @endif
        </div>
     </div>
