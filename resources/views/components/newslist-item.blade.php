@@ -1,5 +1,5 @@
 <li>
-    <div class="grid grid-cols-12 gap-5 xl:gap-y-10 mt-5">
+    <div class="grid grid-cols-12 gap-5 mt-5">
         
        <div class="col-span-2">
         <div class="flex flex-col"> 
@@ -13,7 +13,7 @@
     </div>
       
 
-    <div class="col-span-7 xl:col-span-8">
+    <div class="col-span-7 xl:col-span-8 xl:max-w-lg">
        <div class="flex flex-col">
          
         <a target="_blank" href="{{$href}}" title="{{$linkTitle}}">
