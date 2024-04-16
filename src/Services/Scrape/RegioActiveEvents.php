@@ -34,6 +34,7 @@ class RegioActiveEvents
                     $dateObject = $date ? new DateTime($date) : null;
                     $month = $dateObject ? strtoupper($dateObject->format('M')) : 'N/A';
                     $day = $dateObject ? $dateObject->format('d') : 'N/A';
+                    $time = $dateObject ? $dateObject->format('H:i') : 'N/A';
 
                     $events[] = [
                         'title' => $json['name'] ?? 'N/A',
@@ -46,7 +47,8 @@ class RegioActiveEvents
                         'link' => $json['url'] ?? 'N/A',
                         'eventType' => $json['@type'],
                         'month' => $month,
-                        'day' => $day
+                        'day' => $day,
+                        'time' => $time
                     ];
                 }
             }
