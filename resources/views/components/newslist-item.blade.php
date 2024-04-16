@@ -10,7 +10,7 @@
       
 
     <div class="col-span-7 xl:col-span-8 xl:max-w-lg">
-       <div class="flex flex-col space-y-4">
+       <div class="flex flex-col">
          
         <a target="_blank" href="{{$href}}" title="{{$linkTitle}}">
          @if($firstLoop)
@@ -18,7 +18,7 @@
          @else
          <img loading="lazy" width="24" height="14" class="w-6" src="{{$imgSrcThumb}}" alt="{{$imgAltThumb}}" />
          @endif
-        <h2 class="text-md xl:text-lg font-bold text-font_primary">{{$title}}</h2>
+        <h2 class="text-md xl:text-lg font-bold text-font_primary mt-2">{{$title}}</h2>
         <p class="text-xs text-font_primary">{!!$description!!}</p>
        </a>
        </div>
