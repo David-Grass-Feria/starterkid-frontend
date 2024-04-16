@@ -1,6 +1,6 @@
 <?php
 
-namespace GrassFeria\StarterkidFrontend\Services;
+namespace GrassFeria\StarterkidFrontend\Services\Scrape;
 
 use Illuminate\Support\Facades\Http;
 use Symfony\Component\DomCrawler\Crawler;
