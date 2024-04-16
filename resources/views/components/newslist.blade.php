@@ -9,6 +9,7 @@
         <div class="flex flex-col">
         <h2 class="text-md font-bold xl:text-lg">{{$heading}}</h2>
         <span class="text-xs">{{__('Last update:')}} {{$lastUpdate}}</span>
+        
         </div>
       </div>
 
