@@ -10,7 +10,10 @@
       
 
     <div class="col-span-7 xl:col-span-8 w-full xl:max-w-lg">
-       <div class="flex flex-col">
+       
+      @if(isset($link))
+      <a href="{{$link}}" title="{{$linkTitle}}">
+      <div class="flex flex-col cursor-pointer">
         <h2 class="text-md xl:text-lg font-bold text-font_primary">{!!$eventName!!}</h2>
         @if(isset($eventDescription))
         <p class="text-xs text-font_primary">{!!$eventDescription ?? ''!!}</p>
@@ -19,6 +22,18 @@
         <p class="text-xs text-font_primary">{!!$eventCity!!}</p>
         <p class="text-xs text-font_primary font-bold">{!!$eventTime!!}</p>
        </div>
+      </a>
+      @else
+      <div class="flex flex-col">
+         <h2 class="text-md xl:text-lg font-bold text-font_primary">{!!$eventName!!}</h2>
+         @if(isset($eventDescription))
+         <p class="text-xs text-font_primary">{!!$eventDescription ?? ''!!}</p>
+         @endif
+         <p class="text-xs text-font_primary">{!!$eventAdress!!}</p>
+         <p class="text-xs text-font_primary">{!!$eventCity!!}</p>
+         <p class="text-xs text-font_primary font-bold">{!!$eventTime!!}</p>
+        </div>
+      @endif
     </div>
 
     <div class="col-span-3 xl:col-span-2">
