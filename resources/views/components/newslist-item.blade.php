@@ -23,9 +23,9 @@
 
     <div class="col-span-3 xl:col-span-2">
         @if($firstLoop)
-       <img rel="preload" as="image" width="80" height="80" class="w-20 h-20 xl:w-36 xl:h-36 rounded-md bg-contain" src="{{$imgSrc}}" alt="{{$imgAlt}}" />
+       <img rel="preload" as="image" width="80" height="80" class="w-20 h-20 xl:w-36 xl:h-36 rounded-md bg-cover" src="{{$imgSrc}}" alt="{{$imgAlt}}" />
        @else
-       <img loading="lazy" width="80" height="80" class="w-20 h-20 xl:w-36 xl:h-36 rounded-md bg-contain" src="{{$imgSrc}}" alt="{{$imgAlt}}" />
+       <img loading="lazy" width="80" height="80" class="w-20 h-20 xl:w-36 xl:h-36 rounded-md bg-cover" src="{{$imgSrc}}" alt="{{$imgAlt}}" />
        @endif
     </div>
     
