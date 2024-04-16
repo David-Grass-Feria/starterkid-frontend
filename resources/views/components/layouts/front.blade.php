@@ -38,6 +38,7 @@
       
     
     @yield('schema')
+    @stack('schema')
  
     <x-starterkid::starterkid.font />
     <x-starterkid::starterkid.favicon />
