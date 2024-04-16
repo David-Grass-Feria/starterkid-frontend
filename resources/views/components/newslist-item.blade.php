@@ -13,22 +13,23 @@
        <div class="flex flex-col">
          
         <a target="_blank" href="{{$href}}" title="{{$linkTitle}}">
-         @if($firstLoop)
+         
+        <h2 class="text-md xl:text-lg font-bold text-font_primary mt-2">{{$title}}</h2>
+        <p class="text-xs text-font_primary">{!!$description!!}</p>
+        @if($firstLoop)
          <img rel="preload" as="image" width="24" height="14" class="w-6" src="{{$imgSrcThumb}}" alt="{{$imgAltThumb}}" />
          @else
          <img loading="lazy" width="24" height="14" class="w-6" src="{{$imgSrcThumb}}" alt="{{$imgAltThumb}}" />
          @endif
-        <h2 class="text-md xl:text-lg font-bold text-font_primary mt-2">{{$title}}</h2>
-        <p class="text-xs text-font_primary">{!!$description!!}</p>
        </a>
        </div>
     </div>
 
     <div class="col-span-3 xl:col-span-2">
         @if($firstLoop)
-       <img rel="preload" as="image" width="80" height="80" class="w-20 xl:w-36 rounded-md" src="{{$imgSrc}}" alt="{{$imgAlt}}" />
+       <img rel="preload" as="image" width="80" height="80" class="w-20 xl:w-48 rounded-md" src="{{$imgSrc}}" alt="{{$imgAlt}}" />
        @else
-       <img loading="lazy" width="80" height="80" class="w-20 xl:w-36 rounded-md" src="{{$imgSrc}}" alt="{{$imgAlt}}" />
+       <img loading="lazy" width="80" height="80" class="w-20 xl:w-48 rounded-md" src="{{$imgSrc}}" alt="{{$imgAlt}}" />
        @endif
     </div>
     
