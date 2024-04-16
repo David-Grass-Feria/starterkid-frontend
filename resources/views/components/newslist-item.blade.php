@@ -14,7 +14,7 @@
          
         <a target="_blank" href="{{$href}}" title="{{$linkTitle}}">
          
-        <h2 class="text-md xl:text-lg font-bold text-font_primary mt-2">{{$title}}</h2>
+        <h2 class="text-md xl:text-lg font-bold text-font_primary">{{$title}}</h2>
         <p class="text-xs text-font_primary">{!!$description!!}</p>
         @if($firstLoop)
          <img rel="preload" as="image" width="24" height="14" class="w-6" src="{{$imgSrcThumb}}" alt="{{$imgAltThumb}}" />
