@@ -4,19 +4,20 @@
        <div class="col-span-2">
         <div class="flex flex-col"> 
          <p class="text-xs font-bold text-font_primary">{{$dateForHumans}}</p>
-         @if($firstLoop)
-         <img rel="preload" as="image" width="24" height="14" class="w-6" src="{{$imgSrcThumb}}" alt="{{$imgAltThumb}}" />
-         @else
-         <img loading="lazy" width="24" height="14" class="w-6" src="{{$imgSrcThumb}}" alt="{{$imgAltThumb}}" />
-         @endif
+         
        </div>
     </div>
       
 
     <div class="col-span-7 xl:col-span-8 xl:max-w-lg">
-       <div class="flex flex-col">
+       <div class="flex flex-col space-y-2">
          
         <a target="_blank" href="{{$href}}" title="{{$linkTitle}}">
+         @if($firstLoop)
+         <img rel="preload" as="image" width="24" height="14" class="w-6" src="{{$imgSrcThumb}}" alt="{{$imgAltThumb}}" />
+         @else
+         <img loading="lazy" width="24" height="14" class="w-6" src="{{$imgSrcThumb}}" alt="{{$imgAltThumb}}" />
+         @endif
         <h2 class="text-md xl:text-lg font-bold text-font_primary">{{$title}}</h2>
         <p class="text-xs text-font_primary">{!!$description!!}</p>
        </a>
