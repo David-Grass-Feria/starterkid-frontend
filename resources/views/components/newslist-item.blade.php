@@ -10,7 +10,7 @@
       
 
     <div class="col-span-7 xl:col-span-8 xl:max-w-lg">
-       <div class="flex flex-col space-y-2">
+       <div class="flex flex-col space-y-4">
          
         <a target="_blank" href="{{$href}}" title="{{$linkTitle}}">
          @if($firstLoop)
@@ -26,9 +26,9 @@
 
     <div class="col-span-3 xl:col-span-2">
         @if($firstLoop)
-       <img rel="preload" as="image" width="80" height="80" class="w-20 rounded-md" src="{{$imgSrc}}" alt="{{$imgAlt}}" />
+       <img rel="preload" as="image" width="80" height="80" class="w-20 xl:w-36 rounded-md" src="{{$imgSrc}}" alt="{{$imgAlt}}" />
        @else
-       <img loading="lazy" width="80" height="80" class="w-20 rounded-md" src="{{$imgSrc}}" alt="{{$imgAlt}}" />
+       <img loading="lazy" width="80" height="80" class="w-20 xl:w-36 rounded-md" src="{{$imgSrc}}" alt="{{$imgAlt}}" />
        @endif
     </div>
     
