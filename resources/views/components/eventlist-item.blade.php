@@ -12,7 +12,7 @@
     <div class="col-span-7 xl:col-span-8 w-full xl:max-w-lg">
        
       @if(isset($link))
-      <a href="{{$link}}" title="{{$linkTitle}}">
+      <a target="_blank" href="{{$link}}" title="{{$linkTitle}}">
       <div class="flex flex-col cursor-pointer">
         <h2 class="text-md xl:text-lg font-bold text-font_primary">{!!$eventName!!}</h2>
         @if(isset($eventDescription))
