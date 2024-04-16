@@ -9,15 +9,15 @@
     </div>
       
 
-    <div class="col-span-7 xl:col-span-8 xl:max-w-lg">
+    <div class="col-span-7 xl:col-span-8 w-full xl:max-w-lg">
        <div class="flex flex-col">
-        <h2 class="text-md xl:text-lg font-bold text-font_primary">{{$eventName}}</h2>
+        <h2 class="text-md xl:text-lg font-bold text-font_primary">{!!$eventName!!}</h2>
         @if(isset($eventDescription))
         <p class="text-xs text-font_primary">{!!$eventDescription ?? ''!!}</p>
         @endif
-        <p class="text-xs text-font_primary">{{$eventAdress}}</p>
-        <p class="text-xs text-font_primary">{{$eventCity}}</p>
-        <p class="text-xs text-font_primary">{!!$eventTime!!}</p>
+        <p class="text-xs text-font_primary">{!!$eventAdress!!}</p>
+        <p class="text-xs text-font_primary">{!!$eventCity!!}</p>
+        <p class="text-xs text-font_primary font-bold">{!!$eventTime!!}</p>
        </div>
     </div>
 
