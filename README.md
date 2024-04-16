@@ -66,3 +66,8 @@ $blogposts = \GrassFeria\StarterkidBlog\Models\BlogPost::frontGetBlogPostWhereSt
         </x-starterkid-frontend::card-grid>
       </div>
 ```
+# get events from radioactive.de
+```shell
+$events = (new \GrassFeria\StarterkidFrontend\Services\Scrape\RegioActiveEvents())->getEventsForCity('saalfeld','07318');
+```
+f
