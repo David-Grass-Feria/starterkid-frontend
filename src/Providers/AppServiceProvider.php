@@ -37,7 +37,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         
-        
+       
         $cacheMiddleware = $this->app['router'];
         $cacheMiddleware->aliasMiddleware('cache', CacheResponseMiddleware::class);
         $minifyMiddleware = $this->app['router'];
