@@ -9,24 +9,24 @@
     </div>
       
 
-    <div class="col-span-7 xl:col-span-8">
+    <div class="col-span-7 xl:col-span-8 xl:max-w-lg">
        <div class="flex flex-col">
         <h2 class="text-md xl:text-lg font-bold text-font_primary">{{$eventName}}</h2>
-        <p class="text-xs text-font_primary">{!!$eventTime!!}</p>
         @if(isset($eventDescription))
         <p class="text-xs text-font_primary">{!!$eventDescription ?? ''!!}</p>
         @endif
         <p class="text-xs text-font_primary">{{$eventAdress}}</p>
         <p class="text-xs text-font_primary">{{$eventCity}}</p>
+        <p class="text-xs text-font_primary">{!!$eventTime!!}</p>
        </div>
     </div>
 
     <div class="col-span-3 xl:col-span-2">
         
       @if($firstLoop)
-       <img rel="preload" as="image" width="80" height="80" class="w-20 rounded-md" src="{{$imgSrc}}" alt="{{$imgAlt}}" />
+       <img rel="preload" as="image" width="80" height="80" class="w-20 xl:w-36 rounded-md" src="{{$imgSrc}}" alt="{{$imgAlt}}" />
        @else
-       <img loading="lazy" width="80" height="80" class="w-20 rounded-md" src="{{$imgSrc}}" alt="{{$imgAlt}}" />
+       <img loading="lazy" width="80" height="80" class="w-20 xl:w-36 rounded-md" src="{{$imgSrc}}" alt="{{$imgAlt}}" />
        @endif
     </div>
     
