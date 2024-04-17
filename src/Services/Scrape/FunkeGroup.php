@@ -8,7 +8,7 @@ use Symfony\Component\DomCrawler\Crawler;
 class FunkeGroup
 
 {
-    public function getNewsFromNewsPaper(string $newsPaperUrl, string $cityName, string $newsPaperName)
+    public function getNewsFromNewsPaper(string $newsPaperUrl, string $cityName, string $newsPaperName, string $newsPaperDomain)
     {
         $response = Http::get($newsPaperUrl);
         $html = $response->body();
@@ -16,8 +16,8 @@ class FunkeGroup
 
         $news = [];
 
-        $crawler->filter('ul')->each(function (Crawler $ul) use (&$news,$cityName,$newsPaperName) {
-            $ul->filter('li')->each(function (Crawler $li) use (&$news,$cityName,$newsPaperName) {
+        $crawler->filter('ul')->each(function (Crawler $ul) use (&$news,$cityName,$newsPaperName,$newsPaperDomain) {
+            $ul->filter('li')->each(function (Crawler $li) use (&$news,$cityName,$newsPaperName,$newsPaperDomain) {
                 $titleNode = $li->filter('strong');
                 $title = $titleNode->count() ? $titleNode->text() : 'Titel nicht gefunden';
 
@@ -38,7 +38,7 @@ class FunkeGroup
                         'title' => $title,
                         'description' => $description,
                         'city' => $city,
-                        'link' => 'https://otz.de'.$link,
+                        'link' => $newsPaperDomain.$link,
                         'thumb' => $thumb,
                         'vendor' => $newsPaperName,
                     ];
