@@ -13,7 +13,10 @@
        <div class="flex flex-col">
          
         <a class="space-y-5" target="_blank" href="{{$href}}" title="{{$linkTitle}}">
-        <img class="w-4" src="{{imgSrcThumb}}" alt="{{$imgSrcAltThumb}}" /> 
+         <div class="flex items-center space-x-1">
+        <img class="w-4" src="{{imgSrcThumb}}" alt="{{$imgSrcAltThumb}}" />
+        <span class="text-xs">{{$vendorName}}</span>
+         </div> 
         <h2 class="text-md xl:text-lg font-bold text-font_primary">{{$title}}</h2>
         <p class="text-xs text-font_primary">{!!$description!!}</p>
         <p class="text-xs text-font_primary">{{$vendor}}</p>
