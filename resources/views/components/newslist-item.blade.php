@@ -9,8 +9,8 @@
     </div>
       
 
-    <div class="col-span-7 xl:col-span-8 xl:max-w-lg">
-       <div class="flex flex-col space-y-10">
+    <div class="col-span-7 xl:col-span-8 xl:max-w-lg space-y-10">
+       <div class="flex flex-col">
          
         <a target="_blank" href="{{$href}}" title="{{$linkTitle}}">
          
