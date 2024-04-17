@@ -13,7 +13,7 @@
        
       @if(isset($link))
       <a target="_blank" href="{{$link}}" title="{{$linkTitle}}">
-      <div class="flex flex-col cursor-pointer">
+      <div class="flex flex-col cursor-pointer space-y-5">
         <h2 class="text-md xl:text-lg font-bold text-font_primary">{!!$eventName!!}</h2>
         @if(isset($eventDescription))
         <p class="text-xs text-font_primary">{!!$eventDescription ?? ''!!}</p>
@@ -24,7 +24,7 @@
        </div>
       </a>
       @else
-      <div class="flex flex-col">
+      <div class="flex flex-col space-y-5">
          <h2 class="text-md xl:text-lg font-bold text-font_primary">{!!$eventName!!}</h2>
          @if(isset($eventDescription))
          <p class="text-xs text-font_primary">{!!$eventDescription ?? ''!!}</p>
