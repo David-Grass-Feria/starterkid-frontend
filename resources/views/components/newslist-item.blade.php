@@ -9,10 +9,10 @@
     </div>
       
 
-    <div class="col-span-7 xl:col-span-8 xl:max-w-lg space-y-10">
+    <div class="col-span-7 xl:col-span-8 xl:max-w-lg">
        <div class="flex flex-col">
          
-        <a target="_blank" href="{{$href}}" title="{{$linkTitle}}">
+        <a class="space-y-10" target="_blank" href="{{$href}}" title="{{$linkTitle}}">
          
         <h2 class="text-md xl:text-lg font-bold text-font_primary">{{$title}}</h2>
         <p class="text-xs text-font_primary">{!!$description!!}</p>
