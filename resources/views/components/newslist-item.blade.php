@@ -14,7 +14,11 @@
          
         <a class="space-y-3" target="_blank" href="{{$href}}" title="{{$linkTitle}}">
          <div class="flex items-center space-x-1">
-        <img class="w-4" src="{{$imgSrcThumb}}" alt="{{$imgAltThumb}}" />
+        @if($firstLoop)
+        <img rel="preload" as="image" width="16" height="16" class="w-4" src="{{$imgSrcThumb}}" alt="{{$imgAltThumb}}" />
+        @else
+        <img loading="lazy" width="16" height="16" class="w-4" src="{{$imgSrcThumb}}" alt="{{$imgAltThumb}}" />
+        @endif
         <span class="text-xs">{{$vendorName}}</span>
          </div> 
         <h2 class="text-md xl:text-lg font-bold text-font_primary">{{$title}}</h2>
