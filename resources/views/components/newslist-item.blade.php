@@ -14,7 +14,7 @@
          
         <a class="space-y-5" target="_blank" href="{{$href}}" title="{{$linkTitle}}">
          <div class="flex items-center space-x-1">
-        <img class="w-4" src="{{$imgSrcThumb}}" alt="{{$imgSrcAltThumb}}" />
+        <img class="w-4" src="{{$imgSrcThumb}}" alt="{{$imgAltThumb}}" />
         <span class="text-xs">{{$vendorName}}</span>
          </div> 
         <h2 class="text-md xl:text-lg font-bold text-font_primary">{{$title}}</h2>
