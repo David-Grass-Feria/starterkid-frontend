@@ -64,7 +64,7 @@ class FunkeGroup
             // Erstelle eine menschenlesbare Version des Datums
             if ($dateTime !== 'Datum nicht gefunden') {
                 $date = new \Carbon\Carbon($dateTime);
-                $news[$key]['date_for_humans'] = $date->diffForHumans();
+                $news[$key]['date_for_humans'] = $date->diffForHumans(['short' => true]);
             } else {
                 $news[$key]['date_for_humans'] = 'Zeitangabe nicht verfügbar';
             }
