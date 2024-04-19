@@ -28,10 +28,12 @@
     </div>
 
     <div class="col-span-3 xl:col-span-2">
+      @if(isset($imgSrc))
         @if($firstLoop)
        <img rel="preload" as="image" width="80" height="80" class="w-20 xl:w-44 rounded-md" src="{{$imgSrc}}" alt="{{$imgAlt}}" />
        @else
        <img loading="lazy" width="80" height="80" class="w-20 xl:w-44 rounded-md" src="{{$imgSrc}}" alt="{{$imgAlt}}" />
+       @endif
        @endif
     </div>
     
