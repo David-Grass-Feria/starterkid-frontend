@@ -23,7 +23,7 @@
          </div> 
         <h2 class="text-md xl:text-lg font-bold text-font_primary">{{$title}}</h2>
         <p class="text-xs text-font_primary">{!!Str::limit($description,200)!!}</p>
-        <a target="_blank" href="{{$href}}" title="{{$linkTitle}}" class="text-xs text-font_primary underline">{{__('Read more..')}}</a>
+        <a target="_blank" href="{{$href}}" title="{{$linkTitle}}" class="text-xs text-font_primary underline mt-3">{{__('Read more..')}}</a>
        </a>
        </div>
     </div>
