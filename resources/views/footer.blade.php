@@ -102,7 +102,7 @@
               <h3 class="text-sm font-semibold leading-6 text-gray-900">{{__('Sitemap')}}</h3>
               <ul role="list" class="mt-6 space-y-4">
                
-            <x-starterkid-frontend::footer-link wire:navigate  href="{{ route('front.sitemap-page') }}" title="{{ __('Sitemap') }}">{{ __('Sitemap') }}</x-starterkid-frontend::footer-link>
+          
          
             
               </ul>

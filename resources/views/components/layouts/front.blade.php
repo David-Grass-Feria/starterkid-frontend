@@ -10,7 +10,7 @@
     <meta name="description" content="{{$description}}">
     @endif
     <link rel="canonical" href="{{url()->current()}}">
-    <title>{{$title}} | {{ config('app.name', 'Laravel') }}</title>
+    <title>{{$title}}</title>
     @yield('meta')
 
     <script type="application/ld+json">
