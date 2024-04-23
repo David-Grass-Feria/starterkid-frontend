@@ -30,12 +30,12 @@
                 @if (Route::has('front.blog-post.index'))
                     <x-starterkid-frontend::navlink wire:navigate href="{{ route('front.blog-post.index') }}"
                         title="{{ config('starterkid-blog.blog_post_title') }}"
-                        :active="request()->routeIs(['front.blog-post.index', 'front.blog-post.show'])">{{ config('starterkid-blog.blog_post_title') }}</x-starterkid-frontend::navlink>
+                        :active="request()->routeIs(['front.blog-post.index', 'front.blog-post.show'])">{{ config('starterkid-blog.blog_post_menu_name') }}</x-starterkid-frontend::navlink>
                 @endif
                 @if (Route::has('front.service.index'))
                     <x-starterkid-frontend::navlink wire:navigate href="{{ route('front.service.index') }}"
                         title="{{ config('starterkid-service.service_title') }}"
-                        :active="request()->routeIs(['front.service.index', 'front.service.show'])">{{ config('starterkid-service.service_title') }}</x-starterkid-frontend::navlink>
+                        :active="request()->routeIs(['front.service.index', 'front.service.show'])">{{ config('starterkid-service.service_menu_name') }}</x-starterkid-frontend::navlink>
                 @endif
                 @foreach (collect($frontNavLinks)->sortBy('order') as $frontNavLink)
                     @if (Route::has($frontNavLink['route']))
@@ -101,13 +101,13 @@
                                         :active="request()->routeIs([
                                             'front.blog-post.index',
                                             'front.blog-post.show',
-                                        ])">{{ config('starterkid-blog.blog_post_title') }}</x-starterkid-frontend::navlink-mobile>
+                                        ])">{{ config('starterkid-blog.blog_post_menu_name') }}</x-starterkid-frontend::navlink-mobile>
                                 @endif
                                 @if (Route::has('front.service.index'))
                                     <x-starterkid-frontend::navlink-mobile wire:navigate
                                         href="{{ route('front.service.index') }}"
                                         title="{{ config('starterkid-service.service_title') }}"
-                                        :active="request()->routeIs(['front.service.index', 'front.service.show'])">{{ config('starterkid-service.service_title') }}</x-starterkid-frontend::navlink-mobile>
+                                        :active="request()->routeIs(['front.service.index', 'front.service.show'])">{{ config('starterkid-service.service_menu_name') }}</x-starterkid-frontend::navlink-mobile>
                                 @endif
                                 @foreach (collect($frontNavLinks)->sortBy('order') as $frontNavLink)
                                     @if (Route::has($frontNavLink['route']))
@@ -116,7 +116,7 @@
                                             wire:navigate
                                             href="{{ route($frontNavLink['route'], $frontNavLink['parameters'] ?? []) }}"
                                             title="{{ $frontNavLink['title'] }}"
-                                            :active="request()->routeIs($frontNavLink['active'])">{{ $frontNavLink['title'] }}
+                                            :active="request()->routeIs($frontNavLink['active'])">{{ $frontNavLink['menu_name'] }}
                                         </x-starterkid-frontend::navlink-mobile>
                                       @else
                                       <x-starterkid-frontend::navlink-mobile
