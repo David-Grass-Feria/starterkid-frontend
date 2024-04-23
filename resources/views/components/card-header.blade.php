@@ -3,7 +3,7 @@
       
     
       <div>
-        <h1 class="text-4xl font-bold tracking-tight text-font_primary sm:text-6xl xl:text-5xl">{{$heading}}</h1>
+        <h1 class="text-4xl font-bold tracking-tight text-font_primary sm:text-6xl xl:text-4xl">{{$heading}}</h1>
         @if(isset($description))
         <p class="mt-6 text-lg leading-8 text-font_primary">{{$description}}</p>
         @endif
