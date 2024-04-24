@@ -97,7 +97,7 @@
             </div>
           </div>
           <div class="md:grid md:grid-cols-2 md:gap-8">
-            
+            {{--
             <div>
               <h3 class="text-sm font-semibold leading-6 text-gray-900">{{__('Sitemap')}}</h3>
               <ul role="list" class="mt-6 space-y-4">
@@ -107,7 +107,7 @@
             
               </ul>
             </div>
-         
+            --}}
             <div class="mt-10 md:mt-0">
               <h3 class="text-sm font-semibold leading-6 text-gray-900"></h3>
               <ul role="list" class="mt-6 space-y-4">
