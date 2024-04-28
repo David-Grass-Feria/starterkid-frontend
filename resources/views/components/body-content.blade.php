@@ -109,9 +109,13 @@ $count = 0;
 $content = preg_replace_callback(
     '/<img(.*?)>/i',
     function ($matches) use (&$count) {
-$loading = $count === 0 ? 'preload' : 'lazy';
-$count++;
-return "<img$matches[1] loading="$loading">";
+        if ($count === 0) {
+    $count++;
+    return "<img$matches[1] loading=\"preload\">";
+} else {
+    $count++;
+    return "<img$matches[1] loading=\"lazy\">";
+}
 },
     $content
 );
