@@ -105,11 +105,14 @@ $content = preg_replace_callback(
 );
 
 // add loading lazy to the images
+$count = 0;
 $content = preg_replace_callback(
     '/<img(.*?)>/i',
-    function ($matches) {
-        return "<img$matches[1] loading=\"lazy\">";
-    },
+    function ($matches) use (&$count) {
+$loading = $count === 0 ? 'preload' : 'lazy';
+$count++;
+return "<img$matches[1] loading="$loading">";
+},
     $content
 );
 
