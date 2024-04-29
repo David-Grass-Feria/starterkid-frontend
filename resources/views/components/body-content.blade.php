@@ -123,7 +123,7 @@ $xpath = new DOMXPath($doc);
 // Suchen Sie nach allen <a>-Tags, die nur '[]' enthalten
 $nodes = $xpath->query('//a[text()="[]"]');
 
-$counter = 1;
+$counterReferenceNotes = 1;
 $referencesList = $doc->createElement('ul');
 $referencesList->setAttribute('class', 'references');
 
@@ -131,9 +131,9 @@ foreach ($nodes as $node) {
     $href = $node->getAttribute('href'); // Extrahiere den href-Wert
 
     // Erstellen eines neuen <a>-Tags
-    $newLink = $doc->createElement('a', "[$counter]");
-    $newLink->setAttribute('class', "cite_note_$counter");
-    $newLink->setAttribute('href', "#cite_note_$counter");
+    $newLink = $doc->createElement('a', "[$counterReferenceNotes]");
+    $newLink->setAttribute('class', "cite_note_$counterReferenceNotes");
+    $newLink->setAttribute('href', "#cite_note_$counterReferenceNotes");
 
     // Ersetzen des alten Nodes mit dem neuen Link
     $node->parentNode->replaceChild($newLink, $node);
@@ -141,25 +141,32 @@ foreach ($nodes as $node) {
     // Referenzen aktualisieren
     $referenceItem = $doc->createElement('li');
     $referenceItem->setAttribute('class', 'text-xs list-none');
-    $referenceItemText = $doc->createTextNode("$counter. ");
+    $referenceItemText = $doc->createTextNode("$counterReferenceNotes. ");
     $referenceItem->appendChild($referenceItemText);
     $referenceLink = $doc->createElement('a', htmlspecialchars($href));
-    $referenceLink->setAttribute('id', "cite_note_$counter");
+    $referenceLink->setAttribute('id', "cite_note_$counterReferenceNotes");
     $referenceLink->setAttribute('target', "_blank");
     $referenceLink->setAttribute('href', htmlspecialchars($href));
     $referenceItem->appendChild($referenceLink);
     $referencesList->appendChild($referenceItem);
-
-    $counter++;
+    
+    $counterReferenceNotes++;
 }
 
+
+
 // Füge Referenzliste und Überschrift am Ende des Dokuments ein
-$referencesHeader = $doc->createElement('h2', 'Einzelnachweise');
+if($counterReferenceNotes > 1){
+    $referencesHeader = $doc->createElement('h2', 'Einzelnachweise');    
+
+
 $doc->documentElement->appendChild($referencesHeader);
 $doc->documentElement->appendChild($referencesList);
 
 // Geändertes HTML zurück in einen String konvertieren
 $content = $doc->saveHTML();
+}
+
 @endphp
 
 @php
