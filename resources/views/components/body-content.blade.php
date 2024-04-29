@@ -145,7 +145,6 @@ foreach ($nodes as $node) {
     $referenceItem->appendChild($referenceItemText);
     $referenceLink = $doc->createElement('a', htmlspecialchars($href));
     $referenceLink->setAttribute('id', "cite_note_$counter");
-    $referenceLink->setAttribute('rel', "nofollow");
     $referenceLink->setAttribute('target', "_blank");
     $referenceLink->setAttribute('href', htmlspecialchars($href));
     $referenceItem->appendChild($referenceLink);
