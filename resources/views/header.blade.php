@@ -37,6 +37,11 @@
                         title="{{ config('starterkid-service.service_title') }}"
                         :active="request()->routeIs(['front.service.index', 'front.service.show'])">{{ config('starterkid-service.service_menu_name') }}</x-starterkid-frontend::navlink>
                 @endif
+                @if (Route::has('front.wiki.index'))
+                    <x-starterkid-frontend::navlink wire:navigate href="{{ route('front.wiki.index') }}"
+                        title="{{ config('starterkid-wiki.wiki_title') }}"
+                        :active="request()->routeIs(['front.wiki.index', 'front.wiki.show'])">{{ config('starterkid-wiki.wiki_menu_name') }}</x-starterkid-frontend::navlink>
+                @endif
                 @foreach (collect($frontNavLinks)->sortBy('order') as $frontNavLink)
                     @if (Route::has($frontNavLink['route']))
                       @if($frontNavLink['wire_navigate'] ?? false)
@@ -108,6 +113,12 @@
                                         href="{{ route('front.service.index') }}"
                                         title="{{ config('starterkid-service.service_title') }}"
                                         :active="request()->routeIs(['front.service.index', 'front.service.show'])">{{ config('starterkid-service.service_menu_name') }}</x-starterkid-frontend::navlink-mobile>
+                                @endif
+                                @if (Route::has('front.wiki.index'))
+                                    <x-starterkid-frontend::navlink-mobile wire:navigate
+                                        href="{{ route('front.wiki.index') }}"
+                                        title="{{ config('starterkid-wiki.wiki_title') }}"
+                                        :active="request()->routeIs(['front.wiki.index', 'front.wiki.show'])">{{ config('starterkid-wiki.wiki_menu_name') }}</x-starterkid-frontend::navlink-mobile>
                                 @endif
                                 @foreach (collect($frontNavLinks)->sortBy('order') as $frontNavLink)
                                     @if (Route::has($frontNavLink['route']))
