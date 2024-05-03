@@ -19,6 +19,11 @@ return [
             'scope' => 'frontGetServicesWhereStatusIsOnline',
             'route' => 'front.service.show',
         ],
+        [
+            'class' => \GrassFeria\StarterkidWiki\Models\Wiki::class,
+            'scope' => 'frontGetWikisWhereStatusIsOnline',
+            'route' => 'front.wiki.show',
+        ],
         // Füge hier weitere Model-Konfigurationen hinzu
     ],
 ];
