@@ -160,7 +160,7 @@ $content = preg_replace_callback(
      <div class="col-span-12 xl:col-span-9 w-full xl:max-w-xl">   
     <div class="w-full overflow-hidden">
         <div class="mb-5">
-     <h1 class="text-2xl font-bold text-font_primary mt-10 md:mt-0 md:text-4xl xl:text-5xl">{{$heading}}</h1>
+     <h1 class="text-2xl font-bold text-font_primary md:text-4xl xl:text-5xl">{{$heading}}</h1>
      @if(isset($dateTime))
      <div class="flex items-center space-x-2 mt-5">
         <span class="text-xs text-font_primary xl:text-sm">{{$dateTime}}</span>
