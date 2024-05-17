@@ -49,13 +49,13 @@
                             wire:navigate
                             href="{{ route($frontNavLink['route'], $frontNavLink['parameters'] ?? []) }}"
                             title="{{ $frontNavLink['title'] }}"
-                            :active="request()->routeIs($frontNavLink['active'])">{{ $frontNavLink['title'] }}
+                            :active="request()->routeIs($frontNavLink['active'])">{{ $frontNavLink['menu_name'] }}
                         </x-starterkid-frontend::navlink>
                         @else
                         <x-starterkid-frontend::navlink 
                             href="{{ route($frontNavLink['route'], $frontNavLink['parameters'] ?? []) }}"
                             title="{{ $frontNavLink['title'] }}"
-                            :active="request()->routeIs($frontNavLink['active'])">{{ $frontNavLink['title'] }}
+                            :active="request()->routeIs($frontNavLink['active'])">{{ $frontNavLink['menu_name'] }}
                         </x-starterkid-frontend::navlink>
                         @endif
                     @endif
