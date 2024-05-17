@@ -7,6 +7,8 @@
         
           <h1 class="mt-10 text-center text-4xl font-bold text-font_primary xl:text-8xl">{{$h1}} <br> <span class="underline decoration-primary">{{$h1Color}}</span></h1>
           <p class="mt-6 w.full md:max-w-2xl mx-auto text-xl leading-8 text-font_primary text-center">{{$description}}</p>
+          
+          @if(isset($href))
           <div class="mt-10 flex flex-col space-y-5 items-center sm:flex-row sm:items-center sm:justify-center sm:space-x-3 sm:space-y-0 ">
             <a wire:navigate href="{{$href}}" title="{{$hrefTitle}}">
          <x-starterkid-frontend::button-secondary type="button">{{$hrefAnchor}}</x-starterkid-frontend::button-secondary>
@@ -16,6 +18,8 @@
            @endif
            
         </div>
+        @endif
+
         </div>
         <div class="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow">
           
