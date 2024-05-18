@@ -1,7 +1,13 @@
 <div>
   <div class="rounded-3xl group relative bg-white p-6 text-font_primary h-96 shadow-md border border-primary">
+    
+    
+    @if (!empty($imgSrc))
     <div>
       <span class="inline-flex rounded-lg p-3">
+        
+
+        
         @if($firstLoop)
       <img rel="preload" as="image" width="40" height="40" class="h-10 w-10 rounded-sm object-contain" src="{{$imgSrc}}" alt="{{$imgAlt}}">
       @else
@@ -9,6 +15,25 @@
       @endif
       </span>
     </div>
+
+    @else
+    <div>
+      <span class="inline-flex rounded-lg p-3">
+        
+
+        
+        @if($firstLoop)
+      <img rel="preload" as="image" width="40" height="40" class="h-10 w-10 rounded-sm object-contain" src="{{Cache::has('logo') ? Cache::get('logo') : asset('/logo.png')}}" alt="{{$imgAlt}}">
+      @else
+      <img loading="lazy" width="40" height="40" class="h-10 w-10 rounded-sm object-contain" src="{{Cache::has('logo') ? Cache::get('logo') : asset('/logo.png')}}" alt="{{$imgAlt}}">
+      @endif
+      </span>
+    </div>
+
+    @endif
+
+
+
     <div class="mt-8">
       <h3 class="text-base font-semibold leading-6">
         <a wire:navigate href="{{$href}}" title="{{$hrefTitle}}" class="focus:outline-none">
