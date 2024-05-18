@@ -26,8 +26,7 @@ class PreloadCacheJob implements ShouldQueue
     public function handle()
     {
         // Versuche, die URL zu erreichen, um den Cache neu zu erstellen
-        Http::timeout(30)->get($this->url);
-        Livewire::test('FrontStateShow')
-                ->call('render');
+        Http::get($this->url);
+        
     }
 }
