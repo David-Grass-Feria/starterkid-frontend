@@ -27,6 +27,7 @@ class PreloadCacheJob implements ShouldQueue
     {
         // Versuche, die URL zu erreichen, um den Cache neu zu erstellen
         Http::get($this->url);
+        Http::get($this->url);
         
     }
 }
