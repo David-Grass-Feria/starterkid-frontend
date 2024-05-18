@@ -3,6 +3,7 @@
 namespace GrassFeria\StarterkidFrontend\Jobs;
 
 use ZipArchive;
+use Livewire\Livewire;
 use Illuminate\Bus\Queueable;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Queue\SerializesModels;
@@ -26,5 +27,7 @@ class PreloadCacheJob implements ShouldQueue
     {
         // Versuche, die URL zu erreichen, um den Cache neu zu erstellen
         Http::timeout(30)->get($this->url);
+        Livewire::test('FrontStateShow')
+                ->call('render');
     }
 }
