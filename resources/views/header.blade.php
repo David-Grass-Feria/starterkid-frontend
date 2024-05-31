@@ -33,7 +33,7 @@
                         :active="request()->routeIs(['front.blog-post.index', 'front.blog-post.show'])">{{ config('starterkid-blog.blog_post_menu_name') }}</x-starterkid-frontend::navlink>
                 @endif
                 @if (Route::has('front.service.index'))
-                @if(config('starterkid-service.on_header'))
+                @if(config('starterkid-service.service_link_on_header'))
                     <x-starterkid-frontend::navlink wire:navigate href="{{ route('front.service.index') }}"
                         title="{{ config('starterkid-service.service_title') }}"
                         :active="request()->routeIs(['front.service.index', 'front.service.show'])">{{ config('starterkid-service.service_menu_name') }}</x-starterkid-frontend::navlink>
@@ -111,7 +111,7 @@
                                         ])">{{ config('starterkid-blog.blog_post_menu_name') }}</x-starterkid-frontend::navlink-mobile>
                                 @endif
                                 @if (Route::has('front.service.index'))
-                                @if(config('starterkid-service.on_header'))
+                                @if(config('starterkid-service.service_link_on_header'))
                                     <x-starterkid-frontend::navlink-mobile wire:navigate
                                         href="{{ route('front.service.index') }}"
                                         title="{{ config('starterkid-service.service_title') }}"
